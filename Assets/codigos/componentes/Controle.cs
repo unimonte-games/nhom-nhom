@@ -2,34 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// Contém controles do personagem.
-///
-/// Através da Callback de Atualização "Update", ele lê a entrada do jogo
-/// através de uma abstração do próprio jogo, e escreve sobre o componente
-/// de Velocidade e também modifica a posse de item caso o botão de Ação1
-/// seja pressionado com um item próximo.
 public class Controle : MonoBehaviour
 {
-    /// O sistema lê a entrada usando esses parâmetros
-    [Tooltip("O sistema lê a entrada usando esses parâmetros")]
-    public ControlesJogador controles;
+    public ObjetosAlcancaveis listaDeItensProximos, listaDeEspacosItensProximas;
+    public EspacoItem espacoItem;
+    public float velocidade;
+    public ControlesValores ctrlValores;
 
     Velocidade compVelocidade;
-    Item compItem;
+
+    Vector3 direcao;
 
     void Awake() {
         compVelocidade = GetComponent<Velocidade>();
     }
 
     void Update() {
-        float dt = Time.deltaTime;
+        // velocidade
+        compVelocidade.direcao.x = ctrlValores.eixoHorizontal;
+        compVelocidade.direcao.z = ctrlValores.eixoVertical;
+        compVelocidade.velocidade = velocidade;
 
-        // TODO: talvez seja necessário mudar pra uma abstração em cima do Input
-        float eixoH = Input.GetAxis(controles.eixoHorizontal);
-        float eixoV = Input.GetAxis(controles.eixoVertical);
-        bool acao1  = Input.GetButtonDown(controles.eixoAcao1);
+        // pegar ou soltar item
+        if (ctrlValores.eixoAcao1) {
+            if (!espacoItem.Vazio()) {
+                Item item = espacoItem.Soltar();
 
-        compVelocidade.direcao.x = eixoH;
-        compVelocidade.direcao.z = eixoV;
+                if (!listaDeEspacosItensProximas.Vazio()) {
+                    GameObject espacoGbj = listaDeEspacosItensProximas.ObterMaisProximo();
+                    var espacoItemProximo = espacoGbj.GetComponent<EspacoItem>();
+                    espacoItemProximo.Abrigar(item);
+                }
+            }
+            else if (!listaDeItensProximos.Vazio()) {
+                // a verificação de Vazio acima garante que ObterMaisProximo não retornará null
+                GameObject itemGbj = listaDeItensProximos.ObterMaisProximo();
+                var item = itemGbj.GetComponent<Item>();
+                espacoItem.Abrigar(item);
+            }
+        }
     }
 }

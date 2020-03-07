@@ -2,16 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// Contém quem detém a posse do item através do EspacoItem e métodos de
-/// transferência de posse.
 public class Item : MonoBehaviour
 {
-    /// Espaço ocupado por esse item
-    [Tooltip("Espaço ocupado por esse item")]
     public EspacoItem espacoPertencente;
+    Transform tr;
 
-    /// Muda a posse do item para o espaço novoEspaco
-    public void MudarPosse(EspacoItem novoEspaco) {
+    public void LimparPosse() {
+        if (espacoPertencente) {
+            tr.SetParent(null);
+            espacoPertencente.itemAbrigado = null;
+        }
+    }
 
+    public void DefinirPosse(EspacoItem novoEspacoPertencente) {
+        LimparPosse();
+        novoEspacoPertencente.itemAbrigado = this;
+        tr.SetParent(novoEspacoPertencente.transform);
+        tr.localPosition = Vector3.zero;
+    }
+
+    void Awake() {
+        tr = GetComponent<Transform>();
     }
 }
