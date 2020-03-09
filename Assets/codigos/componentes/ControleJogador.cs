@@ -24,6 +24,7 @@ public class ControleJogador : ImplControle
         // ou seja, é o mesmo que if (ctrlEixos.eixoAcao1 != "") resultado.eixoAcao1 = Input.GetButtonDown(ctrlEixos.eixoAcao1);
         // o nome disso é Avaliação curto-circuito: https://pt.wikipedia.org/wiki/Express%C3%A3o_(computa%C3%A7%C3%A3o)#Avalia%C3%A7%C3%A3o_curto-circuito
         resultado.eixoAcao1 = ctrlEixos.eixoAcao1 != "" && Input.GetButtonDown(ctrlEixos.eixoAcao1);
+        resultado.eixoAcao1 = ctrlEixos.eixoAcao1 != "" && Input.GetButtonDown(ctrlEixos.eixoAcao1);
         resultado.eixoAcao2 = ctrlEixos.eixoAcao2 != "" && Input.GetButtonDown(ctrlEixos.eixoAcao2);
 
         return resultado;
