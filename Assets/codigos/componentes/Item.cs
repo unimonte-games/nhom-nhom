@@ -11,6 +11,7 @@ public class Item : MonoBehaviour
         if (espacoPertencente) {
             tr.SetParent(null);
             espacoPertencente.itemAbrigado = null;
+            espacoPertencente = null;
         }
     }
 
