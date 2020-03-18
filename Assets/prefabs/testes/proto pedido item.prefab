@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2894989269796068085}
+  - component: {fileID: 5756055473373449789}
+  - component: {fileID: 2122420772763041829}
   m_Layer: 0
-  m_Name: ptoto pedido item
-  m_TagString: Untagged
+  m_Name: proto pedido item
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +33,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5756055473373449789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894989269796068084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf238d6cc7228f5784deeead353e77f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  espacoPertencente: {fileID: 0}
+--- !u!135 &2122420772763041829
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894989269796068084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2894989270356870409
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +70,6 @@ GameObject:
   - component: {fileID: 2894989270356870414}
   - component: {fileID: 2894989270356870413}
   - component: {fileID: 2894989270356870412}
-  - component: {fileID: 2894989270356870415}
   m_Layer: 0
   m_Name: pedido (1)
   m_TagString: Untagged
@@ -110,19 +137,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2894989270356870415
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2894989270356870409}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2894989270383907575
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +148,7 @@ GameObject:
   - component: {fileID: 2894989270383907572}
   - component: {fileID: 2894989270383907531}
   - component: {fileID: 2894989270383907530}
-  - component: {fileID: 2894989270383907573}
+  - component: {fileID: 2116805058219721906}
   m_Layer: 0
   m_Name: pedido
   m_TagString: Untagged
@@ -206,19 +220,66 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2894989270383907573
-BoxCollider:
+--- !u!114 &2116805058219721906
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2894989270383907575}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174c4f5462b64c2f88a92558b5b92c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformar: 1
+  transformParaTransformar: {fileID: 2894989270383907572}
+  relatividade: 0
+  duracaoTranslacao: 0
+  duracaoRotacao: 1
+  duracaoEscalonamento: 0
+  velTranslacao: 0
+  velRotacao: 100
+  velEscalonamento: 0
+  translacao: {x: 0, y: 0, z: 0}
+  rotacao: {x: 0, y: 1, z: 0}
+  escalonamento: {x: 0, y: 0, z: 0}
+  curvaTranslacao:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curvaRotacao:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curvaEscalonamento:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2894989270627106351
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +291,6 @@ GameObject:
   - component: {fileID: 2894989270627106348}
   - component: {fileID: 2894989270627106339}
   - component: {fileID: 2894989270627106338}
-  - component: {fileID: 2894989270627106349}
   m_Layer: 0
   m_Name: pedido (3)
   m_TagString: Untagged
@@ -298,19 +358,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2894989270627106349
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2894989270627106351}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2894989270852989687
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +369,6 @@ GameObject:
   - component: {fileID: 2894989270852989684}
   - component: {fileID: 2894989270852989643}
   - component: {fileID: 2894989270852989642}
-  - component: {fileID: 2894989270852989685}
   m_Layer: 0
   m_Name: pedido
   m_TagString: Untagged
@@ -390,19 +436,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2894989270852989685
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2894989270852989687}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2894989271501534435
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +447,6 @@ GameObject:
   - component: {fileID: 2894989271501534432}
   - component: {fileID: 2894989271501534439}
   - component: {fileID: 2894989271501534438}
-  - component: {fileID: 2894989271501534433}
   m_Layer: 0
   m_Name: pedido (2)
   m_TagString: Untagged
@@ -482,16 +514,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2894989271501534433
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2894989271501534435}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
