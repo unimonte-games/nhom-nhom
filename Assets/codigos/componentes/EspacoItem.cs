@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class EspacoItem : MonoBehaviour
 {
@@ -16,14 +17,19 @@ public class EspacoItem : MonoBehaviour
         if (!Vazio() && itemAbrigado.espacoPertencente == this) {
             Item itemQueEstavaAbrigado = itemAbrigado;
             itemAbrigado.LimparPosse();
+
+            // itemQueEstavaAbrigado não deve ser nula
+            Assert.IsNotNull(itemQueEstavaAbrigado);
+
             return itemQueEstavaAbrigado;
         }
         return null;
     }
 
     public void Abrigar(Item item) {
-        if (Vazio())
+        if (Vazio()) {
             item.DefinirPosse(this);
+        }
     }
 
     void Awake() {
