@@ -13,9 +13,10 @@ public class EspacoItem : MonoBehaviour
     }
 
     public Item Soltar() {
-        if (!Vazio()) {
+        if (!Vazio() && itemAbrigado.espacoPertencente == this) {
+            Item itemQueEstavaAbrigado = itemAbrigado;
             itemAbrigado.LimparPosse();
-            return itemAbrigado;
+            return itemQueEstavaAbrigado;
         }
         return null;
     }
