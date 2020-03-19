@@ -26,10 +26,12 @@ public class EspacoItem : MonoBehaviour
         return null;
     }
 
-    public void Abrigar(Item item) {
+    public bool Abrigar(Item item) {
         if (Vazio()) {
             item.DefinirPosse(this);
+            return true;
         }
+        return false;
     }
 
     void Awake() {
