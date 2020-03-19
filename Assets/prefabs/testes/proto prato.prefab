@@ -195,7 +195,6 @@ GameObject:
   - component: {fileID: 3624989412698349191}
   - component: {fileID: 3624989412698349186}
   - component: {fileID: 3624989412698349185}
-  - component: {fileID: 3624989412698349184}
   m_Layer: 0
   m_Name: prato
   m_TagString: Untagged
@@ -264,19 +263,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &3624989412698349184
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3624989412698349190}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3624989413130152319
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,9 +272,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3624989413130152312}
+  - component: {fileID: -167789548379403667}
+  - component: {fileID: -5343638075889370716}
+  - component: {fileID: 98082987248392041}
+  - component: {fileID: 4673124334521476470}
   m_Layer: 0
   m_Name: proto prato
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,6 +298,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-167789548379403667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624989413130152319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be8b4549bac6e03cbc86809c6ba3ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: proto prato
+--- !u!114 &-5343638075889370716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624989413130152319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf238d6cc7228f5784deeead353e77f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  espacoPertencente: {fileID: 0}
+--- !u!114 &98082987248392041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624989413130152319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9eb1e934261d2baa0ade5421d2de1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipo: 1
+--- !u!135 &4673124334521476470
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624989413130152319}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3624989413560284451
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +453,6 @@ GameObject:
   - component: {fileID: 3624989413834038138}
   - component: {fileID: 3624989413834038133}
   - component: {fileID: 3624989413834038132}
-  - component: {fileID: 3624989413834038139}
   m_Layer: 0
   m_Name: miojo
   m_TagString: Untagged
@@ -483,19 +524,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &3624989413834038139
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3624989413834038137}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3624989413886821472
 GameObject:
   m_ObjectHideFlags: 0
