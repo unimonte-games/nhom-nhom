@@ -10,6 +10,15 @@ public class ObjetosAlcancaveis : MonoBehaviour
 
     Transform tr;
 
+    void Limpar() {
+        for (int i = listaObjetos.Count - 1; i >= 0; i--)
+        {
+            GameObject gbj_i = listaObjetos[i];
+            if (gbj_i == null)
+                listaObjetos.RemoveAt(i);
+        }
+    }
+
     public bool Vazio() {
         return listaObjetos.Count == 0;
     }
@@ -17,6 +26,8 @@ public class ObjetosAlcancaveis : MonoBehaviour
     public GameObject ObterMaisProximo() {
         if (Vazio())
             return null;
+
+        Limpar();
 
         GameObject resultado = listaObjetos[0];
         Transform res_tr = resultado.GetComponent<Transform>();
@@ -38,10 +49,9 @@ public class ObjetosAlcancaveis : MonoBehaviour
         Assert.IsNotNull(resultado);
 
         return resultado;
-
     }
 
-    bool EstaDentroDaLista(GameObject gbj) {
+    public bool EstaDentroDaLista(GameObject gbj) {
         for (int i = 0; i < listaObjetos.Count; i++)
             if (gbj == listaObjetos[i])
                 return true;
@@ -57,6 +67,8 @@ public class ObjetosAlcancaveis : MonoBehaviour
         if (etiqueta != "" && !col.CompareTag(etiqueta))
             return;
 
+        Limpar();
+
         GameObject col_gbj = col.gameObject;
 
         if (!EstaDentroDaLista(col_gbj))
@@ -66,6 +78,8 @@ public class ObjetosAlcancaveis : MonoBehaviour
     void OnTriggerExit(Collider col) {
         if (etiqueta != "" && !col.CompareTag(etiqueta))
             return;
+
+        Limpar();
 
         GameObject col_gbj = col.gameObject;
 
