@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class ObjetosAlcancaveis : MonoBehaviour
 {
@@ -32,6 +33,9 @@ public class ObjetosAlcancaveis : MonoBehaviour
                 res_tr = tr_i;
             }
         }
+
+        // neste ponto o resultado não deverá ser nulo
+        Assert.IsNotNull(resultado);
 
         return resultado;
 
