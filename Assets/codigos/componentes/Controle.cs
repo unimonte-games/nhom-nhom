@@ -11,17 +11,44 @@ public class Controle : MonoBehaviour
     public ControlesValores ctrlValores;
 
     Velocidade compVelocidade;
+    Transform tr;
 
     Vector3 direcao;
 
     void Awake() {
         compVelocidade = GetComponent<Velocidade>();
+        tr = GetComponent<Transform>();
     }
 
     void Update() {
+        // rotação e direção
+        float H = ctrlValores.eixoHorizontal;
+        float V = ctrlValores.eixoVertical;
+
+        direcao.x = 0;
+        direcao.y = 0;
+        direcao.z = 0;
+        if ((H < -0.1f || H > 0.1f) || (V < -0.1f || V > 0.1f)) {
+
+            if (H < -0.1f)
+                direcao.x = -1;
+            else if (H > 0.1f)
+                direcao.x =  1;
+
+            if (V < -0.1f)
+                direcao.z = -1;
+            else if (V > 0.1f)
+                direcao.z =  1;
+
+            direcao.Normalize();
+
+            tr.LookAt(tr.position + direcao);
+        }
+
         // velocidade
-        compVelocidade.direcao.x = ctrlValores.eixoHorizontal;
-        compVelocidade.direcao.z = ctrlValores.eixoVertical;
+        compVelocidade.direcao.x = 0;
+        compVelocidade.direcao.y = 0;
+        compVelocidade.direcao.z = Mathf.Ceil(direcao.magnitude);
         compVelocidade.velocidade = velocidade;
 
         // pegar ou soltar item
