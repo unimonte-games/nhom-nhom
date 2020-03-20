@@ -59,8 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transacoes:
-  - entrada: proto pedido
-    saida: {fileID: 3624989413130152319, guid: 91b4e1d141ea7f889bcbacafadfcd8b3, type: 3}
+  - entrada: '#pedido proto'
+    saida: {fileID: 56056780774805262, guid: add4e4596dc737e418ff3c86da157532, type: 3}
 --- !u!65 &5900403454355770985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -730,7 +730,7 @@ PrefabInstance:
         type: 3}
       propertyPath: itemAbrigado
       value: 
-      objectReference: {fileID: 4016676950615875109}
+      objectReference: {fileID: 4177528712577719691}
     - target: {fileID: 6180263439703783376, guid: 541f283fb41ded5f0b2e1288e4730b9e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1135,6 +1135,92 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5053619560346987705}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7017642556615399914
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5139748142227957394}
+    m_Modifications:
+    - target: {fileID: 2363024408371071197, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363024408371071197, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363024408371071197, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363024408371071197, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363024408371071197, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363024408371071197, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363024408371071197, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363024408371071197, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363024408371071197, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363024408371071197, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363024408371071197, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3164416008463641396, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: m_Name
+      value: proto pedido
+      objectReference: {fileID: 0}
+    - target: {fileID: 6384481952598656097, guid: 5bf41f6b42ed720e28d8897945011b81,
+        type: 3}
+      propertyPath: espacoPertencente
+      value: 
+      objectReference: {fileID: 2665872139898544073}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5bf41f6b42ed720e28d8897945011b81, type: 3}
+--- !u!114 &4177528712577719691 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6384481952598656097, guid: 5bf41f6b42ed720e28d8897945011b81,
+    type: 3}
+  m_PrefabInstance: {fileID: 7017642556615399914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf238d6cc7228f5784deeead353e77f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7975586526602065905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1289,92 +1375,6 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2971680370167323333, guid: 427fa810e3873c5b9849c1379b4695c9,
     type: 3}
   m_PrefabInstance: {fileID: 8007285489546274295}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bf238d6cc7228f5784deeead353e77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1001 &8673800472889085976
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5139748142227957394}
-    m_Modifications:
-    - target: {fileID: 2894989269796068084, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: m_Name
-      value: proto pedido item
-      objectReference: {fileID: 0}
-    - target: {fileID: 2894989269796068085, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2894989269796068085, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2894989269796068085, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2894989269796068085, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2894989269796068085, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2894989269796068085, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2894989269796068085, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2894989269796068085, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2894989269796068085, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2894989269796068085, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2894989269796068085, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5756055473373449789, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-        type: 3}
-      propertyPath: espacoPertencente
-      value: 
-      objectReference: {fileID: 2665872139898544073}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d258ccfabb8e8ef21a673d92f7b8c040, type: 3}
---- !u!114 &4016676950615875109 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5756055473373449789, guid: d258ccfabb8e8ef21a673d92f7b8c040,
-    type: 3}
-  m_PrefabInstance: {fileID: 8673800472889085976}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
