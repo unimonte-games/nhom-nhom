@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - EspacoItem
+  - Prato
   layers:
   - Default
   - TransparentFX

@@ -16,8 +16,8 @@ public class ControleJogador : ImplControle
 
     protected override ControlesValores ObterControlesValores(ref ControlesEixos ctrlEixos) {
         ControlesValores resultado;
-        resultado.eixoHorizontal = Input.GetAxis(ctrlEixos.eixoHorizontal);
-        resultado.eixoVertical = Input.GetAxis(ctrlEixos.eixoVertical);
+        resultado.eixoHorizontal = Input.GetAxisRaw(ctrlEixos.eixoHorizontal);
+        resultado.eixoVertical = Input.GetAxisRaw(ctrlEixos.eixoVertical);
 
         // truque que aprendi :D
         // considere a expressão x && y, se x for false, y não será avaliado
