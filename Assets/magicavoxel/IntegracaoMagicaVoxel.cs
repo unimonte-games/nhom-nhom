@@ -15,7 +15,7 @@ namespace IntegracaoMagicaVoxel
 
         public static Dictionary<string, string> dicionario;
         public static string pathDicio = "Assets/magicavoxel/dicionarioVoxel.txt";
-        public static string pathCena = "Assets/magicavoxel/teste.ply";
+        public static string pathCena = "Assets/magicavoxel/cena01.ply";
 
         public static void PopularDicionario()
         {
@@ -43,7 +43,8 @@ namespace IntegracaoMagicaVoxel
 
         public static void LerArqPly()
         {
-            if (dicionario == null) PopularDicionario();
+            // Atualiza o dicionário
+            PopularDicionario();
 
             // Cria obj pai do cenário
             Transform paiCenario = new GameObject("Cenario Importado").transform;
@@ -75,6 +76,14 @@ namespace IntegracaoMagicaVoxel
             } while (!arqPly.EndOfStream);
         }
 
+        public static void RegerarCena()
+        {
+            GameObject pai = GameObject.Find("Cenario Importado");
+            DestroyImmediate(pai);
+
+            LerArqPly();
+        }
+
         private static void InstanciarModelo(string chave, Vector3 posi, Transform pai)
         {
             string nomePrefab;
@@ -101,7 +110,14 @@ namespace IntegracaoMagicaVoxel
 
             // Mensagem de erro
             else
-                Debug.LogError("Chave não encontrada no dicionário: " + chave);
+            {
+                Debug.LogWarning("Chave não encontrada no dicionário: " + chave);
+
+                GameObject obj = Instantiate(
+                            Resources.Load(@"magicavoxel/prefabs/debug")) as GameObject;
+                obj.transform.position = posi;
+                obj.transform.parent = pai;
+            }
         }
     }
 }

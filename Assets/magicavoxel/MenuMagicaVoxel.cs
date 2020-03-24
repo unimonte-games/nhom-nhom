@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEditor;
-using System.IO;
 
 namespace IntegracaoMagicaVoxel
 {
@@ -12,6 +11,12 @@ namespace IntegracaoMagicaVoxel
         public static void GerarCena()
         {
             IntegracaoMagicaVoxel.LerArqPly();
+        }
+
+        [MenuItem("MagicaVoxel/Atualizar Cena")]
+        public static void AtualizarCena()
+        {
+            IntegracaoMagicaVoxel.RegerarCena();
         }
 
         [MenuItem("MagicaVoxel/Configurações")]
