@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using System.IO;
-using System;
 
 namespace IntegracaoMagicaVoxel
 {
@@ -15,9 +13,17 @@ namespace IntegracaoMagicaVoxel
         /// para a substituição pelos modelos referentes
         /// </summary>
 
-        public static void PopularDicionario(ref Dictionary<string, string> dicionario, string path)
+        public static Dictionary<string, string> dicionario;
+        public static string pathDicio = "Assets/magicavoxel/dicionarioVoxel.txt";
+        public static string pathCena = "Assets/magicavoxel/teste.ply";
+
+        public static void PopularDicionario()
         {
-            var arqRef = new StreamReader(path);
+            if (dicionario == null) dicionario = new Dictionary<string, string>();
+            else dicionario.Clear();
+
+            // Abre o arquivo no caminho completo (remove "Assets" do nome devido a duplicidade)
+            var arqRef = new StreamReader(Application.dataPath + pathDicio.Remove(0, 6));
 
             try
             {
@@ -35,15 +41,15 @@ namespace IntegracaoMagicaVoxel
             }
         }
 
-        public static void GerarCena(ref Dictionary<string, string> dicionario, string path)
+        public static void LerArqPly()
         {
-            Debug.Log("Gerando a Cena...");
-            // ----------------------------------
-            //
+            if (dicionario == null) PopularDicionario();
 
-            var arqPly = new StreamReader(path);
-
+            // Cria obj pai do cenário
             Transform paiCenario = new GameObject("Cenario Importado").transform;
+
+            // Abre o arquivo no caminho completo (remove "Assets" do nome devido a duplicidade)
+            var arqPly = new StreamReader(Application.dataPath + pathCena.Remove(0, 6));
 
             // Pula o cabeçalho do arquivo
             while (arqPly.ReadLine() != "end_header") ;
@@ -61,39 +67,41 @@ namespace IntegracaoMagicaVoxel
                 posi.y = int.Parse(linha[2]);
 
                 // Popular chave
-                var chave = String.Format("{0} {1} {2}", linha[3], linha[4], linha[5]);
+                string chave = string.Format("{0} {1} {2}", linha[3], linha[4], linha[5]);
 
-                // Verifica se a chave está presente no dicionário
-                string nomePrefab;
-                if (dicionario.ContainsKey(chave))
-                {
-                    nomePrefab = dicionario[chave];
-
-                    if (nomePrefab != "vazio")
-                    {
-                        try
-                        {
-                            // Instancia Prefab na posição correta
-                            GameObject obj = Instantiate(
-                                Resources.Load(@"magicavoxel/prefabs/" + nomePrefab)) as GameObject;
-                            obj.transform.position = posi;
-                            obj.transform.parent = paiCenario;
-                        }
-
-                        // Mensagem de erro
-                        catch { Debug.LogError("Prefab não encontrado: " + nomePrefab); }
-                    }
-                }
-
-                // Mensagem de erro
-                else
-                    Debug.LogError("Chave não encontrada no dicionário: " + chave);
+                // Instancia o modelo
+                InstanciarModelo(chave, posi, paiCenario);
 
             } while (!arqPly.EndOfStream);
+        }
 
-            //
-            // ----------------------------------
-            Debug.Log("Cena gerada!");
+        private static void InstanciarModelo(string chave, Vector3 posi, Transform pai)
+        {
+            string nomePrefab;
+
+            if (dicionario.ContainsKey(chave))
+            {
+                nomePrefab = dicionario[chave];
+
+                if (nomePrefab != "vazio")
+                {
+                    try
+                    {
+                        // Instancia Prefab na posição correta
+                        GameObject obj = Instantiate(
+                            Resources.Load(@"magicavoxel/prefabs/" + nomePrefab)) as GameObject;
+                        obj.transform.position = posi;
+                        obj.transform.parent = pai;
+                    }
+
+                    // Mensagem de erro
+                    catch { Debug.LogError("Prefab não encontrado: " + nomePrefab); }
+                }
+            }
+
+            // Mensagem de erro
+            else
+                Debug.LogError("Chave não encontrada no dicionário: " + chave);
         }
     }
 }
