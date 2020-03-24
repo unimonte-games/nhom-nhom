@@ -13,12 +13,9 @@ public class IntegracaoMagicaVoxel : MonoBehaviour
     /// para a substituição pelos modelos referentes
     /// </summary>
 
-    public static string pathArqPly, pathArqDicio;
-
-    private static void PopularDicionario(ref Dictionary<string, string> dicionario)
+    public static void PopularDicionario(ref Dictionary<string, string> dicionario, string path)
     {
-        pathArqDicio = @"Assets/magicavoxel/dicionarioVoxel.txt";
-        var arqRef = new StreamReader(pathArqDicio);
+        var arqRef = new StreamReader(path);
 
         try
         {
@@ -36,23 +33,18 @@ public class IntegracaoMagicaVoxel : MonoBehaviour
         }
     }
 
-    [MenuItem("Importar Cenário/Gerar Cena")]
-    public static void GerarCena()
+    public static void GerarCena(ref Dictionary<string, string> dicionario, string path)
     {
         Debug.Log("Gerando a Cena...");
         // ----------------------------------
         //
-
-        var dicionario = new Dictionary<string, string>();
-        PopularDicionario(ref dicionario);
-
-        pathArqPly = @"Assets/magicavoxel/teste.ply";
-        var arqPly = new StreamReader(pathArqPly);
+            
+        var arqPly = new StreamReader(path);
 
         Transform paiCenario = new GameObject("Cenario Importado").transform;
 
         // Pula o cabeçalho do arquivo
-        while (arqPly.ReadLine() != "end_header");
+        while (arqPly.ReadLine() != "end_header") ;
 
         // Lê a disposição dos cubos
         string[] linha;
@@ -96,7 +88,7 @@ public class IntegracaoMagicaVoxel : MonoBehaviour
                 Debug.LogError("Chave não encontrada no dicionário: " + chave);
 
         } while (!arqPly.EndOfStream);
-        
+
         //
         // ----------------------------------
         Debug.Log("Cena gerada!");
