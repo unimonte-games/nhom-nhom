@@ -13,6 +13,10 @@ public class AndaNaFila : MonoBehaviour
 
     ControladorVaiAtePonto ctrlVaiPonto;
 
+    public bool EstaNaFrente() {
+        return espaco_i == 0 && ctrlVaiPonto.estaNoPonto;
+    }
+
     void ObtemEspaco() {
         espaco_i = fila.RegistraEspaco(id);
         if (espaco_i >= 0) {
