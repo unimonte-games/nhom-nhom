@@ -39,6 +39,8 @@ namespace IntegracaoMagicaVoxel
             {
                 Debug.LogError("Erro ao analizar o arquivo de dicionário para o MagicaVoxel\n" + e);
             }
+
+            arqRef.Close();
         }
 
         public static void LerArqPly()
@@ -74,6 +76,8 @@ namespace IntegracaoMagicaVoxel
                 InstanciarModelo(chave, posi, paiCenario);
 
             } while (!arqPly.EndOfStream);
+
+            arqPly.Close();
         }
 
         public static void RegerarCena()

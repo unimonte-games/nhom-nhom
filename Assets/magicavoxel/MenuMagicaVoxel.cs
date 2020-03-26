@@ -6,6 +6,8 @@ namespace IntegracaoMagicaVoxel
     public class MenuMagicaVoxel : EditorWindow
     {
         static Object objDicio, objCena;
+        static bool foldoutDicio = true;
+        static Vector2 scrollPos;
 
         [MenuItem("MagicaVoxel/Gerar Cena")]
         public static void GerarCena()
@@ -29,27 +31,47 @@ namespace IntegracaoMagicaVoxel
         {
             GUILayout.Label("Arquivos", EditorStyles.boldLabel);
 
-            GUILayout.BeginHorizontal();
-            GUILayout.Label("Cena:");
-            objCena = EditorGUILayout.ObjectField(objCena, typeof(Object), false);
+            // Seleção do arquivo de cena
+            objCena = EditorGUILayout.ObjectField("Cena", objCena, typeof(Object), false);
             IntegracaoMagicaVoxel.pathCena = AssetDatabase.GetAssetPath(objCena);
-            GUILayout.EndHorizontal();
 
-            GUILayout.BeginHorizontal();
-            GUILayout.Label("Dicionário:");
-            objDicio = EditorGUILayout.ObjectField(objDicio, typeof(Object), false);
+            // Seleção do arquivo de dicionário
+            objDicio = EditorGUILayout.ObjectField("Dicionário", objDicio, typeof(Object), false);
             IntegracaoMagicaVoxel.pathDicio = AssetDatabase.GetAssetPath(objDicio);
-            GUILayout.EndHorizontal();
 
-            // Botão de popular o dicionário
-            if (GUILayout.Button("Atualizar Dicionário"))
+            GUILayout.Label("Dicionário", EditorStyles.boldLabel);
+
+            // Repopular dicionário
+            if (GUILayout.Button("Atualizar"))
                 IntegracaoMagicaVoxel.PopularDicionario();
 
             // Visualização dos  itens do dicionário
-            GUILayout.Label("Entradas no dicionário:", EditorStyles.foldout);
-            if (IntegracaoMagicaVoxel.dicionario != null)
-                foreach (var item in IntegracaoMagicaVoxel.dicionario)
-                    EditorGUILayout.SelectableLabel(item.Key + " : " + item.Value);
+            foldoutDicio = EditorGUILayout.Foldout(foldoutDicio, "Entradas no dicionário", true);
+            EditorGUI.indentLevel++;
+            if (foldoutDicio)
+            {
+                scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
+
+                if (IntegracaoMagicaVoxel.dicionario != null)
+                {
+                    GUILayoutOption[] layout = new GUILayoutOption[2];
+                    layout[0] = GUILayout.Width(EditorGUIUtility.labelWidth);
+                    layout[1] = GUILayout.Height(EditorGUIUtility.singleLineHeight);
+
+                    foreach (var item in IntegracaoMagicaVoxel.dicionario)
+                    {
+                        // Chave / Valor
+                        GUILayout.BeginHorizontal();
+                        EditorGUILayout.SelectableLabel(item.Key, EditorStyles.textArea, layout);
+                        EditorGUILayout.SelectableLabel(item.Value, EditorStyles.textArea, layout);
+                        GUILayout.EndHorizontal();
+                    }
+                }
+                else
+                    GUILayout.Label("Atualize o dicionário", EditorStyles.centeredGreyMiniLabel);
+
+                EditorGUILayout.EndScrollView();
+            }
         }
 
         private void OnEnable()
