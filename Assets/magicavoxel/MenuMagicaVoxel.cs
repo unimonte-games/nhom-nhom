@@ -39,11 +39,18 @@ namespace IntegracaoMagicaVoxel
             objDicio = EditorGUILayout.ObjectField("Dicionário", objDicio, typeof(Object), false);
             IntegracaoMagicaVoxel.pathDicio = AssetDatabase.GetAssetPath(objDicio);
 
+            // Salvar arquivos
+            if (GUILayout.Button("Salvar arquivos"))
+            {
+                IntegracaoMagicaVoxel.GerenciaConfigs(true);
+                Debug.Log("Configurações salvas");
+            }
+
             GUILayout.Label("Dicionário", EditorStyles.boldLabel);
 
-            // Repopular dicionário
-            if (GUILayout.Button("Atualizar"))
-                IntegracaoMagicaVoxel.PopularDicionario();
+            // Atualizar dicionário
+            if (GUILayout.Button("Atualizar dicionário"))
+                IntegracaoMagicaVoxel.LerArqDicio();
 
             // Visualização dos  itens do dicionário
             foldoutDicio = EditorGUILayout.Foldout(foldoutDicio, "Entradas no dicionário", true);
@@ -76,6 +83,9 @@ namespace IntegracaoMagicaVoxel
 
         private void OnEnable()
         {
+            if (string.IsNullOrEmpty(IntegracaoMagicaVoxel.pathDicio))
+                IntegracaoMagicaVoxel.GerenciaConfigs(false);
+
             objCena = AssetDatabase.LoadAssetAtPath(
                 IntegracaoMagicaVoxel.pathCena, typeof(Object));
 

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
@@ -14,13 +13,49 @@ namespace IntegracaoMagicaVoxel
         /// </summary>
 
         public static Dictionary<string, string> dicionario;
-        public static string pathDicio = "Assets/magicavoxel/dicionarioVoxel.txt";
-        public static string pathCena = "Assets/magicavoxel/cena01.ply";
+        public static string pathDicio;
+        public static string pathCena;
 
-        public static void PopularDicionario()
+        public static void GerenciaConfigs(bool sobrescrever)
+        {
+            string arqPath = Application.dataPath + "/magicavoxel/.configply";
+
+            try
+            {
+                if (sobrescrever)
+                {
+                    var arqConfig = new StreamWriter(arqPath);
+                    arqConfig.WriteLine(pathCena);
+                    arqConfig.WriteLine(pathDicio);
+                    arqConfig.Close();
+                }
+                else
+                {
+                    var arqConfig = new StreamReader(arqPath);
+                    pathCena = arqConfig.ReadLine();
+                    pathDicio = arqConfig.ReadLine();
+                    arqConfig.Close();
+                }
+            }
+            catch
+            { Debug.LogError("Erro ao acessar configurações do MagicaVoxel"); }
+        }
+
+        public static void RegerarCena()
+        {
+            GameObject pai = GameObject.Find("Cenario Importado");
+            DestroyImmediate(pai);
+
+            LerArqPly();
+        }
+
+        public static void LerArqDicio()
         {
             if (dicionario == null) dicionario = new Dictionary<string, string>();
             else dicionario.Clear();
+
+            if (string.IsNullOrEmpty(pathDicio))
+                GerenciaConfigs(false);
 
             // Abre o arquivo no caminho completo (remove "Assets" do nome devido a duplicidade)
             var arqRef = new StreamReader(Application.dataPath + pathDicio.Remove(0, 6));
@@ -46,7 +81,7 @@ namespace IntegracaoMagicaVoxel
         public static void LerArqPly()
         {
             // Atualiza o dicionário
-            PopularDicionario();
+            LerArqDicio();
 
             // Cria obj pai do cenário
             Transform paiCenario = new GameObject("Cenario Importado").transform;
@@ -78,14 +113,6 @@ namespace IntegracaoMagicaVoxel
             } while (!arqPly.EndOfStream);
 
             arqPly.Close();
-        }
-
-        public static void RegerarCena()
-        {
-            GameObject pai = GameObject.Find("Cenario Importado");
-            DestroyImmediate(pai);
-
-            LerArqPly();
         }
 
         private static void InstanciarModelo(string chave, Vector3 posi, Transform pai)
