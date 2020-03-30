@@ -7,10 +7,10 @@ public class AndaNaFila : MonoBehaviour
     Fila fila;
     static int ultimoIDFila = 1;
 
-    int id, espaco_i;
+    public int id;
+    int espaco_i;
 
-    Transform pontoFila;
-
+    Transform pontoFila, tr;
     ControladorVaiAtePonto ctrlVaiPonto;
 
     public bool EstaNaFrente() {
@@ -27,6 +27,7 @@ public class AndaNaFila : MonoBehaviour
 
     void Awake() {
         fila = FindObjectOfType<Fila>();
+        tr = GetComponent<Transform>();
         ctrlVaiPonto = GetComponent<ControladorVaiAtePonto>();
         id = ++ultimoIDFila;
     }
@@ -36,11 +37,19 @@ public class AndaNaFila : MonoBehaviour
     }
 
     void Update() {
+        if (espaco_i >= 0 && ctrlVaiPonto.estaNoPonto) {
+            tr.rotation = ctrlVaiPonto.trAlvo.rotation;
+        }
+
+
         espaco_i = fila.ObtemIndicePorID(id, espaco_i);
 
         if (espaco_i >= 0) {
-            if (pontoFila != fila.fila_trs[espaco_i])
+            if (pontoFila != fila.fila_trs[espaco_i]) {
+                pontoFila = fila.fila_trs[espaco_i];
                 ctrlVaiPonto.trAlvo = pontoFila;
+                ctrlVaiPonto.estaNoPonto = false;
+            }
         } else
             ObtemEspaco();
     }
