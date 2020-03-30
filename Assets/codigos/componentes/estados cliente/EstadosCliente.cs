@@ -9,6 +9,8 @@ public class EstadosCliente : MonoBehaviour
     }
 
     public Estado estado = Estado.NaFila;
+    Fila fila;
+    Cadeiras cadeiras;
 
     AndaNaFila     c_andaNaFila;
     AndaAteCadeira c_andaAteCadeira;
@@ -25,11 +27,22 @@ public class EstadosCliente : MonoBehaviour
     }
 
     void AbreEstado(Estado e) {
-        if (c_andaNaFila)     Destroy(c_andaNaFila);
-        if (c_andaAteCadeira) Destroy(c_andaAteCadeira);
-        if (c_aguardaPrato)   Destroy(c_aguardaPrato);
-        if (c_comendoPrato)   Destroy(c_comendoPrato);
-        if (c_vaiEmbora)      Destroy(c_vaiEmbora);
+        if (c_andaNaFila) {
+            fila.AbrirVaga(c_andaNaFila.id);
+            Destroy(c_andaNaFila);
+        }
+        if (c_andaAteCadeira) {
+            Destroy(c_andaAteCadeira);
+        }
+        if (c_aguardaPrato) {
+            Destroy(c_aguardaPrato);
+        }
+        if (c_comendoPrato) {
+            Destroy(c_comendoPrato);
+        }
+        if (c_vaiEmbora) {
+            Destroy(c_vaiEmbora);
+        }
 
         switch (e) {
             case Estado.NaFila:       c_andaNaFila     = gameObject.AddComponent<AndaNaFila>();     break;
@@ -40,22 +53,30 @@ public class EstadosCliente : MonoBehaviour
         }
     }
 
+    bool DeveIrParaProximoEstado() {
+        switch (estado) {
+            case Estado.NaFila:       return cadeiras.HaVagas() && cadeiras.podeEntrar && c_andaNaFila.EstaNaFrente();
+            case Estado.AteCadeira:   return c_andaAteCadeira.Chegou();
+            case Estado.AguardaPrato: break;
+            case Estado.ComendoPrato: break;
+            case Estado.VaiEmbora:    break;
+        }
+
+        return false;
+    }
+
+    void Awake() {
+        fila = FindObjectOfType<Fila>();
+        cadeiras = FindObjectOfType<Cadeiras>();
+    }
+
     void Start() {
         AbreEstado(Estado.NaFila);
     }
 
     void Update() {
-        bool deveIrParaProximoEstado = false;
-
-        switch (estado) {
-            case Estado.NaFila:       deveIrParaProximoEstado = c_andaNaFila.EstaNaFrente(); break;
-            case Estado.AteCadeira:                                                          break;
-            case Estado.AguardaPrato:                                                        break;
-            case Estado.ComendoPrato:                                                        break;
-            case Estado.VaiEmbora:                                                           break;
-        }
-
-        if (deveIrParaProximoEstado)
+        if (DeveIrParaProximoEstado()) {
             ProximoEstado();
+        }
     }
 }
