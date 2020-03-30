@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class AndaAteCadeira : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    Cadeiras cadeiras;
+
+    Transform[] pontos;
+    int i_ponto;
+    ControladorVaiAtePonto ctrlVaiPonto;
+
+    public bool Chegou() {
+        return i_ponto == pontos.Length - 1;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Awake() {
+        cadeiras = FindObjectOfType<Cadeiras>();
+        ctrlVaiPonto = GetComponent<ControladorVaiAtePonto>();
+    }
+    void Start() {
+        pontos = cadeiras.ObterRota();
+        ctrlVaiPonto.trAlvo = pontos[i_ponto];
+    }
+
+    void Update() {
+        if (ctrlVaiPonto.estaNoPonto) {
+            if (!Chegou())
+                i_ponto++;
+        } else {
+            ctrlVaiPonto.estaNoPonto = false;
+        }
+        ctrlVaiPonto.trAlvo = pontos[i_ponto];
     }
 }
