@@ -80,6 +80,8 @@ namespace IntegracaoMagicaVoxel
 
         public static void LerArqPly()
         {
+            var objsParaRot = new List<Rotacionador>();
+
             // Atualiza o dicionário
             LerArqDicio();
 
@@ -108,14 +110,18 @@ namespace IntegracaoMagicaVoxel
                 string chave = string.Format("{0} {1} {2}", linha[3], linha[4], linha[5]);
 
                 // Instancia o modelo
-                InstanciarModelo(chave, posi, paiCenario);
+                InstanciarModelo(chave, posi, paiCenario, ref objsParaRot);
 
             } while (!arqPly.EndOfStream);
 
             arqPly.Close();
+
+            // Rotaciona os filhos
+            foreach (Rotacionador obj in objsParaRot)
+                obj.Invoke("Rotacionar", 0);
         }
 
-        private static void InstanciarModelo(string chave, Vector3 posi, Transform pai)
+        private static void InstanciarModelo(string chave, Vector3 posi, Transform pai, ref List<Rotacionador> lista)
         {
             string nomePrefab;
 
@@ -132,6 +138,10 @@ namespace IntegracaoMagicaVoxel
                             Resources.Load(@"magicavoxel/prefabs/" + nomePrefab)) as GameObject;
                         obj.transform.localPosition = posi;
                         obj.transform.parent = pai;
+
+                        // Adiciona objs com o componente Rotacionador na lista
+                        var rot = obj.GetComponent<Rotacionador>();
+                        if (rot) lista.Add(rot);
                     }
 
                     // Mensagem de erro
