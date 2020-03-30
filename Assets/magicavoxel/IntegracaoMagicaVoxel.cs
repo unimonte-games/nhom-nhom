@@ -113,6 +113,9 @@ namespace IntegracaoMagicaVoxel
             } while (!arqPly.EndOfStream);
 
             arqPly.Close();
+
+            // Rotaciona os filhos
+            VerificarRotacao(paiCenario);
         }
 
         private static void InstanciarModelo(string chave, Vector3 posi, Transform pai)
@@ -148,6 +151,15 @@ namespace IntegracaoMagicaVoxel
                             Resources.Load(@"magicavoxel/prefabs/debug")) as GameObject;
                 obj.transform.position = posi;
                 obj.transform.parent = pai;
+            }
+        }
+
+        public static void VerificarRotacao(Transform pai)
+        {
+            foreach (Transform obj in pai)
+            {
+                Rotacionador rot = obj.GetComponent<Rotacionador>();
+                if (rot) rot.Invoke("Rotacionar", 0);
             }
         }
     }

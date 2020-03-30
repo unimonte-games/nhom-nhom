@@ -2,7 +2,10 @@
 
 public class Rotacionador : MonoBehaviour
 {
-    public void Rotacionar(string id, float dist = 1f)
+    public string alvo;
+
+    [ContextMenu("vai")]
+    public void Rotacionar()
     {
         Vector3[] direcoes = new Vector3[4] {
             Vector3.forward, Vector3.back, Vector3.right, Vector3.left
@@ -13,10 +16,10 @@ public class Rotacionador : MonoBehaviour
 
         for (int i = 0; i < direcoes.Length; i++)
         {
-            if (Physics.Raycast(transform.position, direcoes[i], out hit, dist))
+            if (Physics.Raycast(transform.position, direcoes[i], out hit, 1f))
             {
                 idHit = hit.transform.parent.GetComponent<GbjID>();
-                if (idHit != null && idHit.id == id)
+                if (idHit != null && idHit.id == alvo)
                 {
                     transform.rotation = Quaternion.LookRotation(direcoes[i]);
                     break;
@@ -25,17 +28,12 @@ public class Rotacionador : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        Rotacionar("pilastra");
-    }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.parent.position, transform.parent.position + Vector3.forward);
-        Gizmos.DrawLine(transform.parent.position, transform.parent.position + Vector3.back);
-        Gizmos.DrawLine(transform.parent.position, transform.parent.position + Vector3.right);
-        Gizmos.DrawLine(transform.parent.position, transform.parent.position + Vector3.left);
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.forward);
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.back);
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.right);
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.left);
     }
 }
