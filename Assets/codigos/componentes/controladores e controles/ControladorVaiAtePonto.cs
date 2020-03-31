@@ -6,7 +6,7 @@ public class ControladorVaiAtePonto : MonoBehaviour
 {
     public float distanciaMinima, velocidade;
     public Transform trAlvo;
-    public bool estaNoPonto;
+    public bool estaNoPonto, ativo;
 
     Transform tr;
     Controle controle;
@@ -48,7 +48,15 @@ public class ControladorVaiAtePonto : MonoBehaviour
             dir = Vector3.zero;
         }
 
-        controle.velocidade = ObterVelocidade();
-        controle.ctrlValores = ObterControlesValores();
+        if (ativo) {
+            controle.velocidade = ObterVelocidade();
+            controle.ctrlValores = ObterControlesValores();
+        } else {
+            controle.velocidade = 0f;
+            controle.ctrlValores.eixoHorizontal = 0f;
+            controle.ctrlValores.eixoVertical = 0f;
+            controle.ctrlValores.eixoAcao1 = false;
+            controle.ctrlValores.eixoAcao2 = false;
+        }
     }
 }
