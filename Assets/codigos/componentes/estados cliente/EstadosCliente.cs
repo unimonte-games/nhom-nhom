@@ -57,8 +57,8 @@ public class EstadosCliente : MonoBehaviour
         switch (estado) {
             case Estado.NaFila:       return cadeiras.HaVagas() && cadeiras.podeEntrar && c_andaNaFila.EstaNaFrente();
             case Estado.AteCadeira:   return c_andaAteCadeira.Chegou();
-            case Estado.AguardaPrato: return c_aguardaPrato.ComPrato(); break;
-            case Estado.ComendoPrato: break;
+            case Estado.AguardaPrato: return c_aguardaPrato.ComPrato();
+            case Estado.ComendoPrato: return c_comendoPrato.Comeu();
             case Estado.VaiEmbora:    break;
         }
 

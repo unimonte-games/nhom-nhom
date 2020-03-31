@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComendoPrato : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class ComendoPrato : MonoBehaviour {
+    float tempoInicio, intervaloPrato;
+
+    void Start() {
+        tempoInicio = Time.time;
+        Item itemPrato = transform.Find("ref_item").GetComponent<EspacoItem>().Soltar();
+        intervaloPrato = itemPrato.GetComponent<Prato>().intervalo;
+        Destroy(itemPrato.gameObject, intervaloPrato);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public bool Comeu() {
+        return Time.time - tempoInicio > intervaloPrato;
     }
 }
