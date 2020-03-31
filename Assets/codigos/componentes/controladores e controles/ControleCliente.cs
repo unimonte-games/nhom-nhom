@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ControleCliente : MonoBehaviour
 {
+    public Transform ptCadeira;
+
     Transform tr;
     Controle ctrl;
     Velocidade compVelocidade;
