@@ -59,7 +59,7 @@ public class EstadosCliente : MonoBehaviour
             case Estado.AteCadeira:   return c_andaAteCadeira.Chegou();
             case Estado.AguardaPrato: return c_aguardaPrato.ComPrato();
             case Estado.ComendoPrato: return c_comendoPrato.Comeu();
-            case Estado.VaiEmbora:    break;
+            case Estado.VaiEmbora:    return c_vaiEmbora.FoiEmbora();
         }
 
         return false;
