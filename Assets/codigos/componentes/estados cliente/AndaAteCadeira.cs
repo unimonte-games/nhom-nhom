@@ -11,7 +11,7 @@ public class AndaAteCadeira : MonoBehaviour
     ControladorVaiAtePonto ctrlVaiPonto;
 
     public bool Chegou() {
-        return i_ponto == pontos.Length - 1;
+        return i_ponto == pontos.Length - 1 && ctrlVaiPonto.estaNoPonto;
     }
 
     void Awake() {
