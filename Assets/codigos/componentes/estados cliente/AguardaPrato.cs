@@ -21,7 +21,9 @@ public class AguardaPrato : MonoBehaviour {
 
         if (recebeuPrato) {
             Item pratoItem = espacoMesa.Soltar();
+            Vector3 pos = pratoItem.transform.position;
             espacoCliente.Abrigar(pratoItem);
+            pratoItem.transform.position = pos;
         }
 
         return recebeuPrato;
