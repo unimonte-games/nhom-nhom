@@ -22,8 +22,10 @@ public class EstadosCliente : MonoBehaviour
         if (estado != Estado.VaiEmbora) {
             estado = (Estado)( (int)estado + 1 );
             AbreEstado(estado);
-        } else
+        } else {
+            cadeiras.AbrirVaga(c_vaiEmbora.ptFolha);
             Destroy(gameObject);
+        }
     }
 
     void AbreEstado(Estado e) {
@@ -39,9 +41,6 @@ public class EstadosCliente : MonoBehaviour
         }
         if (c_comendoPrato) {
             Destroy(c_comendoPrato);
-        }
-        if (c_vaiEmbora) {
-            Destroy(c_vaiEmbora);
         }
 
         switch (e) {

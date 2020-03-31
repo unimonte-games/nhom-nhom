@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class VaiEmbora : MonoBehaviour
 {
-    Cadeiras cadeiras;
+    public Transform ptFolha;
 
+    Cadeiras cadeiras;
     Transform[] pontos;
     int i_ponto;
     ControladorVaiAtePonto ctrlVaiAtePonto;
@@ -20,9 +21,9 @@ public class VaiEmbora : MonoBehaviour
     }
 
     void Start() {
-        pontos = cadeiras.ObterRotaSaida(
-            GetComponent<ControleCliente>().ptCadeira
-        );
+        ptFolha = GetComponent<ControleCliente>().ptCadeira;
+
+        pontos = cadeiras.ObterRotaSaida(ptFolha);
 
         ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
         ctrlVaiAtePonto.ativo = true;

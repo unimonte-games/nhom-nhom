@@ -15,6 +15,14 @@ public class Cadeiras : MonoBehaviour
     [SerializeField] bool __DEV_AutoValidar;
 #endif // UNITY_EDITOR
 
+    public void AbrirVaga(Transform folha) {
+        for (int i = 0; i < trFolhas.Length; i++)
+            if (trFolhas[i] == folha) {
+                b_trFolhas[i] = false;
+                break;
+            }
+    }
+
     public bool HaVagas() {
         for (int i = 0; i < b_trFolhas.Length; i++)
             if (!b_trFolhas[i]) {
