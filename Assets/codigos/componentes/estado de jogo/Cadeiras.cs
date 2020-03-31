@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cadeiras : MonoBehaviour
 {
     public bool podeEntrar;
-    public Transform trRaiz;
+    public Transform trRaiz, saida;
     [Header("Auto Gerado:")]
     public Transform[] trFolhas;
     public bool[] b_trFolhas;
@@ -22,6 +22,23 @@ public class Cadeiras : MonoBehaviour
             }
 
         return false;
+    }
+
+    public Transform[] ObterRotaSaida(Transform folha) {
+        List<Transform> rota = new List<Transform>();
+
+        Transform pai = folha;
+
+        while (pai != saida) {
+            if (pai == null)
+                Debug.Break(); // impedindo o travamento do Unity :)
+
+            rota.Add(pai);
+            pai = pai.parent;
+        }
+
+        rota.Add(saida);
+        return rota.ToArray();
     }
 
     public Transform[] ObterRota() {
