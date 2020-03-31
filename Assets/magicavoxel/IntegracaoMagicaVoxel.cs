@@ -135,7 +135,7 @@ namespace IntegracaoMagicaVoxel
                     {
                         // Instancia Prefab na posição correta
                         GameObject obj = Instantiate(
-                            Resources.Load(@"magicavoxel/prefabs/" + nomePrefab)) as GameObject;
+                            Resources.Load(@"magicavoxel/prefabs/Moveis_" + nomePrefab)) as GameObject;
                         obj.transform.localPosition = posi;
                         obj.transform.parent = pai;
 
