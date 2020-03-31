@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class VaiEmbora : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    Cadeiras cadeiras;
+
+    Transform[] pontos;
+    int i_ponto;
+    ControladorVaiAtePonto ctrlVaiAtePonto;
+
+    public bool FoiEmbora() {
+        return i_ponto == pontos.Length - 1 && ctrlVaiAtePonto.estaNoPonto;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Awake() {
+        cadeiras = FindObjectOfType<Cadeiras>();
+        ctrlVaiAtePonto = GetComponent<ControladorVaiAtePonto>();
+    }
+
+    void Start() {
+        pontos = cadeiras.ObterRotaSaida(
+            GetComponent<ControleCliente>().ptCadeira
+        );
+
+        ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
+        ctrlVaiAtePonto.ativo = true;
+    }
+
+    void Update() {
+        if (ctrlVaiAtePonto.estaNoPonto && !FoiEmbora())
+            i_ponto++;
+
+        ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
     }
 }
