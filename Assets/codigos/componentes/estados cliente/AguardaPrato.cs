@@ -33,6 +33,7 @@ public class AguardaPrato : MonoBehaviour {
     }
 
     void Start() {
+        ctrlVaiAtePonto.ativo = false;
         objsEspacos = tr.Find("sensor_espacos").GetComponent<ObjetosAlcancaveis>();
         espacoCliente = tr.Find("ref_item").GetComponent<EspacoItem>();
         Assert.IsNotNull(objsEspacos);
