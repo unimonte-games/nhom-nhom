@@ -10,15 +10,21 @@ public class AguardaPrato : MonoBehaviour {
     ObjetosAlcancaveis objsEspacos;
 
     bool mesaObtida;
-    EspacoItem espacoMesa;
+    EspacoItem espacoMesa, espacoCliente;
 
     public bool ComPrato() {
         if (!espacoMesa || espacoMesa.Vazio())
             return false;
 
         string id = espacoMesa.itemAbrigado.GetComponent<GbjID>().id;
-        print(id);
-        return id.Substring(0, 6) == "#prato";
+        bool recebeuPrato = id.Substring(0, 6) == "#prato";
+
+        if (recebeuPrato) {
+            Item pratoItem = espacoMesa.Soltar();
+            espacoCliente.Abrigar(pratoItem);
+        }
+
+        return recebeuPrato;
     }
 
     void Awake() {
@@ -28,6 +34,7 @@ public class AguardaPrato : MonoBehaviour {
 
     void Start() {
         objsEspacos = tr.Find("sensor_espacos").GetComponent<ObjetosAlcancaveis>();
+        espacoCliente = tr.Find("ref_item").GetComponent<EspacoItem>();
         Assert.IsNotNull(objsEspacos);
     }
 
@@ -36,9 +43,11 @@ public class AguardaPrato : MonoBehaviour {
             if (!mesaObtida) {
                 GameObject gbjMesa = objsEspacos.ObterMaisProximo();
                 espacoMesa = gbjMesa.GetComponent<EspacoItem>();
+
                 Assert.IsNotNull(espacoMesa);
+
                 mesaObtida = true;
-            } else {
+
                 tr.LookAt(espacoMesa.transform);
                 tr.eulerAngles = new Vector3(0, tr.eulerAngles.y, 0);
             }
