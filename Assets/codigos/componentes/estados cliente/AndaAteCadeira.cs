@@ -20,16 +20,14 @@ public class AndaAteCadeira : MonoBehaviour
     }
     void Start() {
         pontos = cadeiras.ObterRota();
+        GetComponent<ControleCliente>().ptCadeira = pontos[pontos.Length-1];
         ctrlVaiPonto.trAlvo = pontos[i_ponto];
     }
 
     void Update() {
-        if (ctrlVaiPonto.estaNoPonto) {
-            if (!Chegou())
-                i_ponto++;
-        } else {
-            ctrlVaiPonto.estaNoPonto = false;
-        }
+        if (ctrlVaiPonto.estaNoPonto && !Chegou())
+            i_ponto++;
+
         ctrlVaiPonto.trAlvo = pontos[i_ponto];
     }
 }
