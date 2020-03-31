@@ -858,7 +858,7 @@ Transform:
   m_LocalPosition: {x: 10.5, y: 1, z: 12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8659430418883279379}
+  - {fileID: 9187927795825200458}
   m_Father: {fileID: 2681177576150846018}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -977,12 +977,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6319860438478813615}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2478021245657483906}
-  m_Father: {fileID: 4262331174352991537}
+  m_Father: {fileID: 9187927795825200458}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6520525151964689689
@@ -1173,6 +1173,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7384301953725743455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9187927795825200458}
+  m_Layer: 0
+  m_Name: saida
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9187927795825200458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7384301953725743455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8659430418883279379}
+  m_Father: {fileID: 4262331174352991537}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7584512883557267765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,6 +1288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   podeEntrar: 0
   trRaiz: {fileID: 8659430418883279379}
+  saida: {fileID: 9187927795825200458}
   trFolhas:
   - {fileID: 1619058441746914911}
   - {fileID: 521949221846906922}

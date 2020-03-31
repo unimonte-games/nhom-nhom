@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanciaMinima: 0.2
-  velocidade: 1.5
+  velocidade: 5
   trAlvo: {fileID: 0}
   estaNoPonto: 0
   ativo: 1
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c5d4d7154bf46aa89215b8227e9c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ptCadeira: {fileID: 0}
 --- !u!114 &1738189507485322916
 MonoBehaviour:
   m_ObjectHideFlags: 0
