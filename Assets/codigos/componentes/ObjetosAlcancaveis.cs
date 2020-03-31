@@ -35,7 +35,6 @@ public class ObjetosAlcancaveis : MonoBehaviour
 
         for (int i = 0; i < listaObjetos.Count; i++) {
             var gbj_i = listaObjetos[i];
-            print("listaObjetos: " + i.ToString());
             var tr_i = gbj_i.GetComponent<Transform>();
             float dist_i = Vector3.Distance(res_tr.position, tr.position);
 
