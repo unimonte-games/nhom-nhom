@@ -35,6 +35,7 @@ public class ObjetosAlcancaveis : MonoBehaviour
 
         for (int i = 0; i < listaObjetos.Count; i++) {
             var gbj_i = listaObjetos[i];
+            print("listaObjetos: " + i.ToString());
             var tr_i = gbj_i.GetComponent<Transform>();
             float dist_i = Vector3.Distance(res_tr.position, tr.position);
 
@@ -64,8 +65,16 @@ public class ObjetosAlcancaveis : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider col) {
-        if (etiqueta != "" && !col.CompareTag(etiqueta))
+        if (etiqueta == "")
             return;
+        else if (etiqueta.Substring(0, 1) == "#") {
+            GbjID gbjid = col.GetComponent<GbjID>();
+            if (!gbjid || gbjid.id != etiqueta)
+                return;
+        } else {
+            if (!col.CompareTag(etiqueta))
+                return;
+        }
 
         Limpar();
 
@@ -76,8 +85,16 @@ public class ObjetosAlcancaveis : MonoBehaviour
     }
 
     void OnTriggerExit(Collider col) {
-        if (etiqueta != "" && !col.CompareTag(etiqueta))
+        if (etiqueta == "")
             return;
+        else if (etiqueta.Substring(0, 1) == "#") {
+            GbjID gbjid = col.GetComponent<GbjID>();
+            if (!gbjid || gbjid.id != etiqueta)
+                return;
+        } else {
+            if (!col.CompareTag(etiqueta))
+                return;
+        }
 
         Limpar();
 

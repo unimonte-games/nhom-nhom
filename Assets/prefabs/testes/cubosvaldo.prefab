@@ -57,8 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b65d215a236669e9cc94b46a6b862a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imprimir: 0
-  etiqueta: EspacoItem
+  etiqueta: '#movel mesa espaco'
   listaObjetos: []
 --- !u!1 &3745023751852880510
 GameObject:
@@ -78,6 +77,7 @@ GameObject:
   - component: {fileID: 3048845162863884483}
   - component: {fileID: 1738189507485322916}
   - component: {fileID: 310123289395259308}
+  - component: {fileID: 7333941956031545150}
   m_Layer: 0
   m_Name: cubosvaldo
   m_TagString: Untagged
@@ -251,6 +251,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7333941956031545150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3745023751852880510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be8b4549bac6e03cbc86809c6ba3ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: '#personagem cliente espaco'
 --- !u!1 &4342231363502294110
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +276,7 @@ GameObject:
   - component: {fileID: 2262385579716121524}
   - component: {fileID: 1358467119354353166}
   - component: {fileID: 8908609014312042433}
+  - component: {fileID: 8421430104910261718}
   m_Layer: 0
   m_Name: ref_item
   m_TagString: EspacoItem
@@ -309,7 +323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b65d215a236669e9cc94b46a6b862a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imprimir: 0
   etiqueta: Item
   listaObjetos: []
 --- !u!114 &8908609014312042433
@@ -325,6 +338,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemAbrigado: {fileID: 0}
+--- !u!114 &8421430104910261718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4342231363502294110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be8b4549bac6e03cbc86809c6ba3ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: '#personagem cliente espaco'
 --- !u!1 &6028853363778106820
 GameObject:
   m_ObjectHideFlags: 0
