@@ -64,8 +64,16 @@ public class ObjetosAlcancaveis : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider col) {
-        if (etiqueta != "" && !col.CompareTag(etiqueta))
+        if (etiqueta == "")
             return;
+        else if (etiqueta.Substring(0, 1) == "#") {
+            GbjID gbjid = col.GetComponent<GbjID>();
+            if (!gbjid || gbjid.id != etiqueta)
+                return;
+        } else {
+            if (!col.CompareTag(etiqueta))
+                return;
+        }
 
         Limpar();
 
@@ -76,8 +84,16 @@ public class ObjetosAlcancaveis : MonoBehaviour
     }
 
     void OnTriggerExit(Collider col) {
-        if (etiqueta != "" && !col.CompareTag(etiqueta))
+        if (etiqueta == "")
             return;
+        else if (etiqueta.Substring(0, 1) == "#") {
+            GbjID gbjid = col.GetComponent<GbjID>();
+            if (!gbjid || gbjid.id != etiqueta)
+                return;
+        } else {
+            if (!col.CompareTag(etiqueta))
+                return;
+        }
 
         Limpar();
 

@@ -3,33 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class Controle : MonoBehaviour
+public class ControleJogador : MonoBehaviour
 {
     public ObjetosAlcancaveis listaDeItensProximos, listaDeEspacosItensProximas;
     public EspacoItem espacoItem;
-    public float velocidade;
-    public ControlesValores ctrlValores;
 
-    Velocidade compVelocidade;
     Transform tr;
+    Controle ctrl;
+    Velocidade compVelocidade;
 
     Vector3 direcao;
 
     void Awake() {
         compVelocidade = GetComponent<Velocidade>();
         tr = GetComponent<Transform>();
+        ctrl = GetComponent<Controle>();
     }
 
     void Update() {
         // rotação e direção
-        float H = ctrlValores.eixoHorizontal;
-        float V = ctrlValores.eixoVertical;
+        float H = ctrl.ctrlValores.eixoHorizontal;
+        float V = ctrl.ctrlValores.eixoVertical;
 
         direcao.x = 0;
         direcao.y = 0;
         direcao.z = 0;
         if ((H < -0.1f || H > 0.1f) || (V < -0.1f || V > 0.1f)) {
-
             if (H < -0.1f)
                 direcao.x = -1;
             else if (H > 0.1f)
@@ -49,10 +48,10 @@ public class Controle : MonoBehaviour
         compVelocidade.direcao.x = 0;
         compVelocidade.direcao.y = 0;
         compVelocidade.direcao.z = Mathf.Ceil(direcao.magnitude);
-        compVelocidade.velocidade = velocidade;
+        compVelocidade.velocidade = ctrl.velocidade;
 
         // pegar ou soltar item
-        if (ctrlValores.eixoAcao1) {
+        if (ctrl.ctrlValores.eixoAcao1) {
             if (!espacoItem.Vazio()) {
                 Item item = espacoItem.Soltar();
 
