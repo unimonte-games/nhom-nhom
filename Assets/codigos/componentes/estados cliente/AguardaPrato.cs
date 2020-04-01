@@ -11,6 +11,7 @@ public class AguardaPrato : MonoBehaviour {
 
     bool mesaObtida;
     EspacoItem espacoMesa, espacoCliente;
+    Item pedidoItem;
 
     public bool ComPrato() {
         if (!espacoMesa || espacoMesa.Vazio())
@@ -37,7 +38,11 @@ public class AguardaPrato : MonoBehaviour {
     void Start() {
         ctrlVaiAtePonto.ativo = false;
         objsEspacos = tr.Find("sensor_espacos").GetComponent<ObjetosAlcancaveis>();
+
         espacoCliente = tr.Find("ref_item").GetComponent<EspacoItem>();
+        espacoCliente.itemAbrigado.gameObject.SetActive(true);
+        pedidoItem = espacoCliente.Soltar();
+
         Assert.IsNotNull(objsEspacos);
     }
 
@@ -48,6 +53,8 @@ public class AguardaPrato : MonoBehaviour {
                 espacoMesa = gbjMesa.GetComponent<EspacoItem>();
 
                 Assert.IsNotNull(espacoMesa);
+
+                espacoMesa.Abrigar(pedidoItem);
 
                 mesaObtida = true;
 
