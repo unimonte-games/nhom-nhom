@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 1623984071290364617, guid: e023885d6e6a815dd9c1905badbf187d,
         type: 3}
       propertyPath: id
-      value: '#pedido '
+      value: '#pedido'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825067404813978905, guid: e023885d6e6a815dd9c1905badbf187d,
+        type: 3}
+      propertyPath: tipo
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7278541234260757578, guid: e023885d6e6a815dd9c1905badbf187d,
         type: 3}
