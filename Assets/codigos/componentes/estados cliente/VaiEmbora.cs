@@ -27,6 +27,8 @@ public class VaiEmbora : MonoBehaviour
 
         ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
         ctrlVaiAtePonto.ativo = true;
+
+        FindObjectOfType<Cadeiras>().AbrirVaga(ptFolha);
     }
 
     void Update() {

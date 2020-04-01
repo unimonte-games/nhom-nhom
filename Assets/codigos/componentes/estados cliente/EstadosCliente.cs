@@ -23,7 +23,6 @@ public class EstadosCliente : MonoBehaviour
             estado = (Estado)( (int)estado + 1 );
             AbreEstado(estado);
         } else {
-            cadeiras.AbrirVaga(c_vaiEmbora.ptFolha);
             Destroy(gameObject);
         }
     }
