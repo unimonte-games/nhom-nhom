@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Velocidade : MonoBehaviour
-{
-    public Vector3 direcao;
-    public float velocidade;
-
-    Transform tr;
-
-    void Awake()
+namespace NhomNhom {
+    public class Velocidade : MonoBehaviour
     {
-        tr = GetComponent<Transform>();
-    }
+        public Vector3 direcao;
+        public float velocidade;
 
-    void FixedUpdate()
-    {
-        if (direcao.magnitude < 0.02f || velocidade <= 0.02f && velocidade >= -0.02f)
-            return;
+        Transform tr;
 
-        tr.Translate(direcao * velocidade * Time.deltaTime);
+        void Awake()
+        {
+            tr = GetComponent<Transform>();
+        }
+
+        void FixedUpdate()
+        {
+            if (direcao.magnitude < 0.02f || velocidade <= 0.02f && velocidade >= -0.02f)
+                return;
+
+            tr.Translate(direcao * velocidade * Time.deltaTime);
+        }
     }
 }

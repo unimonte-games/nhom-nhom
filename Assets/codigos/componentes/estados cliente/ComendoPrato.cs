@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComendoPrato : MonoBehaviour {
-    float tempoInicio, intervaloPrato;
+namespace NhomNhom {
 
-    void Start() {
-        tempoInicio = Time.time;
-        Item itemPrato = transform.Find("ref_item").GetComponent<EspacoItem>().Soltar();
-        intervaloPrato = itemPrato.GetComponent<Prato>().intervalo;
-        Destroy(itemPrato.gameObject, intervaloPrato);
-    }
+    public class ComendoPrato : MonoBehaviour {
+        float tempoInicio, intervaloPrato;
 
-    public bool Comeu() {
-        return Time.time - tempoInicio > intervaloPrato;
+        void Start() {
+            tempoInicio = Time.time;
+            Item itemPrato = transform.Find("ref_item").GetComponent<EspacoItem>().Soltar();
+            intervaloPrato = itemPrato.GetComponent<Prato>().intervalo;
+            Destroy(itemPrato.gameObject, intervaloPrato);
+        }
+
+        public bool Comeu() {
+            return Time.time - tempoInicio > intervaloPrato;
+        }
     }
 }

@@ -2,39 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VaiEmbora : MonoBehaviour
-{
-    public Transform ptFolha;
+namespace NhomNhom {
 
-    Cadeiras cadeiras;
-    Transform[] pontos;
-    int i_ponto;
-    ControladorVaiAtePonto ctrlVaiAtePonto;
+    public class VaiEmbora : MonoBehaviour
+    {
+        public Transform ptFolha;
 
-    public bool FoiEmbora() {
-        return i_ponto == pontos.Length - 1 && ctrlVaiAtePonto.estaNoPonto;
-    }
+        Cadeiras cadeiras;
+        Transform[] pontos;
+        int i_ponto;
+        ControladorVaiAtePonto ctrlVaiAtePonto;
 
-    void Awake() {
-        cadeiras = FindObjectOfType<Cadeiras>();
-        ctrlVaiAtePonto = GetComponent<ControladorVaiAtePonto>();
-    }
+        public bool FoiEmbora() {
+            return i_ponto == pontos.Length - 1 && ctrlVaiAtePonto.estaNoPonto;
+        }
 
-    void Start() {
-        ptFolha = GetComponent<ControleCliente>().ptCadeira;
+        void Awake() {
+            cadeiras = FindObjectOfType<Cadeiras>();
+            ctrlVaiAtePonto = GetComponent<ControladorVaiAtePonto>();
+        }
 
-        pontos = cadeiras.ObterRotaSaida(ptFolha);
+        void Start() {
+            ptFolha = GetComponent<ControleCliente>().ptCadeira;
 
-        ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
-        ctrlVaiAtePonto.ativo = true;
+            pontos = cadeiras.ObterRotaSaida(ptFolha);
 
-        FindObjectOfType<Cadeiras>().AbrirVaga(ptFolha);
-    }
+            ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
+            ctrlVaiAtePonto.ativo = true;
 
-    void Update() {
-        if (ctrlVaiAtePonto.estaNoPonto && !FoiEmbora())
-            i_ponto++;
+            FindObjectOfType<Cadeiras>().AbrirVaga(ptFolha);
+        }
 
-        ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
+        void Update() {
+            if (ctrlVaiAtePonto.estaNoPonto && !FoiEmbora())
+                i_ponto++;
+
+            ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
+        }
     }
 }

@@ -2,38 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControleCliente : MonoBehaviour
-{
-    public Transform ptCadeira;
+namespace NhomNhom {
 
-    Transform tr;
-    Controle ctrl;
-    Velocidade compVelocidade;
+    public class ControleCliente : MonoBehaviour
+    {
+        public Transform ptCadeira;
 
-    Vector3 direcao;
+        Transform tr;
+        Controle ctrl;
+        Velocidade compVelocidade;
 
-    void Awake() {
-        compVelocidade = GetComponent<Velocidade>();
-        tr = GetComponent<Transform>();
-        ctrl = GetComponent<Controle>();
-    }
+        Vector3 direcao;
 
-    void Update() {
-        float H = ctrl.ctrlValores.eixoHorizontal;
-        float V = ctrl.ctrlValores.eixoVertical;
+        void Awake() {
+            compVelocidade = GetComponent<Velocidade>();
+            tr = GetComponent<Transform>();
+            ctrl = GetComponent<Controle>();
+        }
 
-        direcao.x = H;
-        direcao.y = 0;
-        direcao.z = V;
+        void Update() {
+            float H = ctrl.ctrlValores.eixoHorizontal;
+            float V = ctrl.ctrlValores.eixoVertical;
 
-        if (direcao.magnitude > 0.1f) {
-            direcao.Normalize();
-            tr.LookAt(tr.position + direcao);
+            direcao.x = H;
+            direcao.y = 0;
+            direcao.z = V;
 
-            compVelocidade.direcao.x = 0;
-            compVelocidade.direcao.y = 0;
-            compVelocidade.direcao.z = Mathf.Ceil(direcao.magnitude);
-            compVelocidade.velocidade = ctrl.velocidade;
+            if (direcao.magnitude > 0.1f) {
+                direcao.Normalize();
+                tr.LookAt(tr.position + direcao);
+
+                compVelocidade.direcao.x = 0;
+                compVelocidade.direcao.y = 0;
+                compVelocidade.direcao.z = Mathf.Ceil(direcao.magnitude);
+                compVelocidade.velocidade = ctrl.velocidade;
+            }
         }
     }
 }

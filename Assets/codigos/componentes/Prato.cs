@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Prato : MonoBehaviour {
-    public float intervalo;
+namespace NhomNhom {
+
+    public class Prato : MonoBehaviour {
+        public float intervalo;
+    }
 }

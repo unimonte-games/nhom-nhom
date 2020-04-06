@@ -2,40 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Paciencia : MonoBehaviour {
-    public float paciencia;
-    public float consumoPorSeg;
-    public float[] divisoes;
+namespace NhomNhom {
 
-    float pacienciaInicial;
+    public class Paciencia : MonoBehaviour {
+        public float paciencia;
+        public float consumoPorSeg;
+        public float[] divisoes;
 
-    public Transform pseudoBarra;
-    public MeshRenderer pseudoBarra_MR;
+        float pacienciaInicial;
 
-    public Gradient gradienteBarra;
+        public Transform pseudoBarra;
+        public MeshRenderer pseudoBarra_MR;
 
-    Vector3 escala = Vector3.one;
+        public Gradient gradienteBarra;
 
-    public int ObterMarca() {
-        for (int i = 0; i < divisoes.Length; i++)
-            if (paciencia < divisoes[i])
-                return i;
-        return divisoes.Length;
-    }
+        Vector3 escala = Vector3.one;
 
-    void Start() {
-        pacienciaInicial = paciencia;
-    }
+        public int ObterMarca() {
+            for (int i = 0; i < divisoes.Length; i++)
+                if (paciencia < divisoes[i])
+                    return i;
+            return divisoes.Length;
+        }
 
-    void Update() {
-        paciencia -= consumoPorSeg * Time.deltaTime;
+        void Start() {
+            pacienciaInicial = paciencia;
+        }
 
-        float t = Mathf.Clamp01(paciencia / pacienciaInicial);
-        escala.x = t;
-        if (escala.x < 0.00001f)
-            escala = Vector3.zero;
+        void Update() {
+            paciencia -= consumoPorSeg * Time.deltaTime;
 
-        pseudoBarra.localScale = escala;
-        pseudoBarra_MR.material.color = gradienteBarra.Evaluate(t);
+            float t = Mathf.Clamp01(paciencia / pacienciaInicial);
+            escala.x = t;
+            if (escala.x < 0.00001f)
+                escala = Vector3.zero;
+
+            pseudoBarra.localScale = escala;
+            pseudoBarra_MR.material.color = gradienteBarra.Evaluate(t);
+        }
     }
 }

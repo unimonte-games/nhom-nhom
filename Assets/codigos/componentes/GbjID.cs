@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GbjID : MonoBehaviour
-{
-    public string id;
+namespace NhomNhom {
+
+    public class GbjID : MonoBehaviour
+    {
+        public string id;
+    }
 }

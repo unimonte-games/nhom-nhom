@@ -2,32 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AndaAteCadeira : MonoBehaviour
-{
-    Cadeiras cadeiras;
+namespace NhomNhom {
 
-    Transform[] pontos;
-    int i_ponto;
-    ControladorVaiAtePonto ctrlVaiPonto;
+    public class AndaAteCadeira : MonoBehaviour
+    {
+        Cadeiras cadeiras;
 
-    public bool Chegou() {
-        return i_ponto == pontos.Length - 1 && ctrlVaiPonto.estaNoPonto;
-    }
+        Transform[] pontos;
+        int i_ponto;
+        ControladorVaiAtePonto ctrlVaiPonto;
 
-    void Awake() {
-        cadeiras = FindObjectOfType<Cadeiras>();
-        ctrlVaiPonto = GetComponent<ControladorVaiAtePonto>();
-    }
-    void Start() {
-        pontos = cadeiras.ObterRota();
-        GetComponent<ControleCliente>().ptCadeira = pontos[pontos.Length-1];
-        ctrlVaiPonto.trAlvo = pontos[i_ponto];
-    }
+        public bool Chegou() {
+            return i_ponto == pontos.Length - 1 && ctrlVaiPonto.estaNoPonto;
+        }
 
-    void Update() {
-        if (ctrlVaiPonto.estaNoPonto && !Chegou())
-            i_ponto++;
+        void Awake() {
+            cadeiras = FindObjectOfType<Cadeiras>();
+            ctrlVaiPonto = GetComponent<ControladorVaiAtePonto>();
+        }
+        void Start() {
+            pontos = cadeiras.ObterRota();
+            GetComponent<ControleCliente>().ptCadeira = pontos[pontos.Length-1];
+            ctrlVaiPonto.trAlvo = pontos[i_ponto];
+        }
 
-        ctrlVaiPonto.trAlvo = pontos[i_ponto];
+        void Update() {
+            if (ctrlVaiPonto.estaNoPonto && !Chegou())
+                i_ponto++;
+
+            ctrlVaiPonto.trAlvo = pontos[i_ponto];
+        }
     }
 }
