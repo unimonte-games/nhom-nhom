@@ -1,38 +1,41 @@
 ﻿using UnityEngine;
 
-public class Rotacionador : MonoBehaviour
-{
-    public string alvo;
-
-    public void Rotacionar()
+namespace NhomNhom {
+    public class Rotacionador : MonoBehaviour
     {
-        Vector3[] direcoes = new Vector3[4] {
-            transform.forward, -transform.forward, transform.right, -transform.right
-        };
+        public string alvo;
 
-        RaycastHit hit;
-        GbjID idHit;
-
-        for (int i = 0; i < direcoes.Length; i++)
+        public void Rotacionar()
         {
-            if (Physics.Raycast(transform.position, direcoes[i], out hit, 1f))
+            Vector3[] direcoes = new Vector3[4] {
+                transform.forward, -transform.forward, transform.right, -transform.right
+            };
+
+            RaycastHit hit;
+            GbjID idHit;
+
+            for (int i = 0; i < direcoes.Length; i++)
             {
-                idHit = hit.transform.parent.GetComponent<GbjID>();
-                if (idHit != null && idHit.id == alvo)
+                if (Physics.Raycast(transform.position, direcoes[i], out hit, 1f))
                 {
-                    transform.rotation = Quaternion.LookRotation(direcoes[i]);
-                    break;
+                    idHit = hit.transform.parent.GetComponent<GbjID>();
+                    if (idHit != null && idHit.id == alvo)
+                    {
+                        transform.rotation = Quaternion.LookRotation(direcoes[i]);
+                        break;
+                    }
                 }
             }
         }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, transform.position + transform.forward);
+            Gizmos.DrawLine(transform.position, transform.position - transform.forward);
+            Gizmos.DrawLine(transform.position, transform.position + transform.right);
+            Gizmos.DrawLine(transform.position, transform.position - transform.right);
+        }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + transform.forward);
-        Gizmos.DrawLine(transform.position, transform.position - transform.forward);
-        Gizmos.DrawLine(transform.position, transform.position + transform.right);
-        Gizmos.DrawLine(transform.position, transform.position - transform.right);
-    }
 }
