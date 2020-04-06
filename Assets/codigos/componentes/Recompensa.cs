@@ -17,20 +17,15 @@ namespace NhomNhom {
             return recompensas[paciencia.ObterMarca()];
         }
 
-    #if UNITY_EDITOR
-        int REC;
-        void Update() {
-            REC = ObterRecompensa();
-        }
-
-        void OnValidate() {
-            Paciencia _paciencia = GetComponent<Paciencia>();
-
-            if (!_paciencia)
-                return;
-            else if (recompensas.Length != _paciencia.divisoes.Length+1)
-                Debug.LogWarning("a quantidade de recompensas não bate com a quantidade de marcas de paciência", gameObject);
-        }
-    #endif
+//    #if UNITY_EDITOR
+//        void OnValidate() {
+//            Paciencia _paciencia = GetComponent<Paciencia>();
+//
+//            if (!_paciencia)
+//                return;
+//            else if (recompensas.Length != _paciencia.divisoes.Length+1)
+//                Debug.LogWarning("a quantidade de recompensas não bate com a quantidade de marcas de paciência", gameObject);
+//        }
+//    #endif
     }
 }
