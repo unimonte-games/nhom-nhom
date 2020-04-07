@@ -135,7 +135,7 @@ namespace NhomNhom {
                         try
                         {
                             // Instancia Prefab na posição correta
-                            GameObject obj = Instantiate(
+                            GameObject obj = UnityEditor.PrefabUtility.InstantiatePrefab(
                                 Resources.Load(@"magicavoxel/prefabs/Moveis_" + nomePrefab)) as GameObject;
                             obj.transform.localPosition = posi;
                             obj.transform.parent = pai;
