@@ -142,6 +142,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8573769073424849673, guid: 4f7aaf032df0d77818aacf3ebdbd5542,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4f7aaf032df0d77818aacf3ebdbd5542,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -197,10 +202,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4141696592633329311, guid: 4f7aaf032df0d77818aacf3ebdbd5542,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 4f7aaf032df0d77818aacf3ebdbd5542,
         type: 3}
       propertyPath: m_Name
       value: Vaso de Planta
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4f7aaf032df0d77818aacf3ebdbd5542,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4485365336991979012, guid: 4f7aaf032df0d77818aacf3ebdbd5542,
         type: 3}

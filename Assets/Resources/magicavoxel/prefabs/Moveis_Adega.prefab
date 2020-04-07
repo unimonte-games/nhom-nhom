@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5257105272452953574, guid: 6afd1006bed4652278c34daf9c2f1218,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6afd1006bed4652278c34daf9c2f1218,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -72,6 +77,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Adega de Vinho e Garrafa de Vinho
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6afd1006bed4652278c34daf9c2f1218,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567924451268965367, guid: 6afd1006bed4652278c34daf9c2f1218,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5439422374725247210, guid: 6afd1006bed4652278c34daf9c2f1218,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -81,6 +96,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147959604804403031, guid: 6afd1006bed4652278c34daf9c2f1218,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6afd1006bed4652278c34daf9c2f1218, type: 3}

@@ -67,15 +67,30 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 13097a9e9057487eeb0f3510f0bd5703, type: 2}
+    - target: {fileID: -976378961223445679, guid: fe65cb0a7a2915fa1a38f5e7fa83c091,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: fe65cb0a7a2915fa1a38f5e7fa83c091,
         type: 3}
       propertyPath: m_Name
       value: Pilastra
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: fe65cb0a7a2915fa1a38f5e7fa83c091,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 297916245603396058, guid: fe65cb0a7a2915fa1a38f5e7fa83c091,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 297916245603396058, guid: fe65cb0a7a2915fa1a38f5e7fa83c091,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe65cb0a7a2915fa1a38f5e7fa83c091, type: 3}

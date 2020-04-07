@@ -80,10 +80,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4116920369693692774, guid: 7363fac01bd1ca10c9042d938107ebcf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 7363fac01bd1ca10c9042d938107ebcf,
         type: 3}
       propertyPath: m_Name
       value: Cadeira
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7363fac01bd1ca10c9042d938107ebcf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603401637549870153, guid: 7363fac01bd1ca10c9042d938107ebcf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3856227502188479287, guid: 7363fac01bd1ca10c9042d938107ebcf,
         type: 3}

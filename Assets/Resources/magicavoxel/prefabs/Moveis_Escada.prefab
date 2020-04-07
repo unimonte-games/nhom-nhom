@@ -161,6 +161,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2618778856931342692}
     m_Modifications:
+    - target: {fileID: -6652666478050108648, guid: a345b197962f8c81ebb36f884b3a2d6b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a345b197962f8c81ebb36f884b3a2d6b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -221,6 +226,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Escada
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: a345b197962f8c81ebb36f884b3a2d6b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5906330337943838720, guid: a345b197962f8c81ebb36f884b3a2d6b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -230,6 +240,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6016981522363878915, guid: a345b197962f8c81ebb36f884b3a2d6b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a345b197962f8c81ebb36f884b3a2d6b, type: 3}

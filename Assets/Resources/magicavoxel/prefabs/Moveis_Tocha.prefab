@@ -80,15 +80,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tocha
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 488e511f7a6a50a9ca03065666335fe6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3378240419742180154, guid: 488e511f7a6a50a9ca03065666335fe6,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cea5d1ddfeb893bec978eebef9c0acb3, type: 2}
+    - target: {fileID: 7331953588721983230, guid: 488e511f7a6a50a9ca03065666335fe6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569670897359065926, guid: 488e511f7a6a50a9ca03065666335fe6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7625452240757127822, guid: 488e511f7a6a50a9ca03065666335fe6,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625452240757127822, guid: 488e511f7a6a50a9ca03065666335fe6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 488e511f7a6a50a9ca03065666335fe6, type: 3}

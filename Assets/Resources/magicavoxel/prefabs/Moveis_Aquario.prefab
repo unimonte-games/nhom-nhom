@@ -127,6 +127,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7241177037342060127, guid: 4a1f3bfeca0ca1f7c8df77421f4fe4aa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4a1f3bfeca0ca1f7c8df77421f4fe4aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -182,10 +187,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1427140142167415198, guid: 4a1f3bfeca0ca1f7c8df77421f4fe4aa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 4a1f3bfeca0ca1f7c8df77421f4fe4aa,
         type: 3}
       propertyPath: m_Name
       value: Aquario
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4a1f3bfeca0ca1f7c8df77421f4fe4aa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a1f3bfeca0ca1f7c8df77421f4fe4aa, type: 3}

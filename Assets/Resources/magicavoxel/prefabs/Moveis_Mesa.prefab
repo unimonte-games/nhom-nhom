@@ -127,6 +127,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5949862847742108219, guid: 7c5dfe918f4e45827931a17af7dabed6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -4263507788919844922, guid: 7c5dfe918f4e45827931a17af7dabed6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7c5dfe918f4e45827931a17af7dabed6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,6 +196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mesa
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7c5dfe918f4e45827931a17af7dabed6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 271946755483250475, guid: 7c5dfe918f4e45827931a17af7dabed6,
         type: 3}
