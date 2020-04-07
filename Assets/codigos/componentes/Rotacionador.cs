@@ -19,27 +19,23 @@ namespace NhomNhom {
 
             string[] alvos = alvo.Split(';');
 
-            for (int i = 0; !achou && i < direcoes.Length; i++)
+            for (int j = 0; j < alvos.Length; j++)
             {
-                // Verifica ID caso encontre um obj
-                if (Physics.Raycast(transform.position, direcoes[i], out hit, 1f))
+                for (int i = 0; !achou && i < direcoes.Length; i++)
                 {
-                    idHit = hit.transform.GetComponent<GbjID>();
-                    for (int j = 0; j < alvos.Length; j++)
+                    // Verifica ID caso encontre um obj
+                    if (Physics.Raycast(transform.position, direcoes[i], out hit, 1f))
                     {
-                        if (idHit.id == alvos[j])
-                        {
-                            achou = true;
-                            break;
-                        }
+                        idHit = hit.transform.GetComponent<GbjID>();
+                        if (idHit.id == alvos[j]) achou = true;
                     }
-                }
-                // Verifica se não contém alvo (rotaciona para um espaço vazio)
-                else if (alvo == "") achou = true;
+                    // Verifica se não contém alvo (rotaciona para um espaço vazio)
+                    else if (alvo == "") achou = true;
 
-                // Aponta o obj na direção atual
-                if (achou)
-                    transform.rotation = Quaternion.LookRotation(direcoes[i]);
+                    // Aponta o obj na direção atual
+                    if (achou)
+                        transform.rotation = Quaternion.LookRotation(direcoes[i]);
+                }
             }
         }
 
