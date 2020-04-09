@@ -11,6 +11,9 @@ namespace NhomNhom {
         }
 
         public Estado estado = Estado.NaFila;
+
+        public int precoPrato;
+
         Fila fila;
         Cadeiras cadeiras;
 

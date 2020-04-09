@@ -10,7 +10,11 @@ namespace NhomNhom {
         void Start() {
             tempoInicio = Time.time;
             Item itemPrato = transform.Find("ref_item").GetComponent<EspacoItem>().Soltar();
-            intervaloPrato = itemPrato.GetComponent<Prato>().intervalo;
+
+            Prato prato = itemPrato.GetComponent<Prato>();
+            intervaloPrato = prato.intervalo;
+            GetComponent<EstadosCliente>().precoPrato = prato.ObtemPreco();
+
             Destroy(itemPrato.gameObject, intervaloPrato);
         }
 

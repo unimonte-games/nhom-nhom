@@ -6,5 +6,10 @@ namespace NhomNhom {
 
     public class Prato : MonoBehaviour {
         public float intervalo;
+        public int precoBase, precoVariacao1;
+
+        public int ObtemPreco() {
+            return precoBase + precoVariacao1;
+        }
     }
 }

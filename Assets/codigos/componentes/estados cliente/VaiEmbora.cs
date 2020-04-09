@@ -30,6 +30,10 @@ namespace NhomNhom {
             ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
             ctrlVaiAtePonto.ativo = true;
 
+            EstadosCliente estado = GetComponent<EstadosCliente>();
+
+            int recompensa = GetComponent<Recompensa>().ObterRecompensa(estado.precoPrato);
+            FindObjectOfType<Cofre>().Pagar(recompensa);
             FindObjectOfType<Cadeiras>().AbrirVaga(ptFolha);
         }
 
