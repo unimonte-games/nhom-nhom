@@ -601,6 +601,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: proto prato
       objectReference: {fileID: 0}
+    - target: {fileID: 8733498894887014616, guid: 0368026076e30c18c8705c853bd3e206,
+        type: 3}
+      propertyPath: precoBase
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733498894887014616, guid: 0368026076e30c18c8705c853bd3e206,
+        type: 3}
+      propertyPath: precoVariacao1
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0368026076e30c18c8705c853bd3e206, type: 3}
 --- !u!4 &857446367618165991 stripped

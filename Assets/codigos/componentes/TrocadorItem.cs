@@ -7,11 +7,6 @@ namespace NhomNhom {
 
     public class TrocadorItem : MonoBehaviour
     {
-        [System.Serializable]
-        public struct Transacao {
-            public string entrada; public GameObject saida;
-        }
-
         public Transacao[] transacoes;
 
         EspacoItem espacoBalcao;
@@ -24,7 +19,7 @@ namespace NhomNhom {
             if (espacoBalcao.Vazio())
                 return;
 
-            if (espacoBalcao.itemAbrigado.GetComponent<TipoItem>().tipo == TipoItem.Tipo.Prato)
+            if (espacoBalcao.itemAbrigado.GetComponent<TipoItem>().tipo != TipoItem.Tipo.Pedido)
                 return;
 
             Item itemItem = espacoBalcao.Soltar();

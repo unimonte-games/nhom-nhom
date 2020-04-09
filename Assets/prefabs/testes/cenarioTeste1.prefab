@@ -1209,6 +1209,7 @@ GameObject:
   - component: {fileID: 2681177576150846018}
   - component: {fileID: 4092707081328667436}
   - component: {fileID: 8816789235725302847}
+  - component: {fileID: 2260495231182397778}
   m_Layer: 0
   m_Name: cenarioTeste1
   m_TagString: Untagged
@@ -1289,7 +1290,18 @@ MonoBehaviour:
   - {fileID: 6110478153156414797}
   - {fileID: 1516754160942532862}
   b_trFolhas: 00000000
-  __DEV_AutoValidar: 0
+--- !u!114 &2260495231182397778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7584512883557267765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9315fc7cda516fd381aad932e024d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8228111829911195240
 GameObject:
   m_ObjectHideFlags: 0

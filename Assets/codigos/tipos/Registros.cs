@@ -18,4 +18,9 @@ namespace NhomNhom {
         public bool eixoAcao1;
         public bool eixoAcao2;
     }
+
+    [System.Serializable]
+    public struct Transacao {
+        public string entrada; public GameObject saida;
+    }
 }
