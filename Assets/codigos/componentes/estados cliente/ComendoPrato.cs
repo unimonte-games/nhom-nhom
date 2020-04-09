@@ -16,6 +16,10 @@ namespace NhomNhom {
             GetComponent<EstadosCliente>().precoPrato = prato.ObtemPreco();
 
             Destroy(itemPrato.gameObject, intervaloPrato);
+
+            Paciencia paciencia = GetComponent<Paciencia>();
+            paciencia.Recuperar();
+            paciencia.consumir = false;
         }
 
         public bool Comeu() {

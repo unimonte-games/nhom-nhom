@@ -5,6 +5,8 @@ using UnityEngine;
 namespace NhomNhom {
 
     public class Paciencia : MonoBehaviour {
+        public bool consumir;
+
         public float paciencia;
         public float consumoPorSeg;
         public float[] divisoes;
@@ -16,6 +18,7 @@ namespace NhomNhom {
 
         public Gradient gradienteBarra;
 
+
         Vector3 escala = Vector3.one;
 
         public int ObterMarca() {
@@ -25,12 +28,17 @@ namespace NhomNhom {
             return divisoes.Length;
         }
 
+        public void Recuperar() {
+            paciencia = pacienciaInicial;
+        }
+
         void Start() {
             pacienciaInicial = paciencia;
         }
 
         void Update() {
-            paciencia -= consumoPorSeg * Time.deltaTime;
+            if (consumir)
+                paciencia -= consumoPorSeg * Time.deltaTime;
 
             float t = Mathf.Clamp01(paciencia / pacienciaInicial);
             escala.x = t;

@@ -46,6 +46,10 @@ namespace NhomNhom {
             pedidoItem = espacoCliente.Soltar();
 
             Assert.IsNotNull(objsEspacos);
+
+            Paciencia paciencia = GetComponent<Paciencia>();
+            paciencia.Recuperar();
+            paciencia.consumir = true;;
         }
 
         void Update() {
