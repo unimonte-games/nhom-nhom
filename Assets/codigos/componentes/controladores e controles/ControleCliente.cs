@@ -28,14 +28,18 @@ namespace NhomNhom {
             direcao.y = 0;
             direcao.z = V;
 
+            direcao.Normalize();
+            compVelocidade.direcao.x = 0;
+            compVelocidade.direcao.y = 0;
+
             if (direcao.magnitude > 0.1f) {
-                direcao.Normalize();
                 tr.LookAt(tr.position + direcao);
 
-                compVelocidade.direcao.x = 0;
-                compVelocidade.direcao.y = 0;
                 compVelocidade.direcao.z = Mathf.Ceil(direcao.magnitude);
                 compVelocidade.velocidade = ctrl.velocidade;
+            } else {
+                compVelocidade.direcao.z = 0;
+                compVelocidade.velocidade = 0;
             }
         }
     }
