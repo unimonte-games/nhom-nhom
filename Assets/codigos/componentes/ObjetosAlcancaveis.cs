@@ -21,6 +21,7 @@ using UnityEngine.Assertions;
         }
 
         public bool Vazio() {
+            Limpar();
             return listaObjetos.Count == 0;
         }
 
