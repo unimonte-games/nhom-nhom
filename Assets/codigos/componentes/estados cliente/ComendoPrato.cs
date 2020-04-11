@@ -12,7 +12,7 @@ namespace NhomNhom {
             Item itemPrato = transform.Find("ref_item").GetComponent<EspacoItem>().Soltar();
 
             Prato prato = itemPrato.GetComponent<Prato>();
-            intervaloPrato = prato.intervalo;
+            intervaloPrato = prato.tempoConsumo;
             GetComponent<EstadosCliente>().precoPrato = prato.ObtemPreco();
 
             Destroy(itemPrato.gameObject, intervaloPrato);

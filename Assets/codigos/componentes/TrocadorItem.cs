@@ -16,10 +16,9 @@ namespace NhomNhom {
         }
 
         void Update() {
-            if (espacoBalcao.Vazio())
-                return;
-
-            if (espacoBalcao.itemAbrigado.GetComponent<TipoItem>().tipo != TipoItem.Tipo.Pedido)
+            if (espacoBalcao.Vazio() ||
+                espacoBalcao.itemAbrigado.GetComponent<TipoItem>().tipo != TipoItem.Tipo.Pedido
+            )
                 return;
 
             Item itemItem = espacoBalcao.Soltar();
@@ -32,25 +31,34 @@ namespace NhomNhom {
             // itemGID não deve ser nulo
             Assert.IsNotNull(itemGID);
 
-            for (int i = 0; i < transacoes.Length; i++)
-            {
+            for (int i = 0; i < transacoes.Length; i++) {
                 if (itemGID.id == transacoes[i].entrada) {
-                    var novoItemGbj = Instantiate<GameObject>(
-                        transacoes[i].saida, itemItem.transform.position, Quaternion.identity
-                    );
-                    //novoItemGbj.transform.eulerAngles = Vector3.zero;
-
-                    var novoItemItem = novoItemGbj.GetComponent<Item>();
-
-                    // novoItemItem não deverá ser nulo
-                    Assert.IsNotNull(novoItemItem);
-
-                    espacoBalcao.Abrigar(novoItemItem);
+                    StartCoroutine(InstanciarPrato(i, itemItem.transform.position));
                     break;
                 }
             }
 
             Destroy(itemItem.gameObject);
+        }
+
+        IEnumerator InstanciarPrato(int i_trancacao, Vector3 pos) {
+            var pratoGbj = Instantiate<GameObject>(
+                transacoes[i_trancacao].saida, pos, Quaternion.identity
+            );
+
+            var pratoPrato = pratoGbj.GetComponent<Prato>();
+            pratoGbj.SetActive(false);
+
+            yield return new WaitForSeconds(pratoPrato.tempoPreparo);
+
+            pratoGbj.SetActive(true);
+
+            var novoItemItem = pratoGbj.GetComponent<Item>();
+
+            // novoItemItem não deverá ser nulo
+            Assert.IsNotNull(novoItemItem);
+
+            espacoBalcao.Abrigar(novoItemItem);
         }
     }
 }
