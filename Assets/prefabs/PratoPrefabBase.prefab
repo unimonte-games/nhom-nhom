@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619406f5fab87e5d9af371e1d4e881c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intervalo: 5
+  tempoConsumo: 5
+  tempoPreparo: 2
+  precoBase: 5
+  precoVariacao1: 0
 --- !u!1001 &1102575836312084017
 PrefabInstance:
   m_ObjectHideFlags: 0

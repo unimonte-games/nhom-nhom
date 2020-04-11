@@ -191,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf95807e7f7c7542a9e1a1f25e5b840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaMinima: 0.2
-  velocidade: 2
+  distanciaMinima: 0.05
+  velocidade: 5
   trAlvo: {fileID: 0}
   estaNoPonto: 0
   ativo: 1
@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e1ee9be53e42f36cb88f024c8124470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  consumir: 0
   paciencia: 10
   consumoPorSeg: 0.1
   divisoes:
