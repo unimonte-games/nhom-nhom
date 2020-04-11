@@ -11,9 +11,10 @@ namespace NhomNhom {
         Transform[] pontos;
         int i_ponto;
         ControladorVaiAtePonto ctrlVaiPonto;
+        bool estaNoPonto;
 
         public bool Chegou() {
-            return i_ponto == pontos.Length - 1 && ctrlVaiPonto.estaNoPonto;
+            return i_ponto == pontos.Length - 1 && ctrlVaiPonto.estaNoPonto && estaNoPonto;
         }
 
         void Awake() {
@@ -27,10 +28,13 @@ namespace NhomNhom {
         }
 
         void Update() {
-            if (ctrlVaiPonto.estaNoPonto && !Chegou())
+            if (ctrlVaiPonto.estaNoPonto && !Chegou() && i_ponto < pontos.Length - 1)
                 i_ponto++;
 
             ctrlVaiPonto.trAlvo = pontos[i_ponto];
+
+            Vector3 diff = ctrlVaiPonto.trAlvo.position - transform.position;
+            estaNoPonto = diff.magnitude < ctrlVaiPonto.distanciaMinima;
         }
     }
 }
