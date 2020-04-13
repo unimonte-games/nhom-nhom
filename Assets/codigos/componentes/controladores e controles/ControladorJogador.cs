@@ -17,7 +17,7 @@ namespace NhomNhom {
         }
 
         ControlesValores ObterControlesValores(ref ControlesEixos ctrlEixos) {
-            ControlesValores resultado;
+            ControlesValores resultado = new ControlesValores();
             resultado.eixoHorizontal = Input.GetAxisRaw(ctrlEixos.eixoHorizontal);
             resultado.eixoVertical = Input.GetAxisRaw(ctrlEixos.eixoVertical);
 
