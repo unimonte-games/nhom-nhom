@@ -30,14 +30,19 @@ namespace NhomNhom {
             ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
             ctrlVaiAtePonto.ativo = true;
 
+            EstadosCliente estado = GetComponent<EstadosCliente>();
+
+            int recompensa = GetComponent<Recompensa>().ObterRecompensa(estado.precoPrato);
+            FindObjectOfType<Cofre>().Pagar(recompensa);
             FindObjectOfType<Cadeiras>().AbrirVaga(ptFolha);
         }
 
         void Update() {
-            if (ctrlVaiAtePonto.estaNoPonto && !FoiEmbora())
+            if (ctrlVaiAtePonto.estaNoPonto && !FoiEmbora() && i_ponto < pontos.Length - 1) {
                 i_ponto++;
-
-            ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
+                ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
+                ctrlVaiAtePonto.estaNoPonto = false;
+            }
         }
     }
 }

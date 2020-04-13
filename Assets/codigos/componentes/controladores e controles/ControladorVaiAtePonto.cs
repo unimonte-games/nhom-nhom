@@ -22,7 +22,7 @@ namespace NhomNhom {
         }
 
         ControlesValores ObterControlesValores() {
-            ControlesValores resultado;
+            ControlesValores resultado = new ControlesValores();
 
             if (trAlvo || !estaNoPonto) {
                 resultado.eixoHorizontal = dir.x;

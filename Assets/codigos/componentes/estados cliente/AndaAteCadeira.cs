@@ -27,10 +27,11 @@ namespace NhomNhom {
         }
 
         void Update() {
-            if (ctrlVaiPonto.estaNoPonto && !Chegou())
+            if (ctrlVaiPonto.estaNoPonto && !Chegou() && i_ponto < pontos.Length - 1) {
                 i_ponto++;
-
-            ctrlVaiPonto.trAlvo = pontos[i_ponto];
+                ctrlVaiPonto.trAlvo = pontos[i_ponto];
+                ctrlVaiPonto.estaNoPonto = false;
+            }
         }
     }
 }
