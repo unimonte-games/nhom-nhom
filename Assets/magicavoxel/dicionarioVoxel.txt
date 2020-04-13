@@ -7,7 +7,8 @@
 0 255 132:balcaoDireita
 221 0 0:mesa
 255 102 0:cadeira
-168 168 168:pilastra
+168 168 167:pilastraBase
+168 168 168:pilastraTopo
 0 255 204:aquario
 0 204 0:vasoPlanta
 255 255 0:tocha
