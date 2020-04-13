@@ -6,15 +6,15 @@ using UnityEngine;
 namespace NhomNhom {
 
     public class Recompensa : MonoBehaviour {
-        public int[] recompensas;
+        public float[] recompensas;
         Paciencia paciencia;
 
         void Awake () {
             paciencia = GetComponent<Paciencia>();
         }
 
-        public int ObterRecompensa() {
-            return recompensas[paciencia.ObterMarca()];
+        public int ObterRecompensa(int precoBase) {
+            return Mathf.FloorToInt(precoBase * recompensas[paciencia.ObterMarca()]);
         }
 
 //    #if UNITY_EDITOR

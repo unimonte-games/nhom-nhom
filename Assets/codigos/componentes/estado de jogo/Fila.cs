@@ -6,11 +6,25 @@ namespace NhomNhom {
 
     public class Fila : MonoBehaviour
     {
+        public GameObject[] clientes;
         public Transform[] fila_trs;
         int[] espacosOcupados;
 
         void Awake() {
             espacosOcupados = new int[fila_trs.Length];
+        }
+
+        void Start() {
+            StartCoroutine(InstanciarClientes());
+        }
+
+        IEnumerator InstanciarClientes() {
+            Cadeiras cadeiras = FindObjectOfType<Cadeiras>();
+
+            for (int i = 0; i < clientes.Length; i++) {
+                Instantiate<GameObject>(clientes[i], cadeiras.saida.position, Quaternion.identity);
+                yield return new WaitForSeconds(Random.Range(1f, 2f));
+            }
         }
 
         public void AbrirVaga(int id) {
@@ -48,7 +62,7 @@ namespace NhomNhom {
 
         IEnumerator CO_AtualizaLista() {
             for (int i = 0; i < espacosOcupados.Length-1; i++) {
-                yield return new WaitForSeconds(Random.Range(0.5f, 1f));
+                yield return new WaitForEndOfFrame();
                 if (espacosOcupados[i] == 0) {
                     espacosOcupados[i] = espacosOcupados[i+1];
                     espacosOcupados[i+1] = 0;
