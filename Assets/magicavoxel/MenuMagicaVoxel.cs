@@ -19,7 +19,10 @@ namespace NhomNhom {
             [MenuItem("MagicaVoxel/Atualizar Cena")]
             public static void AtualizarCena()
             {
-                IntegracaoMagicaVoxel.RegerarCena();
+                if (EditorUtility.DisplayDialog("Atualizar cena",
+                        "Tem certeza que deseja atualizar a cena? A cena atual será apagada",
+                        "Sim", "Não"))
+                    IntegracaoMagicaVoxel.RegerarCena();
             }
 
             [MenuItem("MagicaVoxel/Configurações")]

@@ -135,7 +135,7 @@ namespace NhomNhom {
                         try
                         {
                             // Instancia Prefab na posição correta
-                            GameObject obj = Instantiate(
+                            GameObject obj = UnityEditor.PrefabUtility.InstantiatePrefab(
                                 Resources.Load(@"magicavoxel/prefabs/Moveis_" + nomePrefab)) as GameObject;
                             obj.transform.localPosition = posi;
                             obj.transform.parent = pai;
@@ -143,6 +143,9 @@ namespace NhomNhom {
                             // Adiciona objs com o componente Rotacionador na lista
                             var rot = obj.GetComponent<Rotacionador>();
                             if (rot) lista.Add(rot);
+
+                            var rotCentr = obj.GetComponent<RotacionarCentro>();
+                            if (rotCentr) rotCentr.Invoke("Rotacionar", 0);
                         }
 
                         // Mensagem de erro
