@@ -38,9 +38,8 @@ namespace NhomNhom {
         }
 
         void Update() {
-            if (espaco_i >= 0 && ctrlVaiPonto.estaNoPonto) {
+            if (espaco_i >= 0 && ctrlVaiPonto.estaNoPonto)
                 tr.rotation = ctrlVaiPonto.trAlvo.rotation;
-            }
 
             espaco_i = fila.ObtemIndicePorID(ctrlCliente.id, espaco_i);
 

@@ -29,7 +29,9 @@ namespace NhomNhom {
             direcao.y = 0;
             direcao.z = V;
 
-            direcao.Normalize();
+            if (direcao.magnitude > 1f)
+                direcao.Normalize();
+
             compVelocidade.direcao.x = 0;
             compVelocidade.direcao.y = 0;
 

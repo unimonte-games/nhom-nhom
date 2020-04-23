@@ -32,13 +32,14 @@ using UnityEngine.Assertions;
             Limpar();
 
             GameObject resultado = listaObjetos[0];
+
             Transform res_tr = resultado.GetComponent<Transform>();
             float dist = Vector3.Distance(res_tr.position, tr.position);
 
-            for (int i = 0; i < listaObjetos.Count; i++) {
+            for (int i = 1; i < listaObjetos.Count; i++) {
                 var gbj_i = listaObjetos[i];
                 var tr_i = gbj_i.GetComponent<Transform>();
-                float dist_i = Vector3.Distance(res_tr.position, tr.position);
+                float dist_i = Vector3.Distance(tr_i.position, tr.position);
 
                 if (dist_i < dist) {
                     dist = dist_i;

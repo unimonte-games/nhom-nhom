@@ -40,6 +40,7 @@ namespace NhomNhom {
         void Start() {
             ctrlVaiAtePonto.ativo = false;
             objsEspacos = tr.Find("sensor_espacos").GetComponent<ObjetosAlcancaveis>();
+            Assert.IsNotNull(objsEspacos);
 
             espacoCliente = tr.Find("ref_item").GetComponent<EspacoItem>();
             espacoCliente.itemAbrigado.gameObject.SetActive(true);
@@ -49,7 +50,7 @@ namespace NhomNhom {
 
             Paciencia paciencia = GetComponent<Paciencia>();
             paciencia.Recuperar();
-            paciencia.consumir = true;;
+            paciencia.consumir = true;
         }
 
         void Update() {
@@ -57,7 +58,6 @@ namespace NhomNhom {
                 if (!mesaObtida) {
                     GameObject gbjMesa = objsEspacos.ObterMaisProximo();
                     espacoMesa = gbjMesa.GetComponent<EspacoItem>();
-
                     Assert.IsNotNull(espacoMesa);
 
                     espacoMesa.Abrigar(pedidoItem);
@@ -69,6 +69,5 @@ namespace NhomNhom {
                 }
             }
         }
-
     }
 }
