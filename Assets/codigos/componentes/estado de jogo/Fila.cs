@@ -39,14 +39,18 @@ namespace NhomNhom {
         }
 
         public int RegistraEspaco(int id) {
-            for (int i = 0; i < espacosOcupados.Length; i++) {
-                if (espacosOcupados[i] == 0) {
-                    espacosOcupados[i] = id;
-                    return i;
-                }
-            }
+            int ultimo_ocupado = -1;
 
-            return -1;
+            for (int i = 0; i < espacosOcupados.Length; i++)
+                if (espacosOcupados[i] != 0)
+                    ultimo_ocupado = i;
+
+            if (ultimo_ocupado == espacosOcupados.Length - 1) // está lotado
+                return -1;
+
+            int vaga_i = ultimo_ocupado + 1;
+            espacosOcupados[vaga_i] = id;
+            return vaga_i;
         }
 
         public int ObtemIndicePorID(int id, int i) {
@@ -62,7 +66,7 @@ namespace NhomNhom {
 
         IEnumerator CO_AtualizaLista() {
             for (int i = 0; i < espacosOcupados.Length-1; i++) {
-                yield return new WaitForEndOfFrame();
+                yield return new WaitForSeconds(0.5f); // WaitForEndOfFrame();
                 if (espacosOcupados[i] == 0) {
                     espacosOcupados[i] = espacosOcupados[i+1];
                     espacosOcupados[i+1] = 0;
