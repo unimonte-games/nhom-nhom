@@ -1,29 +1,32 @@
 ﻿using UnityEngine;
 
-public class RotacionarCentro : MonoBehaviour
+namespace NhomNhom
 {
+    public class RotacionarCentro : MonoBehaviour
+{
+    public bool verificarEixoZ;
+
     [ContextMenu("Rotação Manual")]
     public void Rotacionar()
     {
-        float deltaX = transform.localPosition.x;
-        float deltaZ = transform.localPosition.z;
-
         Vector3 direcao;
-        float maior;
 
-        if (deltaX > deltaZ)
+        if (verificarEixoZ)
         {
-            direcao = Vector3.right;
-            maior = deltaX;
+            if (transform.localPosition.z < transform.parent.localPosition.z)
+                direcao = transform.forward;
+            else
+                direcao = -transform.forward;
         }
         else
         {
-            direcao = Vector3.forward;
-            maior = deltaZ;
+            if (transform.localPosition.x < transform.parent.localPosition.x)
+                direcao = transform.right;
+            else
+                direcao = -transform.right;
         }
-
-        if (maior > 0) direcao = -direcao;
 
         transform.rotation = Quaternion.LookRotation(direcao);
     }
+}
 }
