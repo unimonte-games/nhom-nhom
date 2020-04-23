@@ -7,6 +7,7 @@ namespace NhomNhom {
     public class ControleCliente : MonoBehaviour
     {
         public Transform ptCadeira;
+        public int id;
 
         Transform tr;
         Controle ctrl;

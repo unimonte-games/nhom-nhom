@@ -22,7 +22,9 @@ namespace NhomNhom {
             Cadeiras cadeiras = FindObjectOfType<Cadeiras>();
 
             for (int i = 0; i < clientes.Length; i++) {
-                Instantiate<GameObject>(clientes[i], cadeiras.saida.position, Quaternion.identity);
+                var clienteGbj = Instantiate<GameObject>(clientes[i], cadeiras.saida.position, Quaternion.identity);
+                clienteGbj.GetComponent<ControleCliente>().id = i+1;
+
                 yield return new WaitForSeconds(Random.Range(1f, 2f));
             }
         }

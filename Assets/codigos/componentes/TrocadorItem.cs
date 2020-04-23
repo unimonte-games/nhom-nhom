@@ -33,7 +33,7 @@ namespace NhomNhom {
 
             for (int i = 0; i < transacoes.Length; i++) {
                 if (itemGID.id == transacoes[i].entrada) {
-                    StartCoroutine(InstanciarPrato(i, itemItem.transform.position));
+                    StartCoroutine(InstanciarPrato(i, itemItem.transform.position, itemItem.idDono));
                     break;
                 }
             }
@@ -41,7 +41,7 @@ namespace NhomNhom {
             Destroy(itemItem.gameObject);
         }
 
-        IEnumerator InstanciarPrato(int i_trancacao, Vector3 pos) {
+        IEnumerator InstanciarPrato(int i_trancacao, Vector3 pos, int idDono) {
             var pratoGbj = Instantiate<GameObject>(
                 transacoes[i_trancacao].saida, pos, Quaternion.identity
             );
@@ -54,9 +54,8 @@ namespace NhomNhom {
             pratoGbj.SetActive(true);
 
             var novoItemItem = pratoGbj.GetComponent<Item>();
-
-            // novoItemItem não deverá ser nulo
             Assert.IsNotNull(novoItemItem);
+            novoItemItem.idDono = idDono;
 
             espacoBalcao.Abrigar(novoItemItem);
         }

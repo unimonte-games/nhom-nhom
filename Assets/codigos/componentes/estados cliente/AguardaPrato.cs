@@ -43,9 +43,9 @@ namespace NhomNhom {
 
             espacoCliente = tr.Find("ref_item").GetComponent<EspacoItem>();
             espacoCliente.itemAbrigado.gameObject.SetActive(true);
-            pedidoItem = espacoCliente.Soltar();
 
-            Assert.IsNotNull(objsEspacos);
+            pedidoItem = espacoCliente.Soltar();
+            pedidoItem.idDono = GetComponent<ControleCliente>().id;
 
             Paciencia paciencia = GetComponent<Paciencia>();
             paciencia.Recuperar();
