@@ -1,3 +1,17 @@
-﻿{
-	"name": "NhonNhom_s"
+{
+    "name": "NhonNhom_s",
+    "references": [],
+    "includePlatforms": [
+        "WebGL",
+        "WindowsStandalone32",
+        "WindowsStandalone64",
+        "XboxOne"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
 }
