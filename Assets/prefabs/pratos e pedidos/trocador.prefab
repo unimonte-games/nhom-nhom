@@ -60,8 +60,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transacoes:
-  - entrada: '#pedido proto'
+  - entrada: '#prato proto'
     saida: {fileID: 56056780774805262, guid: add4e4596dc737e418ff3c86da157532, type: 3}
+  - entrada: '#prato hamburger'
+    saida: {fileID: 2297178350313101439, guid: dcf9e2d88124de68eba28402181c5650, type: 3}
+  - entrada: '#prato pizza'
+    saida: {fileID: 5057384799366664881, guid: 0f21ff6f8f93193a38c1a0bba1bc8d38, type: 3}
+  - entrada: '#prato spaghetti'
+    saida: {fileID: 8788808083572203857, guid: 5487f938c1162df89ba22208e25e0112, type: 3}
+  - entrada: '#prato sushi'
+    saida: {fileID: 6657472119890060167, guid: 2564d4be9c50299baa58ff3878a6bff5, type: 3}
 --- !u!65 &6979774556839698006
 BoxCollider:
   m_ObjectHideFlags: 0

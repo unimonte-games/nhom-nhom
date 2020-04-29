@@ -18,7 +18,7 @@ namespace NhomNhom {
             Destroy(itemPrato.gameObject, intervaloPrato);
 
             Paciencia paciencia = GetComponent<Paciencia>();
-            paciencia.Recuperar();
+            // paciencia.Recuperar();
             paciencia.consumir = false;
         }
 

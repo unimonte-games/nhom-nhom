@@ -15,30 +15,52 @@ namespace NhomNhom {
         EspacoItem espacoMesa, espacoCliente;
         Item pedidoItem;
 
+        Paciencia paciencia;
+
+        string idPratoEsperado;
+        int cor_esperada;
+
         public bool ComPrato() {
             if (!espacoMesa || espacoMesa.Vazio())
                 return false;
 
             string id = espacoMesa.itemAbrigado.GetComponent<GbjID>().id;
-            bool recebeuPrato = id.Substring(0, 6) == "#prato";
 
-            if (recebeuPrato) {
-                Item pratoItem = espacoMesa.Soltar();
-                Vector3 pos = pratoItem.transform.position;
-                espacoCliente.Abrigar(pratoItem);
-                pratoItem.transform.position = pos;
+            bool ePrato = id.Substring(0, 6) == "#prato";
+
+            if (ePrato) {
+                int cor_i = espacoMesa.itemAbrigado.GetComponent<Prato>().cor_i;
+
+                if (cor_i == cor_esperada && id == idPratoEsperado) {
+                    Item pratoItem = espacoMesa.Soltar();
+                    Vector3 pos = pratoItem.transform.position;
+                    espacoCliente.Abrigar(pratoItem);
+                    pratoItem.transform.position = pos;
+                    return true;
+                } else {
+                    SlimeBravo();
+                    return false;
+                }
             }
 
-            return recebeuPrato;
+            return false;
+        }
+
+        void SlimeBravo() {
+            // Mudar ícone
+            // diminuir paciência mais rápido
+            paciencia.bravo = true;
         }
 
         void Awake() {
             ctrlVaiAtePonto = GetComponent<ControladorVaiAtePonto>();
             tr = GetComponent<Transform>();
+            paciencia = GetComponent<Paciencia>();
         }
 
         void Start() {
             ctrlVaiAtePonto.ativo = false;
+
             objsEspacos = tr.Find("sensor_espacos").GetComponent<ObjetosAlcancaveis>();
             Assert.IsNotNull(objsEspacos);
 
@@ -46,9 +68,14 @@ namespace NhomNhom {
             espacoCliente.itemAbrigado.gameObject.SetActive(true);
 
             pedidoItem = espacoCliente.Soltar();
-            pedidoItem.idDono = GetComponent<ControleCliente>().id;
 
-            Paciencia paciencia = GetComponent<Paciencia>();
+            {
+                var trocadorItem = FindObjectOfType<TrocadorItem>();
+                var itemPedido = pedidoItem.GetComponent<Pedido>();
+                idPratoEsperado = trocadorItem.ObterIDPratoDeIDPedido(itemPedido.pratoId);
+                cor_esperada = itemPedido.cor_prato;
+            }
+
             paciencia.Recuperar();
             paciencia.consumir = true;
         }

@@ -9,7 +9,6 @@ namespace NhomNhom {
     public class Item : MonoBehaviour
     {
         public EspacoItem espacoPertencente;
-        public int idDono;
 
         Transform tr;
 

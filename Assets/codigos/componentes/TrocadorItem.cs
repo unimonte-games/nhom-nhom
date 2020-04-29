@@ -11,12 +11,26 @@ namespace NhomNhom {
 
         EspacoItem espacoBalcao;
 
+        public string ObterIDPratoDeIDPedido(string pedidoId)
+        {
+            string resultado = "";
+            for (int i = 0; i < transacoes.Length; i++)
+                if (pedidoId == transacoes[i].entrada) {
+                    resultado = transacoes[i].entrada;
+                    break;
+                }
+
+            Assert.AreNotEqual(resultado, "");
+            return resultado;
+        }
+
         void Awake() {
             espacoBalcao = GetComponent<EspacoItem>();
         }
 
         void Update() {
-            if (espacoBalcao.Vazio() ||
+            if (
+                espacoBalcao.Vazio() ||
                 espacoBalcao.itemAbrigado.GetComponent<TipoItem>().tipo != TipoItem.Tipo.Pedido
             )
                 return;
@@ -26,36 +40,33 @@ namespace NhomNhom {
             // itemItem não pode ser nulo por conta da verificação do Vazio
             Assert.IsNotNull(itemItem);
 
-            GbjID itemGID = itemItem.GetComponent<GbjID>();
+            Pedido itemPedido = itemItem.GetComponent<Pedido>();
+            Assert.IsNotNull(itemPedido);
 
-            // itemGID não deve ser nulo
-            Assert.IsNotNull(itemGID);
-
-            for (int i = 0; i < transacoes.Length; i++) {
-                if (itemGID.id == transacoes[i].entrada) {
-                    StartCoroutine(InstanciarPrato(i, itemItem.transform.position, itemItem.idDono));
+            for (int i = 0; i < transacoes.Length; i++)
+                if (itemPedido.pratoId == transacoes[i].entrada) {
+                    StartCoroutine(InstanciarPrato(i, itemItem.transform.position, itemPedido.cor_prato));
                     break;
                 }
-            }
 
             Destroy(itemItem.gameObject);
         }
 
-        IEnumerator InstanciarPrato(int i_trancacao, Vector3 pos, int idDono) {
+        IEnumerator InstanciarPrato(int i_trancacao, Vector3 pos, int cor_prato) {
             var pratoGbj = Instantiate<GameObject>(
                 transacoes[i_trancacao].saida, pos, Quaternion.identity
             );
 
-            var pratoPrato = pratoGbj.GetComponent<Prato>();
             pratoGbj.SetActive(false);
 
+            var pratoPrato = pratoGbj.GetComponent<Prato>();
+            pratoPrato.cor_i = cor_prato;
             yield return new WaitForSeconds(pratoPrato.tempoPreparo);
 
             pratoGbj.SetActive(true);
 
             var novoItemItem = pratoGbj.GetComponent<Item>();
             Assert.IsNotNull(novoItemItem);
-            novoItemItem.idDono = idDono;
 
             espacoBalcao.Abrigar(novoItemItem);
         }

@@ -16,6 +16,12 @@ MonoBehaviour:
   tempoPreparo: 2
   precoBase: 5
   precoVariacao1: 0
+  meshRend: {fileID: 0}
+  matCores: 
+  paletaPrato:
+  - {r: 0.8301887, g: 0.20363118, b: 0.20363118, a: 1}
+  - {r: 0.17584176, g: 0.16838734, b: 0.8301887, a: 0}
+  - {r: 0.8490566, g: 0.2963688, b: 0.8374157, a: 0}
 --- !u!1001 &1102575836312084017
 PrefabInstance:
   m_ObjectHideFlags: 0
