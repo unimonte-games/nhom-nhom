@@ -50,11 +50,24 @@ namespace NhomNhom {
             podeEntrar = false;
             Transform folha = trRaiz;
 
-            for (int i = 0; i < b_trFolhas.Length; i++) {
-                if (!b_trFolhas[i]) {
-                    folha = trFolhas[i];
-                    b_trFolhas[i] = true;
+            // tente 1000x encontrar uma folha aleatória
+            for (int i = 0; i < 1000; i++) {
+                int b_idx = Random.Range(0, b_trFolhas.Length);
+                if (!b_trFolhas[b_idx]) {
+                    folha = trFolhas[b_idx];
+                    b_trFolhas[b_idx] = true;
                     break;
+                }
+            }
+
+            // se folha ainda é a raíz, então faça a busca linear tradicional
+            if (folha == trRaiz) {
+                for (int i = 0; i < b_trFolhas.Length; i++) {
+                    if (!b_trFolhas[i]) {
+                        folha = trFolhas[i];
+                        b_trFolhas[i] = true;
+                        break;
+                    }
                 }
             }
 

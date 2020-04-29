@@ -40247,7 +40247,7 @@ PrefabInstance:
     - target: {fileID: -7324840349729081333, guid: 9666c82332814ce1e8fe92dd19de41f1,
         type: 3}
       propertyPath: clientes.Array.size
-      value: 31
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7324840349729081333, guid: 9666c82332814ce1e8fe92dd19de41f1,
         type: 3}
@@ -40590,6 +40590,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3745023751852880510, guid: 9687d78f71ed2563b91cfed542729e8c,
         type: 3}
+    - target: {fileID: -7324840349729081333, guid: 9666c82332814ce1e8fe92dd19de41f1,
+        type: 3}
+      propertyPath: qtdClientes
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -7324840349729081333, guid: 9666c82332814ce1e8fe92dd19de41f1,
+        type: 3}
+      propertyPath: intervaloMinimo
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7324840349729081333, guid: 9666c82332814ce1e8fe92dd19de41f1,
+        type: 3}
+      propertyPath: intervaloMaximo
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 41148503028048774, guid: 9666c82332814ce1e8fe92dd19de41f1,
         type: 3}
       propertyPath: m_RootOrder

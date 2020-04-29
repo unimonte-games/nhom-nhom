@@ -65,6 +65,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d498977cd2502b77892543799b3e107d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  qtdClientes: 0
+  intervaloMinimo: 2
+  intervaloMaximo: 4
   clientes: []
   fila_trs: []
 --- !u!114 &-6587089400813634626
