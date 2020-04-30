@@ -20,7 +20,9 @@ namespace NhomNhom {
             cadeiras = FindObjectOfType<Cadeiras>();
             ctrlVaiPonto = GetComponent<ControladorVaiAtePonto>();
         }
+
         void Start() {
+            GetComponent<ControleCliente>().olhador.rotSuave.atualizar = true;
             pontos = cadeiras.ObterRota();
             GetComponent<ControleCliente>().ptCadeira = pontos[pontos.Length-1];
             ctrlVaiPonto.trAlvo = pontos[i_ponto];

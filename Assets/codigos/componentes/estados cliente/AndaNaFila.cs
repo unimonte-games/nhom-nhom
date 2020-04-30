@@ -34,6 +34,7 @@ namespace NhomNhom {
         }
 
         void Start() {
+            GetComponent<ControleCliente>().olhador.rotSuave.atualizar = false;
             ObtemEspaco();
         }
 

@@ -9,16 +9,31 @@ namespace NhomNhom {
         public Transform ptCadeira;
         public int id;
 
+        public OlhadorSuave olhador;
+
         Transform tr;
         Controle ctrl;
         Velocidade compVelocidade;
+        RotacionadorSuave rotSuave;
 
         Vector3 direcao;
+
+        public void OlharPonto(Vector3 pontoOlhar)
+        {
+            if (olhador.rotSuave.atualizar) {
+                Quaternion rotBkup = olhador.rotSuave.tr.rotation;
+                tr.LookAt(pontoOlhar);
+                olhador.alvo = pontoOlhar;
+                olhador.rotSuave.tr.rotation = rotBkup;
+            } else
+                tr.LookAt(pontoOlhar);
+        }
 
         void Awake() {
             compVelocidade = GetComponent<Velocidade>();
             tr = GetComponent<Transform>();
             ctrl = GetComponent<Controle>();
+            rotSuave = GetComponent<RotacionadorSuave>();
         }
 
         void Update() {
@@ -36,7 +51,7 @@ namespace NhomNhom {
             compVelocidade.direcao.y = 0;
 
             if (direcao.magnitude > 0.1f) {
-                tr.LookAt(tr.position + direcao);
+                OlharPonto(tr.position + direcao);
 
                 compVelocidade.direcao.z = Mathf.Ceil(direcao.magnitude);
                 compVelocidade.velocidade = ctrl.velocidade;

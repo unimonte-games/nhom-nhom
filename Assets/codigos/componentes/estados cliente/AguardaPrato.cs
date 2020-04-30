@@ -8,6 +8,7 @@ namespace NhomNhom {
 
     public class AguardaPrato : MonoBehaviour {
         ControladorVaiAtePonto ctrlVaiAtePonto;
+        ControleCliente ctrlCliente;
         Transform tr;
         ObjetosAlcancaveis objsEspacos;
 
@@ -54,6 +55,7 @@ namespace NhomNhom {
 
         void Awake() {
             ctrlVaiAtePonto = GetComponent<ControladorVaiAtePonto>();
+            ctrlCliente = GetComponent<ControleCliente>();
             tr = GetComponent<Transform>();
             paciencia = GetComponent<Paciencia>();
         }
@@ -92,8 +94,15 @@ namespace NhomNhom {
 
                     mesaObtida = true;
 
-                    tr.LookAt(espacoMesa.transform);
-                    tr.eulerAngles = new Vector3(0, tr.eulerAngles.y, 0);
+                    Vector3 pontoOlhar = new Vector3(
+                        espacoMesa.transform.position.x,
+                        tr.position.y,
+                        espacoMesa.transform.position.z
+                    );
+
+                    ctrlCliente.OlharPonto(pontoOlhar);
+                    // var rotY = new Vector3(0, tr.eulerAngles.y, 0);
+                    // tr.eulerAngles = rotY;
                 }
             }
         }
