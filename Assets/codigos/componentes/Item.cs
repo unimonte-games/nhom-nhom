@@ -9,11 +9,12 @@ namespace NhomNhom {
     public class Item : MonoBehaviour
     {
         public EspacoItem espacoPertencente;
+        public bool bloqueado;
 
         Transform tr;
 
         public void LimparPosse() {
-            if (espacoPertencente) {
+            if (espacoPertencente && !bloqueado) {
                 tr.SetParent(null);
                 espacoPertencente.itemAbrigado = null;
                 espacoPertencente = null;
@@ -21,6 +22,8 @@ namespace NhomNhom {
         }
 
         public void DefinirPosse(EspacoItem novoEspacoPertencente) {
+            if (bloqueado)
+                return;
             LimparPosse();
             espacoPertencente = novoEspacoPertencente;
             espacoPertencente.itemAbrigado = this;

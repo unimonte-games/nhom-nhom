@@ -36,6 +36,7 @@ namespace NhomNhom {
                     Item pratoItem = espacoMesa.Soltar();
                     Vector3 pos = pratoItem.transform.position;
                     espacoCliente.Abrigar(pratoItem);
+                    pratoItem.bloqueado = true;
                     pratoItem.transform.position = pos;
                     return true;
                 } else {

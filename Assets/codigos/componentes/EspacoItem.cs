@@ -15,7 +15,7 @@ namespace NhomNhom {
         }
 
         public Item Soltar() {
-            if (!Vazio() && itemAbrigado.espacoPertencente == this) {
+            if (!Vazio() && !itemAbrigado.bloqueado && itemAbrigado.espacoPertencente == this) {
                 Item itemQueEstavaAbrigado = itemAbrigado;
                 itemAbrigado.LimparPosse();
 
@@ -28,7 +28,7 @@ namespace NhomNhom {
         }
 
         public bool Abrigar(Item item) {
-            if (Vazio()) {
+            if (Vazio() && !item.bloqueado) {
                 item.DefinirPosse(this);
                 return true;
             }
