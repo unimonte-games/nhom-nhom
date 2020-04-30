@@ -72,7 +72,8 @@ namespace NhomNhom {
             {
                 var trocadorItem = FindObjectOfType<TrocadorItem>();
                 var itemPedido = pedidoItem.GetComponent<Pedido>();
-                idPratoEsperado = trocadorItem.ObterIDPratoDeIDPedido(itemPedido.pratoId);
+                itemPedido.Inicializar();
+                idPratoEsperado = itemPedido.pratoId;
                 cor_esperada = itemPedido.cor_prato;
             }
 

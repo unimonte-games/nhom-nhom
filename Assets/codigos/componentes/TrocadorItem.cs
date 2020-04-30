@@ -11,19 +11,6 @@ namespace NhomNhom {
 
         EspacoItem espacoBalcao;
 
-        public string ObterIDPratoDeIDPedido(string pedidoId)
-        {
-            string resultado = "";
-            for (int i = 0; i < transacoes.Length; i++)
-                if (pedidoId == transacoes[i].entrada) {
-                    resultado = transacoes[i].entrada;
-                    break;
-                }
-
-            Assert.AreNotEqual(resultado, "");
-            return resultado;
-        }
-
         void Awake() {
             espacoBalcao = GetComponent<EspacoItem>();
         }
