@@ -48,7 +48,7 @@ namespace NhomNhom {
                 escala = Vector3.zero;
 
             pseudoBarra.localScale = escala;
-            pseudoBarra_MR.material.color = gradienteBarra.Evaluate(t);
+            pseudoBarra_MR.material.color = bravo ? Color.magenta : gradienteBarra.Evaluate(t);
 
             // é modificado como true pelo aguarda prato
             // a cada quadro enquanto prato errado estiver
