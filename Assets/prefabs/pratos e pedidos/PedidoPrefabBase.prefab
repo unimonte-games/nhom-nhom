@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00207072ce9ade70191353f54dd58c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pratoId: '#prato '
+  pratoId: 
+  cor_prato: 0
+  pratosPossiveis:
+  - '#prato hamburger'
+  - '#prato pizza'
+  - '#prato spaghetti'
+  - '#prato sushi'
 --- !u!1 &2169124604465628461
 GameObject:
   m_ObjectHideFlags: 0

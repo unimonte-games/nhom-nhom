@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fase-1
       objectReference: {fileID: 0}
+    - target: {fileID: 2032239545898650832, guid: 62da92ee6d549ca6680e01407e086a6e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4051790943737276278, guid: 62da92ee6d549ca6680e01407e086a6e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,6 +191,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908515989726718791, guid: 62da92ee6d549ca6680e01407e086a6e,
+        type: 3}
+      propertyPath: __DEV_AutoValidar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62da92ee6d549ca6680e01407e086a6e, type: 3}
