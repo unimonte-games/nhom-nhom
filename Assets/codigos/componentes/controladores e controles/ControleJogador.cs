@@ -46,13 +46,13 @@ namespace NhomNhom {
 
                 direcao.Normalize();
 
-
                 Vector3 pontoOlhar = tr.position + direcao;
                 Quaternion rotBkup = olhador.rotSuave.tr.rotation;
                 tr.LookAt(pontoOlhar);
                 olhador.alvo = pontoOlhar;
                 olhador.rotSuave.tr.rotation = rotBkup;
-            }
+            } else
+                olhador.alvo = tr.position + tr.forward;
 
             // velocidade
             compVelocidade.direcao.x = 0;
