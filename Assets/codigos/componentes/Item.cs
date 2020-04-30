@@ -26,6 +26,7 @@ namespace NhomNhom {
             espacoPertencente.itemAbrigado = this;
             tr.SetParent(espacoPertencente.transform);
             tr.localPosition = Vector3.zero;
+            tr.rotation = novoEspacoPertencente.transform.rotation;
         }
 
         void Awake() {
