@@ -12,7 +12,7 @@ namespace NhomNhom {
 
         Transform tr;
         Controle controle;
-        Vector3 diff, dir;
+        Vector3 diff, dir, pos;
 
         float ObterVelocidade() {
             if (trAlvo && !estaNoPonto)
@@ -24,7 +24,7 @@ namespace NhomNhom {
         ControlesValores ObterControlesValores() {
             ControlesValores resultado = new ControlesValores();
 
-            if (trAlvo || !estaNoPonto) {
+            if (trAlvo && !estaNoPonto) {
                 resultado.eixoHorizontal = dir.x;
                 resultado.eixoVertical   = dir.z;
             } else

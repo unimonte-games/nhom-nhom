@@ -22,6 +22,7 @@ namespace NhomNhom {
         AguardaPrato   c_aguardaPrato;
         ComendoPrato   c_comendoPrato;
         VaiEmbora      c_vaiEmbora;
+        ControleCliente ctrlCliente;
 
         public void ProximoEstado() {
             if (estado != Estado.VaiEmbora) {
@@ -34,7 +35,7 @@ namespace NhomNhom {
 
         void AbreEstado(Estado e) {
             if (c_andaNaFila) {
-                fila.AbrirVaga(c_andaNaFila.id);
+                fila.AbrirVaga(ctrlCliente.id);
                 Destroy(c_andaNaFila);
             }
             if (c_andaAteCadeira) {
@@ -71,6 +72,7 @@ namespace NhomNhom {
         void Awake() {
             fila = FindObjectOfType<Fila>();
             cadeiras = FindObjectOfType<Cadeiras>();
+            ctrlCliente = GetComponent<ControleCliente>();
         }
 
         void Start() {

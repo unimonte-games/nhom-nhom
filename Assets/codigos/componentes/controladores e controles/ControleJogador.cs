@@ -9,10 +9,12 @@ namespace NhomNhom {
     {
         public ObjetosAlcancaveis listaDeItensProximos, listaDeEspacosItensProximas;
         public EspacoItem espacoItem;
+        public OlhadorSuave olhador;
 
         Transform tr;
         Controle ctrl;
         Velocidade compVelocidade;
+        RotacionadorSuave rotSuave;
 
         Vector3 direcao;
 
@@ -20,6 +22,7 @@ namespace NhomNhom {
             compVelocidade = GetComponent<Velocidade>();
             tr = GetComponent<Transform>();
             ctrl = GetComponent<Controle>();
+            rotSuave = GetComponent<RotacionadorSuave>();
         }
 
         void Update() {
@@ -43,8 +46,13 @@ namespace NhomNhom {
 
                 direcao.Normalize();
 
-                tr.LookAt(tr.position + direcao);
-            }
+                Vector3 pontoOlhar = tr.position + direcao;
+                Quaternion rotBkup = olhador.rotSuave.tr.rotation;
+                tr.LookAt(pontoOlhar);
+                olhador.alvo = pontoOlhar;
+                olhador.rotSuave.tr.rotation = rotBkup;
+            } else
+                olhador.alvo = tr.position + tr.forward;
 
             // velocidade
             compVelocidade.direcao.x = 0;

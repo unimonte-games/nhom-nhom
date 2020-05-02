@@ -6,6 +6,8 @@ namespace NhomNhom {
 
     public class Fila : MonoBehaviour
     {
+        public int qtdClientes;
+        public float intervaloMinimo, intervaloMaximo;
         public GameObject[] clientes;
         public Transform[] fila_trs;
         int[] espacosOcupados;
@@ -21,9 +23,15 @@ namespace NhomNhom {
         IEnumerator InstanciarClientes() {
             Cadeiras cadeiras = FindObjectOfType<Cadeiras>();
 
-            for (int i = 0; i < clientes.Length; i++) {
-                Instantiate<GameObject>(clientes[i], cadeiras.saida.position, Quaternion.identity);
-                yield return new WaitForSeconds(Random.Range(1f, 2f));
+            for (int i = 0; i < qtdClientes; i++) {
+                var clienteGbj = Instantiate<GameObject>(
+                    clientes[Random.Range(0, clientes.Length)],
+                    cadeiras.saida.position,
+                    Quaternion.identity
+                );
+                clienteGbj.GetComponent<ControleCliente>().id = i+1;
+
+                yield return new WaitForSeconds(Random.Range(intervaloMinimo, intervaloMaximo));
             }
         }
 
@@ -39,14 +47,18 @@ namespace NhomNhom {
         }
 
         public int RegistraEspaco(int id) {
-            for (int i = 0; i < espacosOcupados.Length; i++) {
-                if (espacosOcupados[i] == 0) {
-                    espacosOcupados[i] = id;
-                    return i;
-                }
-            }
+            int ultimo_ocupado = -1;
 
-            return -1;
+            for (int i = 0; i < espacosOcupados.Length; i++)
+                if (espacosOcupados[i] != 0)
+                    ultimo_ocupado = i;
+
+            if (ultimo_ocupado == espacosOcupados.Length - 1) // está lotado
+                return -1;
+
+            int vaga_i = ultimo_ocupado + 1;
+            espacosOcupados[vaga_i] = id;
+            return vaga_i;
         }
 
         public int ObtemIndicePorID(int id, int i) {
@@ -62,7 +74,7 @@ namespace NhomNhom {
 
         IEnumerator CO_AtualizaLista() {
             for (int i = 0; i < espacosOcupados.Length-1; i++) {
-                yield return new WaitForEndOfFrame();
+                yield return new WaitForSeconds(0.5f); // WaitForEndOfFrame();
                 if (espacosOcupados[i] == 0) {
                     espacosOcupados[i] = espacosOcupados[i+1];
                     espacosOcupados[i+1] = 0;

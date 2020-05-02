@@ -8,6 +8,7 @@ namespace NhomNhom {
         public bool consumir;
 
         public float paciencia;
+        public float multiplicadorBravo;
         public float consumoPorSeg;
         public float[] divisoes;
 
@@ -18,6 +19,7 @@ namespace NhomNhom {
 
         public Gradient gradienteBarra;
 
+        public bool bravo;
 
         Vector3 escala = Vector3.one;
 
@@ -38,7 +40,7 @@ namespace NhomNhom {
 
         void Update() {
             if (consumir)
-                paciencia -= consumoPorSeg * Time.deltaTime;
+                paciencia -= consumoPorSeg * (bravo ? multiplicadorBravo : 1f) * Time.deltaTime;
 
             float t = Mathf.Clamp01(paciencia / pacienciaInicial);
             escala.x = t;
@@ -46,7 +48,12 @@ namespace NhomNhom {
                 escala = Vector3.zero;
 
             pseudoBarra.localScale = escala;
-            pseudoBarra_MR.material.color = gradienteBarra.Evaluate(t);
+            pseudoBarra_MR.material.color = bravo ? Color.magenta : gradienteBarra.Evaluate(t);
+
+            // é modificado como true pelo aguarda prato
+            // a cada quadro enquanto prato errado estiver
+            // sobre a mesa
+            bravo = false;
         }
     }
 }

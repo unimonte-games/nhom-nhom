@@ -25,7 +25,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4be8b4549bac6e03cbc86809c6ba3ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
+  id: '#movel'
 --- !u!1 &8694158802991396619
 GameObject:
   m_ObjectHideFlags: 0

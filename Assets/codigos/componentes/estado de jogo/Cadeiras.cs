@@ -12,11 +12,6 @@ namespace NhomNhom {
         public Transform[] trFolhas;
         public bool[] b_trFolhas;
 
-//    #if UNITY_EDITOR
-//        [Space(10)]
-//        [SerializeField] bool __DEV_AutoValidar;
-//    #endif // UNITY_EDITOR
-
         public void AbrirVaga(Transform folha) {
             for (int i = 0; i < trFolhas.Length; i++)
                 if (trFolhas[i] == folha) {
@@ -55,11 +50,24 @@ namespace NhomNhom {
             podeEntrar = false;
             Transform folha = trRaiz;
 
-            for (int i = 0; i < b_trFolhas.Length; i++) {
-                if (!b_trFolhas[i]) {
-                    folha = trFolhas[i];
-                    b_trFolhas[i] = true;
+            // tente 1000x encontrar uma folha aleatória
+            for (int i = 0; i < 1000; i++) {
+                int b_idx = Random.Range(0, b_trFolhas.Length);
+                if (!b_trFolhas[b_idx]) {
+                    folha = trFolhas[b_idx];
+                    b_trFolhas[b_idx] = true;
                     break;
+                }
+            }
+
+            // se folha ainda é a raíz, então faça a busca linear tradicional
+            if (folha == trRaiz) {
+                for (int i = 0; i < b_trFolhas.Length; i++) {
+                    if (!b_trFolhas[i]) {
+                        folha = trFolhas[i];
+                        b_trFolhas[i] = true;
+                        break;
+                    }
                 }
             }
 
@@ -102,26 +110,29 @@ namespace NhomNhom {
             }
         }
 
-//    #if UNITY_EDITOR
-//        void __DEV_ObtemFolhas(List<Transform> l, Transform i_tr) {
-//            int cc = i_tr.childCount;
+// #if UNITY_EDITOR
+//         [Space(10)]
+//         [SerializeField] bool __DEV_AutoValidar;
 //
-//            if (cc == 0)
-//                l.Add(i_tr);
-//            else
-//                for (int i = 0; i < cc; i++)
-//                    __DEV_ObtemFolhas(l, i_tr.GetChild(i));
-//        }
+//         void __DEV_ObtemFolhas(List<Transform> l, Transform i_tr) {
+//             int cc = i_tr.childCount;
 //
-//        void OnValidate() {
-//            if (!__DEV_AutoValidar || !trRaiz)
-//                return;
+//             if (cc == 0)
+//                 l.Add(i_tr);
+//             else
+//                 for (int i = 0; i < cc; i++)
+//                     __DEV_ObtemFolhas(l, i_tr.GetChild(i));
+//         }
 //
-//            List<Transform> l = new List<Transform>();
-//            __DEV_ObtemFolhas(l, trRaiz);
-//            trFolhas = l.ToArray();
-//            b_trFolhas = new bool[trFolhas.Length];
-//        }
-//    #endif // UNITY_EDITOR
+//         void OnValidate() {
+//             if (!__DEV_AutoValidar || !trRaiz)
+//                 return;
+//
+//             List<Transform> l = new List<Transform>();
+//             __DEV_ObtemFolhas(l, trRaiz);
+//             trFolhas = l.ToArray();
+//             b_trFolhas = new bool[trFolhas.Length];
+//         }
+// #endif // UNITY_EDITOR
     }
 }

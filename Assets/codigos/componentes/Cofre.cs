@@ -11,7 +11,5 @@ namespace NhomNhom {
             cofre += recompensa;
             print("recompensa paga: " + recompensa.ToString());
         }
-
-
     }
 }
