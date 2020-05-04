@@ -11,8 +11,6 @@ namespace NhomNhom {
 
         Controle controle;
 
-        static int jogadorNum = 1;
-
     #region // implementação do IImplControle {
         float ObterVelocidade() {
             return velocidade;
@@ -41,6 +39,7 @@ namespace NhomNhom {
         }
 
         void Start() {
+            int jogadorNum = AdicionarJogadores.jogadorQtd;
             if (jogadorNum > 1 && jogadorNum <= 4) {
                 ctrlEixos.eixoHorizontal = string.Concat(ctrlEixos.eixoHorizontal, " ", jogadorNum.ToString());
                 ctrlEixos.eixoVertical = string.Concat(ctrlEixos.eixoVertical, " ", jogadorNum.ToString());
