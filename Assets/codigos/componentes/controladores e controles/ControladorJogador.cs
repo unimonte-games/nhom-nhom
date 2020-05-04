@@ -38,6 +38,19 @@ namespace NhomNhom {
             controle = GetComponent<Controle>();
         }
 
+        void Start() {
+            int jogadorNum = AdicionarJogadores.jogadorQtd;
+            if (jogadorNum > 1 && jogadorNum <= 4) {
+                ctrlEixos.eixoHorizontal = string.Concat(ctrlEixos.eixoHorizontal, " ", jogadorNum.ToString());
+                ctrlEixos.eixoVertical = string.Concat(ctrlEixos.eixoVertical, " ", jogadorNum.ToString());
+                ctrlEixos.eixoAcao1 = string.Concat(ctrlEixos.eixoAcao1, " ", jogadorNum.ToString());
+            }
+            else if (jogadorNum > 4)
+                Destroy(gameObject);
+
+            jogadorNum++;
+        }
+
         void Update() {
             controle.velocidade = ObterVelocidade();
             controle.ctrlValores = ObterControlesValores(ref ctrlEixos);
