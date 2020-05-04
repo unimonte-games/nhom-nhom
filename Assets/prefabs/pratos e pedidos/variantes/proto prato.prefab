@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 13097a9e9057487eeb0f3510f0bd5703, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -540,6 +540,11 @@ PrefabInstance:
         type: 3}
       propertyPath: id
       value: '#prato proto'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817746246076754243, guid: 0368026076e30c18c8705c853bd3e206,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7020784045301379474, guid: 0368026076e30c18c8705c853bd3e206,
         type: 3}
