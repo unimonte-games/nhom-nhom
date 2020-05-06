@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e42811cbadeae4f91fdea61ba7f3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alvo: mesa
+  alvo: '#movel mesa'
 --- !u!1001 &1662073499089178390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,37 +127,37 @@ PrefabInstance:
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}

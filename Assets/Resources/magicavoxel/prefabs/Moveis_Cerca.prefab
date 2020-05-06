@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e42811cbadeae4f91fdea61ba7f3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alvo: pilastra;cerca
+  alvo: '#movel pilastra;#movel cerca;#imovel parede'
 --- !u!1001 &2322117578265813952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33,17 +33,17 @@ PrefabInstance:
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -21
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
@@ -53,7 +53,7 @@ PrefabInstance:
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000032782552
+      value: 0.707107
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
@@ -63,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071066
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
