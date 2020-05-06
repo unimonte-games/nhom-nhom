@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-namespace NhomNhom {
+namespace NhomNhom
+{
     public class Rotacionador : MonoBehaviour
     {
         [Tooltip("Deixe em branco para apontar para um espaço vazio. Para mais de 1 valor separe-os por ';'")]
@@ -27,7 +28,7 @@ namespace NhomNhom {
                     if (Physics.Raycast(transform.position, direcoes[i], out hit, 1f))
                     {
                         idHit = hit.transform.GetComponent<GbjID>();
-                        if (idHit.id == alvos[j]) achou = true;
+                        if (idHit?.id == alvos[j]) achou = true;
                     }
                     // Verifica se não contém alvo (rotaciona para um espaço vazio)
                     else if (alvo == "") achou = true;
