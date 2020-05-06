@@ -18,6 +18,8 @@ namespace NhomNhom {
             intervaloPrato = prato.tempoConsumo;
             GetComponent<EstadosCliente>().precoPrato = prato.ObtemPreco();
 
+            GetComponent<BolhaCliente>().Ocultar();
+
             StartCoroutine(ConsumirEDestruir(espacoItem, intervaloPrato));
         }
 

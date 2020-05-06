@@ -48,6 +48,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 0
     - _Blend: 0
@@ -70,17 +74,19 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _brilho_mul: 0.7
-    - _fresnel_mul: 0.37
-    - _fresnel_power: 0.82
-    - _specular_step: 0.5
+    - _brilho_mul: 0
+    - _fresnel_mul: 0.585
+    - _fresnel_power: 1.42
+    - _outline_size: 0.727
+    - _specular_step: 1
     m_Colors:
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _light_dir: {r: 0.1438386, g: 0.8276087, b: -0.54256266, a: 0}
-    - _main_color: {r: 1, g: 1, b: 1, a: 1}
+    - _main_color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
+    - _outline_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &3579745307469750029
 MonoBehaviour:
   m_ObjectHideFlags: 11
