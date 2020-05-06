@@ -17,6 +17,7 @@ namespace NhomNhom {
         Item pedidoItem;
 
         Paciencia paciencia;
+        BolhaCliente bolha;
 
         string idPratoEsperado;
         int cor_esperada;
@@ -59,6 +60,7 @@ namespace NhomNhom {
             ctrlCliente = GetComponent<ControleCliente>();
             tr = GetComponent<Transform>();
             paciencia = GetComponent<Paciencia>();
+            bolha = GetComponent<BolhaCliente>();
         }
 
         void Start() {
@@ -78,6 +80,9 @@ namespace NhomNhom {
                 itemPedido.Inicializar();
                 idPratoEsperado = itemPedido.pratoId;
                 cor_esperada = itemPedido.cor_prato;
+
+                bolha.DefinirImgPrato(idPratoEsperado);
+                bolha.Exibir();
             }
 
             paciencia.Recuperar();
