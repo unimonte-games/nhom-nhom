@@ -62,6 +62,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6bd939b922d41574e846810e55ca39e7, type: 2}
   - {fileID: 2100000, guid: 952f6303f268ffc88a814135829738c6, type: 2}
   - {fileID: 2100000, guid: 95dec6bcf780327d1b3d813883ce2054, type: 2}
+  - {fileID: 2100000, guid: 13a9be3b36a341f4fb1868655c1efb41, type: 2}
   matsCenarios:
   - {fileID: 2100000, guid: 9c81ee5eb846b104e865aa163aaf9b02, type: 2}
   - {fileID: 2100000, guid: 833ba1fadb0a9d423b935d1e17bd7292, type: 2}
