@@ -21,8 +21,8 @@ RenderSettings:
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
-  m_AmbientEquatorColor: {r: 0.14412849, g: 0.1274377, b: 0.11443538, a: 1}
-  m_AmbientGroundColor: {r: 0.2422812, g: 0.048171822, b: 0.015208514, a: 1}
+  m_AmbientEquatorColor: {r: 0.9528302, g: 0.8842625, b: 0.74608403, a: 1}
+  m_AmbientGroundColor: {r: 0.10399608, g: 0.38679248, b: 0.32646257, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -446,6 +446,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648373817706347160, guid: d960c8272b5d2d343bbe62da6a3419ff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d960c8272b5d2d343bbe62da6a3419ff, type: 3}

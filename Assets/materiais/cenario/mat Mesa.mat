@@ -61,6 +61,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _tex:
+        m_Texture: {fileID: 2800000, guid: b2c5f2ae56b872c6e9606ec9739804e1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 0
     - _Blend: 0
@@ -94,5 +98,5 @@ Material:
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _cam_dir: {r: 0, g: -0.76604444, b: 0.6427875, a: 0}
     - _light_dir: {r: -0.40925205, g: -0.766044, b: 0.4956704, a: 0}
-    - _main_color: {r: 0.755, g: 0.14797999, b: 0.21999942, a: 1}
-    - _outline_color: {r: 0.6698113, g: 0, b: 0, a: 1}
+    - _main_color: {r: 1, g: 1, b: 1, a: 1}
+    - _outline_color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
