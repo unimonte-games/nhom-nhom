@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEditor;
 
 namespace NhomNhom {
     namespace IntegracaoMagicaVoxel
@@ -45,9 +46,13 @@ namespace NhomNhom {
             public static void RegerarCena()
             {
                 GameObject pai = GameObject.Find("Cenario Importado");
-                DestroyImmediate(pai);
+                Transform posi = null;
+                if (pai != null) posi = pai.transform;
+                
+                try { DestroyImmediate(pai); }
+                catch { Debug.LogWarning("Cenário antigo não excluído, favor escluí-lo manualmente"); }
 
-                LerArqPly();
+                LerArqPly(posi);
             }
 
             public static void LerArqDicio()
@@ -79,7 +84,7 @@ namespace NhomNhom {
                 arqRef.Close();
             }
 
-            public static void LerArqPly()
+            public static void LerArqPly(Transform posicao = null)
             {
                 var objsParaRot = new List<Rotacionador>();
 
@@ -119,7 +124,14 @@ namespace NhomNhom {
 
                 // Rotaciona os filhos
                 foreach (Rotacionador obj in objsParaRot)
-                    obj.Invoke("Rotacionar", 0);
+                    obj.Rotacionar();
+
+                // Define a posição e rotação do cenário
+                if (posicao != null)
+                {
+                    paiCenario.transform.position = posicao.position;
+                    paiCenario.transform.rotation = posicao.rotation;
+                }
             }
 
             private static void InstanciarModelo(string chave, Vector3 posi, Transform pai, ref List<Rotacionador> lista)
