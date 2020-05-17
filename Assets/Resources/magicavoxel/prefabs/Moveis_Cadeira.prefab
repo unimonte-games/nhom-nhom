@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e42811cbadeae4f91fdea61ba7f3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alvo: '#movel mesa'
+  alvo: '#movel mesa;#movel mesa espaco'
 --- !u!1001 &1662073499089178390
 PrefabInstance:
   m_ObjectHideFlags: 0
