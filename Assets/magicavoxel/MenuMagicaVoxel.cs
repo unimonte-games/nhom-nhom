@@ -25,6 +25,21 @@ namespace NhomNhom {
                     IntegracaoMagicaVoxel.RegerarCena();
             }
 
+            [MenuItem("MagicaVoxel/Rotacionar Objetos")]
+            public static void RotacionarObjetos()
+            {
+                GameObject pai = GameObject.Find("Cenario Importado");
+                foreach (Transform filho in pai.transform)
+                {
+                    try
+                    {
+                        Rotacionador rot = filho.GetComponent<Rotacionador>();
+                        rot.Rotacionar();
+                    }
+                    catch { }
+                }
+            }
+
             [MenuItem("MagicaVoxel/Configurações")]
             public static void mostrarJanela()
             {
