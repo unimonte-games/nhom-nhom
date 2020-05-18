@@ -87,6 +87,8 @@ namespace NhomNhom {
 
             paciencia.Recuperar();
             paciencia.consumir = true;
+
+            ctrlCliente.anim.SetBool("movimento", false);
         }
 
         void Update() {
