@@ -28,7 +28,7 @@ namespace NhomNhom {
 
             Color cor = paletaPrato[cor_i];
             for (int i = 0; i < matCores.Length; i++)
-                meshRend.materials[matCores[i]].color = cor;
+                meshRend.materials[matCores[i]].SetColor("_main_color", cor);
         }
     }
 }
