@@ -71,7 +71,14 @@ MonoBehaviour:
   qtdClientes: 0
   intervaloMinimo: 2
   intervaloMaximo: 4
-  clientes: []
+  clientes:
+  - {fileID: 9154333139595048085, guid: 394cac80f312dd939a6833a9b0107a8b, type: 3}
+  - {fileID: 1061177463164921066, guid: 7d394a49f52f3de579ffb7d9f5393c4f, type: 3}
+  - {fileID: 5092075410483384775, guid: 4a1b4cba89e7ba68d8a9b8bb5d7190a3, type: 3}
+  - {fileID: 4290554944110839335, guid: 43eaf65d6d48f0c1e8760f154c264814, type: 3}
+  - {fileID: 4567503338974382183, guid: d08b90bcd79a9821abde9da6a513c6d2, type: 3}
+  - {fileID: 902906992186731064, guid: bd46b321075b3ec3abdfa139efe86c55, type: 3}
+  - {fileID: 6682157486427543685, guid: 8d5bc02a825384de2b19eddaa94c1cb4, type: 3}
   fila_trs: []
 --- !u!114 &-6587089400813634626
 MonoBehaviour:
