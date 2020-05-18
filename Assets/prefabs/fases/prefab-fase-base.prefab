@@ -69,6 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   qtdClientes: 0
+  qtdClientesSimultaneos: 0
+  limiteClientesSimultaneos: 5
   intervaloMinimo: 2
   intervaloMaximo: 4
   clientes:
