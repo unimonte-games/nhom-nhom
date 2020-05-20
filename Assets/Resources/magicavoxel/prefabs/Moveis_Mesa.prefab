@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &6027482373361608330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069474607089201033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e42811cbadeae4f91fdea61ba7f3e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alvo: '#movel cadeira'
 --- !u!1 &4892585594324738590
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +199,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174ac4d864dc47e4f8e1365efbfb5ea6, type: 3}
+--- !u!1 &3069474607089201033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1978452991675638965, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3597274834251320124}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3287612097767184370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
