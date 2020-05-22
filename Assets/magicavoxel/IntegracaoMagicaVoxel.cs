@@ -155,9 +155,6 @@ namespace NhomNhom {
                             // Adiciona objs com o componente Rotacionador na lista
                             var rot = obj.GetComponent<Rotacionador>();
                             if (rot) lista.Add(rot);
-
-                            var rotCentr = obj.GetComponent<RotacionarCentro>();
-                            if (rotCentr) rotCentr.Invoke("Rotacionar", 0);
                         }
 
                         // Mensagem de erro
