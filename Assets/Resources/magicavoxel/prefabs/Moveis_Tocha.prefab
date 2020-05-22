@@ -4888,7 +4888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e42811cbadeae4f91fdea61ba7f3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alvo: pilastra
+  alvo: '#movel pilastraTopo'
 --- !u!1001 &3133498468468760322
 PrefabInstance:
   m_ObjectHideFlags: 0
