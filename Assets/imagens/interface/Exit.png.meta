@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: 0b385203a53ff27459ee7b72e6a7798e
+guid: 9e68c159da43a31469876148d4630c70
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 8609389010862003615
-    second: botoes_menu_0
-  - first:
-      213: -2842541264745882869
-    second: botoes_menu_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -38,7 +32,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -46,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -90,53 +84,11 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: botoes_menu_0
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 22
-        width: 91
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d6a1e4c2863a6c43b683fd6d13837c3
-      internalID: 8609389010862003615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: botoes_menu_1
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 22
-        width: 90
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8435afcace8c5854aa3e32f3762e62a0
-      internalID: -2842541264745882869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 31823177e4a07854fbbfae54abd914c4
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
