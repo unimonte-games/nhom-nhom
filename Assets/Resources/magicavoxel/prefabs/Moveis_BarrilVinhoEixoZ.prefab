@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 61036834374947514, guid: 07a701efa467b7041b024fad03f07a9c,
         type: 3}
       propertyPath: m_Name
-      value: Moveis_BarrilVinho
+      value: Moveis_BarrilVinhoEixoZ
       objectReference: {fileID: 0}
     - target: {fileID: 567417826758929089, guid: 07a701efa467b7041b024fad03f07a9c,
         type: 3}
@@ -95,27 +95,27 @@ PrefabInstance:
     - target: {fileID: 4513864251226791267, guid: 07a701efa467b7041b024fad03f07a9c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000044703478
+      value: -0.7071071
       objectReference: {fileID: 0}
     - target: {fileID: 4513864251226791267, guid: 07a701efa467b7041b024fad03f07a9c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.70710653
       objectReference: {fileID: 0}
     - target: {fileID: 4513864251226791267, guid: 07a701efa467b7041b024fad03f07a9c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5000004
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4513864251226791267, guid: 07a701efa467b7041b024fad03f07a9c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90.00001
       objectReference: {fileID: 0}
     - target: {fileID: 4513864251226791267, guid: 07a701efa467b7041b024fad03f07a9c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49999967
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07a701efa467b7041b024fad03f07a9c, type: 3}
