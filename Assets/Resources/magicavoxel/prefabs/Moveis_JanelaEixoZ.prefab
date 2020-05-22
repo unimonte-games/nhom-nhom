@@ -7,6 +7,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 889632319391098131, guid: c76d5865d22af994baaa9d4de3791815,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 889632319391098131, guid: c76d5865d22af994baaa9d4de3791815,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 889632319391098131, guid: c76d5865d22af994baaa9d4de3791815,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 889632319391098131, guid: c76d5865d22af994baaa9d4de3791815,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 889632319391098131, guid: c76d5865d22af994baaa9d4de3791815,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 2134940687398663881, guid: c76d5865d22af994baaa9d4de3791815,
         type: 3}
       propertyPath: rotacionarEixoZ
@@ -15,7 +40,7 @@ PrefabInstance:
     - target: {fileID: 3613070878135577290, guid: c76d5865d22af994baaa9d4de3791815,
         type: 3}
       propertyPath: m_Name
-      value: Moveis_JanelaEixoX
+      value: Moveis_JanelaEixoZ
       objectReference: {fileID: 0}
     - target: {fileID: 3828961276953285297, guid: c76d5865d22af994baaa9d4de3791815,
         type: 3}
@@ -72,5 +97,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2134940687398663881, guid: c76d5865d22af994baaa9d4de3791815, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c76d5865d22af994baaa9d4de3791815, type: 3}
