@@ -9,5 +9,5 @@ public enum Camadas
 
 public enum Cenas
 {
-    menu_inicial, fase_exterior, fase_interior,
+    menu_inicial, tutorial, externo_pequeno, interno_grande,
 }
