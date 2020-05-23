@@ -80,7 +80,6 @@ namespace NhomNhom {
                 idPratoEsperado = itemPedido.pratoId;
                 cor_esperada = itemPedido.cor_prato;
 
-                Debug.Log("Associando cor: " + (Prato.paletaPrato[itemPedido.cor_prato]).ToString());
                 bolha.DefinirImgPrato(idPratoEsperado, Prato.paletaPrato[itemPedido.cor_prato]);
             }
 
