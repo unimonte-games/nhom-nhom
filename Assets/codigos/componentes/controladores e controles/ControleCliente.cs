@@ -7,6 +7,7 @@ namespace NhomNhom {
     public class ControleCliente : MonoBehaviour
     {
         public Transform ptCadeira;
+        public Animator anim;
         public int id;
 
         public OlhadorSuave olhador;
@@ -50,7 +51,9 @@ namespace NhomNhom {
             compVelocidade.direcao.x = 0;
             compVelocidade.direcao.y = 0;
 
-            if (direcao.magnitude > 0.1f) {
+            bool emMovimento = direcao.magnitude > 0.1f;
+
+            if (emMovimento) {
                 OlharPonto(tr.position + direcao);
 
                 compVelocidade.direcao.z = Mathf.Ceil(direcao.magnitude);
