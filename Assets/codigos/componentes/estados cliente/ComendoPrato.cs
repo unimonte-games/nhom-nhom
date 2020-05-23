@@ -24,15 +24,15 @@ namespace NhomNhom {
         }
 
         IEnumerator ConsumirEDestruir(EspacoItem espacoItem, float intervaloPrato) {
+            Paciencia paciencia = GetComponent<Paciencia>();
+            paciencia.consumir = false;
+            // paciencia.Recuperar();
+
             yield return new WaitForSeconds(intervaloPrato);
 
             espacoItem.itemAbrigado.bloqueado = false;
             Item itemPrato = espacoItem.Soltar();
             Destroy(itemPrato.gameObject);
-
-            Paciencia paciencia = GetComponent<Paciencia>();
-            // paciencia.Recuperar();
-            paciencia.consumir = false;
 
             terminou = true;
         }

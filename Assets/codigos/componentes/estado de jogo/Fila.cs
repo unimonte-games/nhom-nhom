@@ -6,10 +6,11 @@ namespace NhomNhom {
 
     public class Fila : MonoBehaviour
     {
-        public int qtdClientes;
+        public int qtdClientes, qtdClientesSimultaneos, limiteClientesSimultaneos;
         public float intervaloMinimo, intervaloMaximo;
         public GameObject[] clientes;
         public Transform[] fila_trs;
+
         int[] espacosOcupados;
 
         void Awake() {
@@ -24,12 +25,15 @@ namespace NhomNhom {
             Cadeiras cadeiras = FindObjectOfType<Cadeiras>();
 
             for (int i = 0; i < qtdClientes; i++) {
-                var clienteGbj = Instantiate<GameObject>(
-                    clientes[Random.Range(0, clientes.Length)],
-                    cadeiras.saida.position,
-                    Quaternion.identity
-                );
-                clienteGbj.GetComponent<ControleCliente>().id = i+1;
+                if (qtdClientesSimultaneos < limiteClientesSimultaneos) {
+                    var clienteGbj = Instantiate<GameObject>(
+                        clientes[Random.Range(0, clientes.Length)],
+                        cadeiras.saida.position,
+                        Quaternion.identity
+                    );
+                    clienteGbj.GetComponent<ControleCliente>().id = i+1;
+                    qtdClientesSimultaneos++;
+                }
 
                 yield return new WaitForSeconds(Random.Range(intervaloMinimo, intervaloMaximo));
             }
