@@ -109,6 +109,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jogador: {fileID: 1613545408643623078, guid: 8b498cb71ffda476296ee28d7538a1b3, type: 3}
   localInicial: {fileID: 7838678729626606448}
+  coresContorno:
+  - {r: 0.883, g: 0.261368, b: 0.261368, a: 1}
+  - {r: 0.26274514, g: 0.69017, b: 0.88235295, a: 1}
+  - {r: 0.629631, g: 0.26274514, b: 0.88235295, a: 1}
+  - {r: 0.28779224, g: 0.88235295, b: 0.26274514, a: 1}
 --- !u!1 &3042862933210458127
 GameObject:
   m_ObjectHideFlags: 0

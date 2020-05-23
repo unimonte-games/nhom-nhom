@@ -152,6 +152,7 @@ MonoBehaviour:
   listaDeEspacosItensProximas: {fileID: 1011611514362957998}
   espacoItem: {fileID: 3993917575769443566}
   olhador: {fileID: 827034457614407026}
+  meshRendSlime: {fileID: 4283745045469590074}
 --- !u!114 &1926505161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,6 +475,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: abe37292ffc72605bb14f27b8aba65b2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95a849dc70cf5da5ebf2ca2463bdbc28, type: 3}
+--- !u!23 &4283745045469590074 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5090748241666301134, guid: 95a849dc70cf5da5ebf2ca2463bdbc28,
+    type: 3}
+  m_PrefabInstance: {fileID: 9067738235697573620}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4084104259134719470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 95a849dc70cf5da5ebf2ca2463bdbc28,

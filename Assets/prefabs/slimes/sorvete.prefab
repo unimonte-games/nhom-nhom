@@ -72,6 +72,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime Sorvete
       objectReference: {fileID: 0}
+    - target: {fileID: 2787846945433812834, guid: b36bf500a03ad9a00958a4f7e0362d15,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df66837b3e45ca17cb41bce154fdc72b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b36bf500a03ad9a00958a4f7e0362d15, type: 3}
 --- !u!95 &4385459105032268191 stripped

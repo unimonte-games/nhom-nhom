@@ -46,23 +46,13 @@ MonoBehaviour:
   luzDirecional: {fileID: 0}
   direcaoCamera: {fileID: 0}
   matsSlimes:
-  - {fileID: 2100000, guid: cea5d1ddfeb893bec978eebef9c0acb3, type: 2}
-  - {fileID: 2100000, guid: 0e3eedd66b1cb21fdb3d48d190e203e4, type: 2}
-  - {fileID: 2100000, guid: 9fb9f02dee3872043932e2810f9c5f3d, type: 2}
-  - {fileID: 2100000, guid: 1960074bb448bd94788b7c1338338dd3, type: 2}
-  - {fileID: 2100000, guid: 13097a9e9057487eeb0f3510f0bd5703, type: 2}
-  - {fileID: 2100000, guid: 7d0947a8f2c5e5e449bc348fa758a27b, type: 2}
-  - {fileID: 2100000, guid: abe37292ffc72605bb14f27b8aba65b2, type: 2}
-  - {fileID: 2100000, guid: 82aa8ded157efde50a8628dbb9f85d20, type: 2}
-  - {fileID: 2100000, guid: dc57c179a282b886f8cd9f52622aeb22, type: 2}
-  - {fileID: 2100000, guid: 5e55c231d5a7228f2af8f62e183a75ba, type: 2}
-  - {fileID: 2100000, guid: 613631791fdff9b8694c9283d3df6f62, type: 2}
-  - {fileID: 2100000, guid: 8fdae4a9ca5450d149db07c155c53d34, type: 2}
-  - {fileID: 2100000, guid: 349ceb9d3cdbbb74f99ad16c6c591a31, type: 2}
-  - {fileID: 2100000, guid: 6bd939b922d41574e846810e55ca39e7, type: 2}
-  - {fileID: 2100000, guid: 952f6303f268ffc88a814135829738c6, type: 2}
-  - {fileID: 2100000, guid: 95dec6bcf780327d1b3d813883ce2054, type: 2}
-  - {fileID: 2100000, guid: 13a9be3b36a341f4fb1868655c1efb41, type: 2}
+  - {fileID: 2100000, guid: 64528bd769081aabc8d6960563872f4b, type: 2}
+  - {fileID: 2100000, guid: 80acb5aadea66aefea58b5ba72f6acdf, type: 2}
+  - {fileID: 2100000, guid: 69967d17cd8e6c71e9ffa0577b3e18d7, type: 2}
+  - {fileID: 2100000, guid: f0e87593dc8c408a980de4936d94f844, type: 2}
+  - {fileID: 2100000, guid: b785480ed76cbd444a3d56031fe6c2c0, type: 2}
+  - {fileID: 2100000, guid: 244d01424ca53a1feac3a01cc8dc4675, type: 2}
+  - {fileID: 2100000, guid: df66837b3e45ca17cb41bce154fdc72b, type: 2}
   matsCenarios:
   - {fileID: 2100000, guid: 9c81ee5eb846b104e865aa163aaf9b02, type: 2}
   - {fileID: 2100000, guid: 833ba1fadb0a9d423b935d1e17bd7292, type: 2}
