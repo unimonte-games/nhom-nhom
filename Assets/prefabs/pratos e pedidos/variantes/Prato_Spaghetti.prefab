@@ -74,14 +74,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8733498894887014616, guid: 0368026076e30c18c8705c853bd3e206,
         type: 3}
-      propertyPath: matCores.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8733498894887014616, guid: 0368026076e30c18c8705c853bd3e206,
-        type: 3}
       propertyPath: meshRend
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8761451538407723404}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0368026076e30c18c8705c853bd3e206, type: 3}
 --- !u!4 &5866990324918622825 stripped
@@ -105,12 +100,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: eb8d633c33e46caf298ef05f963bd553,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.163
+      value: -0.63415
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: eb8d633c33e46caf298ef05f963bd553,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.000000033582
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: eb8d633c33e46caf298ef05f963bd553,
         type: 3}
@@ -155,17 +150,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: eb8d633c33e46caf298ef05f963bd553,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.36085
+      value: 0.27952525
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: eb8d633c33e46caf298ef05f963bd553,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.36085
+      value: 0.27952525
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: eb8d633c33e46caf298ef05f963bd553,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.36085
+      value: 0.27952525
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: eb8d633c33e46caf298ef05f963bd553,
         type: 3}
@@ -184,3 +179,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 41537bf67f622cdd6b34426f42ae7085, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb8d633c33e46caf298ef05f963bd553, type: 3}
+--- !u!23 &8761451538407723404 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4431899855382387244, guid: eb8d633c33e46caf298ef05f963bd553,
+    type: 3}
+  m_PrefabInstance: {fileID: 4906575788477483936}
+  m_PrefabAsset: {fileID: 0}

@@ -75,13 +75,13 @@ namespace NhomNhom {
             pedidoItem = espacoCliente.Soltar();
 
             {
-                var trocadorItem = FindObjectOfType<TrocadorItem>();
                 var itemPedido = pedidoItem.GetComponent<Pedido>();
                 itemPedido.Inicializar();
                 idPratoEsperado = itemPedido.pratoId;
                 cor_esperada = itemPedido.cor_prato;
 
-                bolha.DefinirImgPrato(idPratoEsperado);
+                Debug.Log("Associando cor: " + (Prato.paletaPrato[itemPedido.cor_prato]).ToString());
+                bolha.DefinirImgPrato(idPratoEsperado, Prato.paletaPrato[itemPedido.cor_prato]);
             }
 
             paciencia.Recuperar();

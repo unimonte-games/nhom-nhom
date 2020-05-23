@@ -605,6 +605,86 @@ Transform:
   m_Father: {fileID: 1841067910949642460}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4071196957461463751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5528422651071932975}
+  - component: {fileID: 8864490171666053381}
+  m_Layer: 0
+  m_Name: cor_img
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5528422651071932975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4071196957461463751}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.02}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_Children: []
+  m_Father: {fileID: 8073967700420093737}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8864490171666053381
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4071196957461463751}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 1fd0a649362483ce99772d339a96240b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8.83, y: 6.54}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &4640878910911721509
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +755,7 @@ GameObject:
   - component: {fileID: 8073967700420093737}
   - component: {fileID: 961369431681490207}
   - component: {fileID: 6803796699631362534}
+  - component: {fileID: 976062594937188832}
   m_Layer: 0
   m_Name: esfera-avesso
   m_TagString: Untagged
@@ -694,6 +775,7 @@ Transform:
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 6630184596683918327}
+  - {fileID: 5528422651071932975}
   m_Father: {fileID: 6579948459964077192}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -743,6 +825,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &976062594937188832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5068562788328314170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e525c4e124b43d477b3e99264e8dfb44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ativo: 1
+  alvo: {fileID: 0}
 --- !u!1 &6042490245274589564
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +1053,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6630184596683918327}
   - component: {fileID: 2913054226429583197}
-  - component: {fileID: 1237517772367911595}
   m_Layer: 0
   m_Name: food_img
   m_TagString: Untagged
@@ -1017,31 +1112,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8654f1d17d5417b07a848934a490c78c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aab6374d8673191f0ad1cdf31030b0bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 8.83, y: 6.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1237517772367911595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6833234928106686741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e525c4e124b43d477b3e99264e8dfb44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ativo: 1
-  alvo: {fileID: 0}
 --- !u!1 &7142813751306376732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,15 +1477,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comidaSprites:
   - str: '#prato hamburger'
-    sprite: {fileID: 21300000, guid: 8654f1d17d5417b07a848934a490c78c, type: 3}
+    sprite: {fileID: 21300000, guid: aab6374d8673191f0ad1cdf31030b0bd, type: 3}
+    spriteCor: {fileID: 21300000, guid: 1fd0a649362483ce99772d339a96240b, type: 3}
   - str: '#prato pizza'
-    sprite: {fileID: 21300000, guid: 34baccd942ccea7ffb4a3f8462d27b40, type: 3}
+    sprite: {fileID: 21300000, guid: 352e0e6d1e2fb0d40a58d485f945be26, type: 3}
+    spriteCor: {fileID: 21300000, guid: be0d8c3b980a641a48152159510a56da, type: 3}
   - str: '#prato spaghetti'
-    sprite: {fileID: 21300000, guid: 2cd979c8158c48fa8b1c91bc431ee639, type: 3}
+    sprite: {fileID: 21300000, guid: 5dff3847c70868a5a885a4afb8966e95, type: 3}
+    spriteCor: {fileID: 21300000, guid: 53840f2377bab1c56b02b34fb85abfe9, type: 3}
   - str: '#prato sushi'
-    sprite: {fileID: 21300000, guid: 68e1a512a4c72549ea47359f06127896, type: 3}
+    sprite: {fileID: 21300000, guid: ad27fd850a3d90cc495209bcbb1557b4, type: 3}
+    spriteCor: {fileID: 21300000, guid: da3bf98edc9e98a6d8fdd7020faa461c, type: 3}
   comidaSprite: {fileID: 2913054226429583197}
-  olhador: {fileID: 1237517772367911595}
+  comidaSpriteCor: {fileID: 8864490171666053381}
+  olhador: {fileID: 976062594937188832}
   trLerp: {fileID: 619478906801366190}
   velocidadeBolha: 5
 --- !u!1 &8812391051899100729

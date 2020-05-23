@@ -5,9 +5,14 @@ using UnityEngine;
 public class BolhaCliente : MonoBehaviour
 {
     [System.Serializable]
-    public struct TuplaSpriteString { public string str; public Sprite sprite;}
+    public struct TuplaSpriteString {
+        public string str;
+        public Sprite sprite;
+        public Sprite spriteCor;
+    }
+
     public TuplaSpriteString[] comidaSprites;
-    public SpriteRenderer comidaSprite;
+    public SpriteRenderer comidaSprite, comidaSpriteCor;
 
     public Olhador olhador;
     public TransformacaoLerp trLerp;
@@ -27,10 +32,13 @@ public class BolhaCliente : MonoBehaviour
         StartCoroutine(CO_DeslizarTransformacao(0));
     }
 
-    public void DefinirImgPrato(string pratoId) {
+    public void DefinirImgPrato(string pratoId, Color cor) {
         for (int i = 0; i < comidaSprites.Length; i++)
-            if (comidaSprites[i].str == pratoId)
+            if (comidaSprites[i].str == pratoId) {
                 comidaSprite.sprite = comidaSprites[i].sprite;
+                comidaSpriteCor.sprite = comidaSprites[i].spriteCor;
+                comidaSpriteCor.color = cor;
+            }
     }
 
     IEnumerator CO_DeslizarTransformacao(float end) {
@@ -45,6 +53,8 @@ public class BolhaCliente : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        trLerp.t = end;
+        yield return new WaitForEndOfFrame();
         trLerp.ativo = false;
     }
 }

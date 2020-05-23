@@ -76,7 +76,7 @@ PrefabInstance:
         type: 3}
       propertyPath: meshRend
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3728977900774986839}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0368026076e30c18c8705c853bd3e206, type: 3}
 --- !u!4 &7979483883781450121 stripped
@@ -105,17 +105,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 45e6bd04aa704a8849525620a881b7ad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.181
+      value: -0.141
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 45e6bd04aa704a8849525620a881b7ad,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.371
+      value: -1.208
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 45e6bd04aa704a8849525620a881b7ad,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.123
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 45e6bd04aa704a8849525620a881b7ad,
         type: 3}
@@ -125,7 +125,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 45e6bd04aa704a8849525620a881b7ad,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 45e6bd04aa704a8849525620a881b7ad,
         type: 3}
@@ -135,7 +135,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 45e6bd04aa704a8849525620a881b7ad,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 45e6bd04aa704a8849525620a881b7ad,
         type: 3}
@@ -150,7 +150,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 45e6bd04aa704a8849525620a881b7ad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -135
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 45e6bd04aa704a8849525620a881b7ad,
         type: 3}
@@ -164,3 +164,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45e6bd04aa704a8849525620a881b7ad, type: 3}
+--- !u!23 &3728977900774986839 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -4603098991711132478, guid: 45e6bd04aa704a8849525620a881b7ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 8332077667224449173}
+  m_PrefabAsset: {fileID: 0}

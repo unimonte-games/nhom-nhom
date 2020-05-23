@@ -8,12 +8,7 @@ namespace NhomNhom {
     public class TrocadorItem : MonoBehaviour
     {
         public Transacao[] transacoes;
-
-        EspacoItem espacoBalcao;
-
-        void Awake() {
-            espacoBalcao = GetComponent<EspacoItem>();
-        }
+        public EspacoItem espacoBalcao;
 
         void Update() {
             if (
