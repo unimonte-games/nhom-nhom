@@ -15,7 +15,8 @@ namespace NhomNhom {
         public void Emitir() {
             transform.position = Camera.main.transform.position;
 
-            audioSrc.clip = SistemaEfeitoSonoro.ObterClipe(efeitoSonoro);
+            AudioClip clip = SistemaEfeitoSonoro.ObterClipe(efeitoSonoro);
+            audioSrc.clip = clip;
             audioSrc.Play();
 
             Destroy(gameObject, audioSrc.clip.length);

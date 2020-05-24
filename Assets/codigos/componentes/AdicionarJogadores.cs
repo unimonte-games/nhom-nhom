@@ -27,6 +27,8 @@ namespace NhomNhom {
             jogadorGbj.GetComponent<ControleJogador>().meshRendSlime.material.SetColor(
                 "_outline_color", coresContorno[jogadorQtd - 1]
             );
+
+            SistemaCamera.DefinirJogador(jogadorGbj.transform, jogadorQtd - 1);
         }
     }
 }

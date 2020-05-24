@@ -15,7 +15,9 @@ namespace NhomNhom {
         }
 
         public static AudioClip ObterClipe(EfeitoSonoro efeito) {
-            return singleton._ObterClipe(efeito);
+            if (singleton)
+                return singleton._ObterClipe(efeito);
+            return null;
         }
 
         AudioClip _ObterClipe(EfeitoSonoro efeito) {

@@ -96,6 +96,8 @@ Material:
     - _outline_mul: 0.233
     - _outline_size: 0.578
     - _usar_cam_dir: 1
+    - _usar_normais: 1
+    - _usar_xadrez: 0
     m_Colors:
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}

@@ -42,6 +42,9 @@ GameObject:
   - component: {fileID: 1904228144059748501}
   - component: {fileID: 1904228144059748499}
   - component: {fileID: 1904228144059748498}
+  - component: {fileID: 5964708883163991978}
+  - component: {fileID: 1042043258659000126}
+  - component: {fileID: 6225003514188887240}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -114,3 +117,53 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904228144059748500}
   m_Enabled: 1
+--- !u!114 &5964708883163991978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904228144059748500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837ce01052050660da9ab59b29b0e459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jogadores:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  zoomVel: 20
+  minFov: 10
+  maxFov: 80
+--- !u!114 &1042043258659000126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904228144059748500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78da88d3130bfdc4aa1f4e63b9a21f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alvo: {x: 0, y: 0, z: 0}
+  rotSuave: {fileID: 6225003514188887240}
+--- !u!114 &6225003514188887240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904228144059748500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7d658e3ee1fe019a4b72d396d07b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vel: 5
+  rotacaoAlvo: {x: 0, y: 0, z: 0, w: 0}
+  atualizar: 1
+  tr: {fileID: 1904228144059748501}

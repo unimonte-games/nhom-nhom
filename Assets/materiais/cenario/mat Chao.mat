@@ -91,11 +91,13 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _normal_strength: 0.635
+    - _normal_strength: 0
     - _outline_color: 0.5
     - _outline_mul: 0
-    - _outline_size: 0.355
+    - _outline_size: 0.32
     - _usar_cam_dir: 0
+    - _usar_normais: 1
+    - _usar_xadrez: 0
     m_Colors:
     - _BaseColor: {r: 0.26415092, g: 0.11154397, b: 0.037379842, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
