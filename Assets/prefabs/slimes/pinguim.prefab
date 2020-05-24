@@ -19,6 +19,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6417974679836051954}
     m_Modifications:
+    - target: {fileID: -6558286443644085283, guid: f9d3e8707e5e7e53c85ec8218af1b467,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -6558286443644085283, guid: f9d3e8707e5e7e53c85ec8218af1b467,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -89.99999
+      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: f9d3e8707e5e7e53c85ec8218af1b467,
         type: 3}
       propertyPath: m_Controller
@@ -88,6 +98,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Slime Pinguim
+      objectReference: {fileID: 0}
+    - target: {fileID: 740981618321620771, guid: f9d3e8707e5e7e53c85ec8218af1b467,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 82.66605
+      objectReference: {fileID: 0}
+    - target: {fileID: 740981618321620771, guid: f9d3e8707e5e7e53c85ec8218af1b467,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 740981618321620771, guid: f9d3e8707e5e7e53c85ec8218af1b467,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583900952899955175, guid: f9d3e8707e5e7e53c85ec8218af1b467,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583900952899955175, guid: f9d3e8707e5e7e53c85ec8218af1b467,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 30.27478
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9d3e8707e5e7e53c85ec8218af1b467, type: 3}

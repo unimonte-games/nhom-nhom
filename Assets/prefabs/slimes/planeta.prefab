@@ -104,6 +104,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f0e87593dc8c408a980de4936d94f844, type: 2}
+    - target: {fileID: -8311626888044194711, guid: 0e2ff0decfb194026b456f73bb634bcc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.0000033935721
+      objectReference: {fileID: 0}
+    - target: {fileID: -8311626888044194711, guid: 0e2ff0decfb194026b456f73bb634bcc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.000002940045
+      objectReference: {fileID: 0}
+    - target: {fileID: -8311626888044194711, guid: 0e2ff0decfb194026b456f73bb634bcc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 80.99284
+      objectReference: {fileID: 0}
+    - target: {fileID: -6558286443644085283, guid: 0e2ff0decfb194026b456f73bb634bcc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: 0e2ff0decfb194026b456f73bb634bcc,
         type: 3}
       propertyPath: m_Controller
@@ -168,6 +188,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Slime Planeta
+      objectReference: {fileID: 0}
+    - target: {fileID: 740981618321620771, guid: 0e2ff0decfb194026b456f73bb634bcc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 740981618321620771, guid: 0e2ff0decfb194026b456f73bb634bcc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.0000046221003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583900952899955175, guid: 0e2ff0decfb194026b456f73bb634bcc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 2.224267
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e2ff0decfb194026b456f73bb634bcc, type: 3}

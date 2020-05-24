@@ -19,6 +19,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4477123243016886096}
     m_Modifications:
+    - target: {fileID: -6558286443644085283, guid: b36bf500a03ad9a00958a4f7e0362d15,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -6558286443644085283, guid: b36bf500a03ad9a00958a4f7e0362d15,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -89.99999
+      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: b36bf500a03ad9a00958a4f7e0362d15,
         type: 3}
       propertyPath: m_Controller
@@ -84,11 +94,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime Sorvete
       objectReference: {fileID: 0}
+    - target: {fileID: 740981618321620771, guid: b36bf500a03ad9a00958a4f7e0362d15,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 79.7477
+      objectReference: {fileID: 0}
+    - target: {fileID: 740981618321620771, guid: b36bf500a03ad9a00958a4f7e0362d15,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 740981618321620771, guid: b36bf500a03ad9a00958a4f7e0362d15,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2787846945433812834, guid: b36bf500a03ad9a00958a4f7e0362d15,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: df66837b3e45ca17cb41bce154fdc72b, type: 2}
+    - target: {fileID: 6583900952899955175, guid: b36bf500a03ad9a00958a4f7e0362d15,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583900952899955175, guid: b36bf500a03ad9a00958a4f7e0362d15,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 32.585186
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b36bf500a03ad9a00958a4f7e0362d15, type: 3}
 --- !u!1 &7209451337915905782 stripped
