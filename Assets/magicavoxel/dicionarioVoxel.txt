@@ -27,3 +27,6 @@
 102 0 0:miscelanea
 0 0 153:caixote
 67 67 255:barril
+255 145 236:mastroPrincipal
+255 145 237:mastroSecundario
+255 0 255:leme

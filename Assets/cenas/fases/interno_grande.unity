@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 2032239545898650832, guid: 62da92ee6d549ca6680e01407e086a6e,
         type: 3}
       propertyPath: m_Name
-      value: fase-1
+      value: interno_grande
       objectReference: {fileID: 0}
     - target: {fileID: 4051790943737276278, guid: 62da92ee6d549ca6680e01407e086a6e,
         type: 3}

@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 5113239033455486339, guid: d960c8272b5d2d343bbe62da6a3419ff,
         type: 3}
       propertyPath: m_Name
-      value: fase-2
+      value: externo_medio
       objectReference: {fileID: 0}
     - target: {fileID: 7132842763524378149, guid: d960c8272b5d2d343bbe62da6a3419ff,
         type: 3}
@@ -187,6 +187,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6196545482961875384, guid: d960c8272b5d2d343bbe62da6a3419ff, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d960c8272b5d2d343bbe62da6a3419ff, type: 3}
