@@ -17,6 +17,7 @@ namespace NhomNhom {
             )
                 return;
 
+            SistemaEfeitoSonoro.Disparar(EfeitoSonoro.PedidoEntregue);
             Item itemItem = espacoBalcao.Soltar();
 
             // itemItem não pode ser nulo por conta da verificação do Vazio

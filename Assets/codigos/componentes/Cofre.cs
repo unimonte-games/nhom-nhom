@@ -9,7 +9,7 @@ namespace NhomNhom {
 
         public void Pagar(int recompensa) {
             cofre += recompensa;
-            print("recompensa paga: " + recompensa.ToString());
+            SistemaEfeitoSonoro.Disparar(EfeitoSonoro.Pago);
         }
     }
 }
