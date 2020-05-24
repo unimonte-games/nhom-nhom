@@ -13,14 +13,19 @@ namespace NhomNhom {
             [MenuItem("MagicaVoxel/Gerar Cena")]
             public static void GerarCena()
             {
-                IntegracaoMagicaVoxel.LerArqPly();
+                IntegracaoMagicaVoxel.GerenciaConfigs(false);
+                if (EditorUtility.DisplayDialog("Gerar cena",
+                        "Arquivo selecionado: " + IntegracaoMagicaVoxel.pathCena,
+                        "Sim", "Não"))
+                    IntegracaoMagicaVoxel.LerArqPly();
             }
 
             [MenuItem("MagicaVoxel/Atualizar Cena")]
             public static void AtualizarCena()
             {
+                IntegracaoMagicaVoxel.GerenciaConfigs(false);
                 if (EditorUtility.DisplayDialog("Atualizar cena",
-                        "Tem certeza que deseja atualizar a cena? A cena atual será apagada",
+                        "Apagar cena antiga? Arquivo selecionado: " + IntegracaoMagicaVoxel.pathCena,
                         "Sim", "Não"))
                     IntegracaoMagicaVoxel.RegerarCena();
             }
