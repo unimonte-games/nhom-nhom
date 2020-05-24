@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat PilastraTopo
+  m_Name: mat Mastro Secundario
   m_Shader: {fileID: -6465566751694194690, guid: 8568fe7c699d041b78c4a85745e24cc1,
     type: 3}
   m_ShaderKeywords: 
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c667b22b2b4d1ac498c0bd4e20f6a6c9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -62,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _tex:
-        m_Texture: {fileID: 2800000, guid: 002bf32ae88d57a40927eb65c704804e, type: 3}
+        m_Texture: {fileID: 2800000, guid: dd49303f761030d46839cb3db9d803e9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _tex_normal:
@@ -73,6 +73,7 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
+    - _ColorMask: 15
     - _Cull: 2
     - _Cutoff: 0.5
     - _DstBlend: 0
@@ -88,21 +89,28 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _Surface: 0
+    - _UseUIAlphaClip: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _normal_strength: 0.5
     - _outline_color: 0.5
-    - _outline_mul: 0.5
-    - _outline_size: 0.584
+    - _outline_mul: 0.475
+    - _outline_size: 0.536
     - _usar_cam_dir: 1
-    - _usar_xadrez: 1
+    - _usar_xadrez: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _Specular: {r: 0, g: 0, b: 0, a: 0}
     - _cam_dir: {r: 0, g: -0.76604444, b: 0.6427875, a: 0}
     - _light_dir: {r: -0.40925205, g: -0.766044, b: 0.4956704, a: 0}
-    - _main_color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
-    - _outline_color: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
+    - _main_color: {r: 1, g: 1, b: 1, a: 1}
+    - _outline_color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
