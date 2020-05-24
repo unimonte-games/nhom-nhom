@@ -14,13 +14,8 @@ public class BolhaCliente : MonoBehaviour
     public TuplaSpriteString[] comidaSprites;
     public SpriteRenderer comidaSprite, comidaSpriteCor;
 
-    public Olhador olhador;
     public TransformacaoLerp trLerp;
     public float velocidadeBolha;
-
-    void Start() {
-        olhador.alvo = Camera.main.transform;
-    }
 
     [ContextMenu("Testar Exibir")]
     public void Exibir() {
