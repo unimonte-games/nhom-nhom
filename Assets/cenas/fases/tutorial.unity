@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 4768179814773528288, guid: e7118aa2c4c139847ae36af88268867d,
         type: 3}
       propertyPath: m_Name
-      value: prefab-fase-base
+      value: tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 7359681392475848006, guid: e7118aa2c4c139847ae36af88268867d,
         type: 3}
