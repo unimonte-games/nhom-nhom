@@ -96,6 +96,8 @@ Material:
     - _outline_mul: 0.233
     - _outline_size: 0.578
     - _usar_cam_dir: 1
+    - _usar_normais: 1
+    - _usar_xadrez: 0
     m_Colors:
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -105,3 +107,4 @@ Material:
     - _light_dir: {r: -0.40925205, g: -0.766044, b: 0.4956704, a: 0}
     - _main_color: {r: 1, g: 1, b: 1, a: 1}
     - _outline_color: {r: 0.77900004, g: 0.77900004, b: 0.77900004, a: 1}
+    - _tiling: {r: 0.75, g: 1, b: 0, a: 0}

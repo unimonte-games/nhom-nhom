@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Olhador : MonoBehaviour
 {
-    public bool ativo;
+    public bool ativo, iniciarOlhandoCamera;
     public Transform alvo;
     Transform tr;
 
@@ -12,9 +12,15 @@ public class Olhador : MonoBehaviour
         tr = GetComponent<Transform>();
     }
 
+    void Start() {
+        if (iniciarOlhandoCamera)
+            alvo = Camera.main.transform;
+    }
+
     public void Update() {
         if (!ativo || !tr || !alvo)
             return;
+
         tr.LookAt(alvo);
     }
 }

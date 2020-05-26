@@ -11,3 +11,10 @@ public enum Cenas
 {
     menu_inicial, tutorial, externo_pequeno, interno_grande,
 }
+
+public enum EfeitoSonoro {
+    PedidoNovo = 0,
+    SlimePasso,
+    Pago,
+    PedidoEntregue,
+}

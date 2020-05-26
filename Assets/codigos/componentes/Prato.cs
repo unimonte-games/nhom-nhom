@@ -10,7 +10,11 @@ namespace NhomNhom {
         public MeshRenderer meshRend;
         public int cor_i;
         public int[] matCores;
-        public Color[] paletaPrato;
+        public static Color[] paletaPrato = new Color[3] {
+            new Color(250f/255f, 52f/255f , 52f/255f , 255f/255f),
+            new Color(52f/255f , 250f/255f, 52f/255f , 255f/255f),
+            new Color(52f/255f , 52f/255f , 250f/255f, 255f/255f)
+        };
 
         public int ObtemPreco() {
             return precoBase + precoVariacao1;
@@ -28,7 +32,7 @@ namespace NhomNhom {
 
             Color cor = paletaPrato[cor_i];
             for (int i = 0; i < matCores.Length; i++)
-                meshRend.materials[matCores[i]].color = cor;
+                meshRend.materials[matCores[i]].SetColor("_main_color", cor);
         }
     }
 }

@@ -119,10 +119,25 @@ PrefabInstance:
       propertyPath: id
       value: '#movel cadeira'
       objectReference: {fileID: 0}
+    - target: {fileID: 1721401422655508000, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.70616984
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721401422655508000, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.14691508
+      objectReference: {fileID: 0}
     - target: {fileID: 1978452991675638965, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_Name
       value: Moveis_Cadeira
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978452991675638965, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2050236997438545102, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}

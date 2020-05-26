@@ -17,11 +17,8 @@ MonoBehaviour:
   precoBase: 5
   precoVariacao1: 0
   meshRend: {fileID: 0}
-  matCores: 
-  paletaPrato:
-  - {r: 0.8301887, g: 0.20363118, b: 0.20363118, a: 1}
-  - {r: 0.17584176, g: 0.16838734, b: 0.8301887, a: 0}
-  - {r: 0.8490566, g: 0.2963688, b: 0.8374157, a: 0}
+  cor_i: 0
+  matCores: 00000000
 --- !u!1001 &1102575836312084017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -107,3 +104,93 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1102575836312084017}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &7020784045301379474 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7936458571848658851, guid: e023885d6e6a815dd9c1905badbf187d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1102575836312084017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3186058221560053142
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7020784045301379474}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.000000035494
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.727
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00000024846
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.40447897
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.40447897
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.40447897
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d3121d2404b9fda49987a28d72cdb6ef,
+        type: 3}
+      propertyPath: m_Name
+      value: Prato
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3121d2404b9fda49987a28d72cdb6ef, type: 3}

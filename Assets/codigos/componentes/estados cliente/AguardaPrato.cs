@@ -12,7 +12,7 @@ namespace NhomNhom {
         Transform tr;
         ObjetosAlcancaveis objsEspacos;
 
-        bool mesaObtida;
+        bool mesaObtida, bolhaSolta;
         EspacoItem espacoMesa, espacoCliente;
         Item pedidoItem;
 
@@ -75,30 +75,30 @@ namespace NhomNhom {
             pedidoItem = espacoCliente.Soltar();
 
             {
-                var trocadorItem = FindObjectOfType<TrocadorItem>();
                 var itemPedido = pedidoItem.GetComponent<Pedido>();
                 itemPedido.Inicializar();
                 idPratoEsperado = itemPedido.pratoId;
                 cor_esperada = itemPedido.cor_prato;
 
-                bolha.DefinirImgPrato(idPratoEsperado);
-                bolha.Exibir();
+                bolha.DefinirImgPrato(idPratoEsperado, Prato.paletaPrato[itemPedido.cor_prato]);
             }
 
             paciencia.Recuperar();
             paciencia.consumir = true;
+
+            ctrlCliente.anim.SetBool("movimento", false);
         }
 
         void Update() {
             if (ctrlVaiAtePonto.estaNoPonto) {
                 if (!mesaObtida) {
+                    mesaObtida = true;
+
                     GameObject gbjMesa = objsEspacos.ObterMaisProximo();
                     espacoMesa = gbjMesa.GetComponent<EspacoItem>();
                     Assert.IsNotNull(espacoMesa);
 
                     espacoMesa.Abrigar(pedidoItem);
-
-                    mesaObtida = true;
 
                     Vector3 pontoOlhar = new Vector3(
                         espacoMesa.transform.position.x,
@@ -109,6 +109,9 @@ namespace NhomNhom {
                     ctrlCliente.OlharPonto(pontoOlhar);
                     // var rotY = new Vector3(0, tr.eulerAngles.y, 0);
                     // tr.eulerAngles = rotY;
+                } else if (!bolhaSolta && espacoMesa.Vazio()) {
+                    bolhaSolta = true;
+                    bolha.Exibir();
                 }
             }
         }

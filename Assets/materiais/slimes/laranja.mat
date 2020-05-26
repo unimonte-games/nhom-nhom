@@ -92,7 +92,7 @@ Material:
     - _ZWrite: 1
     - _brilho_mul: 0.39
     - _fresnel_mul: 0.8
-    - _fresnel_power: 0.97
+    - _fresnel_power: 1.095
     - _specular_step: 0.949
     m_Colors:
     - _BaseColor: {r: 1, g: 0.52968216, b: 0, a: 1}
@@ -101,6 +101,7 @@ Material:
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _light_dir: {r: 0.3213938, g: 0.7660445, b: -0.5566704, a: 0}
     - _main_color: {r: 1, g: 0.52968216, b: 0, a: 1}
+    - _outline_color: {r: 1, g: 0.8712353, b: 0.5613208, a: 1}
 --- !u!114 &7118721925543231031
 MonoBehaviour:
   m_ObjectHideFlags: 11

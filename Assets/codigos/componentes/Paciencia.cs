@@ -11,12 +11,12 @@ namespace NhomNhom {
         public float multiplicadorBravo;
         public float consumoPorSeg;
         public float[] divisoes;
+        public Sprite[] slimotes;
 
         float pacienciaInicial;
 
-        public Transform pseudoBarra;
-        public MeshRenderer pseudoBarra_MR;
-
+        public Transform barraValor;
+        public SpriteRenderer barraValorSprite, slimoteSprite;
         public Gradient gradienteBarra;
 
         public bool bravo;
@@ -47,8 +47,14 @@ namespace NhomNhom {
             if (escala.x < 0.00001f)
                 escala = Vector3.zero;
 
-            pseudoBarra.localScale = escala;
-            pseudoBarra_MR.material.color = bravo ? Color.magenta : gradienteBarra.Evaluate(t);
+            barraValor.localScale = escala;
+
+            barraValorSprite.enabled = consumir;
+            barraValorSprite.color = bravo ? Color.magenta : gradienteBarra.Evaluate(t);
+
+            slimoteSprite.enabled = consumir;
+            slimoteSprite.sprite = slimotes[ObterMarca()];
+
 
             // é modificado como true pelo aguarda prato
             // a cada quadro enquanto prato errado estiver

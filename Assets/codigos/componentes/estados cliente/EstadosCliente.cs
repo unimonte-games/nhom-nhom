@@ -30,6 +30,7 @@ namespace NhomNhom {
                 AbreEstado(estado);
             } else {
                 Destroy(gameObject);
+                fila.qtdClientesSimultaneos--;
             }
         }
 

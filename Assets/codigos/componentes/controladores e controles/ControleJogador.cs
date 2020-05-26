@@ -10,6 +10,7 @@ namespace NhomNhom {
         public ObjetosAlcancaveis listaDeItensProximos, listaDeEspacosItensProximas;
         public EspacoItem espacoItem;
         public OlhadorSuave olhador;
+        public MeshRenderer meshRendSlime;
 
         Transform tr;
         Controle ctrl;

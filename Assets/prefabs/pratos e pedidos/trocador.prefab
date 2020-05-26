@@ -9,13 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6589313098298506701}
-  - component: {fileID: 2743158457261617654}
   - component: {fileID: 7746248960144538507}
-  - component: {fileID: 6979774556839698006}
-  - component: {fileID: 5364988983526790376}
   m_Layer: 0
   m_Name: trocador
-  m_TagString: EspacoItem
+  m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,23 +27,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8430009511087845830}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2743158457261617654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2615869393337393883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f26296260523dc1128218a5e1004f106, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemAbrigado: {fileID: 0}
 --- !u!114 &7746248960144538507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,29 +55,76 @@ MonoBehaviour:
     saida: {fileID: 8788808083572203857, guid: 5487f938c1162df89ba22208e25e0112, type: 3}
   - entrada: '#prato sushi'
     saida: {fileID: 6657472119890060167, guid: 2564d4be9c50299baa58ff3878a6bff5, type: 3}
---- !u!65 &6979774556839698006
-BoxCollider:
+  espacoBalcao: {fileID: 4679336137312717789}
+--- !u!1 &3274827994071941534
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2615869393337393883}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: -1, z: 0}
---- !u!114 &5364988983526790376
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8430009511087845830}
+  - component: {fileID: 4679336137312717789}
+  - component: {fileID: 529896695000081632}
+  - component: {fileID: 5425115853546035125}
+  m_Layer: 0
+  m_Name: espaco item
+  m_TagString: EspacoItem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8430009511087845830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274827994071941534}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6589313098298506701}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4679336137312717789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2615869393337393883}
+  m_GameObject: {fileID: 3274827994071941534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26296260523dc1128218a5e1004f106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemAbrigado: {fileID: 0}
+--- !u!114 &529896695000081632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274827994071941534}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4be8b4549bac6e03cbc86809c6ba3ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: '#movel mesa espaco'
+--- !u!65 &5425115853546035125
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274827994071941534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: -0.3, z: 0}
