@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/cenas/menu_inicial.unity
+    guid: f9084bafb1d3e334e8d978daf985e533
+  - enabled: 1
+    path: Assets/cenas/fases/interno_grande.unity
+    guid: 60cf85dc27427b0a59e6e22044fb4683
+  - enabled: 1
+    path: Assets/cenas/fases/externo_medio.unity
+    guid: 5a5c19c9b719368468e4adf4a9e9793d
   m_configObjects: {}
