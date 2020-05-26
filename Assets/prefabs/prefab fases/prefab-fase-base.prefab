@@ -86,7 +86,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cofre: 0
-  hudLevel: {fileID: 0}
 --- !u!114 &3252545810724683927
 MonoBehaviour:
   m_ObjectHideFlags: 0
