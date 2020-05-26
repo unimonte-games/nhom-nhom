@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e42811cbadeae4f91fdea61ba7f3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alvo: '#movel pilastra;#movel cerca;#imovel parede'
+  alvo: '#imovel pilastraBase;#imovel parede;#movel cerca'
 --- !u!1001 &2322117578265813952
 PrefabInstance:
   m_ObjectHideFlags: 0

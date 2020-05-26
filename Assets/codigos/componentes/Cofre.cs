@@ -6,10 +6,12 @@ namespace NhomNhom {
     public class Cofre : MonoBehaviour
     {
         public int cofre;
+        // public HudLevel hudLevel;
 
         public void Pagar(int recompensa) {
             cofre += recompensa;
-            SistemaEfeitoSonoro.Disparar(EfeitoSonoro.Pago);
+            //print("recompensa paga: " + recompensa.ToString());
+            // hudLevel.atualizaCofre(cofre);
         }
     }
 }
