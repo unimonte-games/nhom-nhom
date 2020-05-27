@@ -23,12 +23,12 @@ public class TransformacaoLerp : MonoBehaviour
             return;
 
         if (transformarPosicao)
-            tr.localPosition = Vector3.Slerp(vetoresPRE0[0], vetoresPRE1[0], t);
+            tr.localPosition = Vector3.Lerp(vetoresPRE0[0], vetoresPRE1[0], t);
 
         if (transformarRotacao)
-            tr.localEulerAngles = Vector3.Slerp(vetoresPRE0[1], vetoresPRE1[1], t);
+            tr.localEulerAngles = Vector3.Lerp(vetoresPRE0[1], vetoresPRE1[1], t);
 
         if (transformarEscala)
-            tr.localScale = Vector3.Slerp(vetoresPRE0[2], vetoresPRE1[2], t);
+            tr.localScale = Vector3.Lerp(vetoresPRE0[2], vetoresPRE1[2], t);
     }
 }

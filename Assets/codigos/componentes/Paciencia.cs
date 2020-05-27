@@ -15,13 +15,12 @@ namespace NhomNhom {
 
         float pacienciaInicial;
 
-        public Transform barraValor;
+        public GameObject barraBorda;
+        public TransformacaoLerp trLepBarra;
         public SpriteRenderer barraValorSprite, slimoteSprite;
         public Gradient gradienteBarra;
 
         public bool bravo;
-
-        Vector3 escala = Vector3.one;
 
         public int ObterMarca() {
             for (int i = 0; i < divisoes.Length; i++)
@@ -43,13 +42,9 @@ namespace NhomNhom {
                 paciencia -= consumoPorSeg * (bravo ? multiplicadorBravo : 1f) * Time.deltaTime;
 
             float t = Mathf.Clamp01(paciencia / pacienciaInicial);
-            escala.x = t;
-            if (escala.x < 0.00001f)
-                escala = Vector3.zero;
+            trLepBarra.t = t;
 
-            barraValor.localScale = escala;
-
-            barraValorSprite.enabled = consumir;
+            barraBorda.SetActive(consumir);
             barraValorSprite.color = bravo ? Color.magenta : gradienteBarra.Evaluate(t);
 
             slimoteSprite.enabled = consumir;
