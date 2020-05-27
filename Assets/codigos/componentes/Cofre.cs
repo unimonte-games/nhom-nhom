@@ -5,7 +5,7 @@ using UnityEngine;
 namespace NhomNhom {
     public class Cofre : MonoBehaviour
     {
-        public int cofre;
+        public int cofre, cofreObjetivo;
         public HudLevel hudLevel;
 
         public void Pagar(int recompensa) {
