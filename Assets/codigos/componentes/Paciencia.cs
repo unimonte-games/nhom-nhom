@@ -15,7 +15,7 @@ namespace NhomNhom {
 
         float pacienciaInicial;
 
-        public GameObject barraBorda;
+        public GameObject barraBorda, slimoteBorda;
         public TransformacaoLerp trLepBarra;
         public SpriteRenderer barraValorSprite, slimoteSprite;
         public Gradient gradienteBarra;
@@ -47,7 +47,7 @@ namespace NhomNhom {
             barraBorda.SetActive(consumir);
             barraValorSprite.color = bravo ? Color.magenta : gradienteBarra.Evaluate(t);
 
-            slimoteSprite.enabled = consumir;
+            slimoteBorda.SetActive(consumir);
             slimoteSprite.sprite = slimotes[ObterMarca()];
 
 
