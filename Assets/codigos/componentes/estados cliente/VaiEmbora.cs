@@ -47,6 +47,9 @@ namespace NhomNhom {
         }
 
         void Update() {
+            if (SistemaPausa.pausado)
+                return;
+
             if (ctrlVaiAtePonto.estaNoPonto && !FoiEmbora() && i_ponto < pontos.Length - 1) {
                 i_ponto++;
                 ctrlVaiAtePonto.trAlvo = pontos[i_ponto];

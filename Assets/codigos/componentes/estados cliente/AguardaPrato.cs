@@ -90,6 +90,9 @@ namespace NhomNhom {
         }
 
         void Update() {
+            if (SistemaPausa.pausado)
+                return;
+
             if (ctrlVaiAtePonto.estaNoPonto) {
                 if (!mesaObtida) {
                     mesaObtida = true;

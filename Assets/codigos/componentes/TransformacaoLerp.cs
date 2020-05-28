@@ -21,6 +21,9 @@ namespace NhomNhom {
         }
 
         public void Update() {
+            if (SistemaPausa.pausado)
+                return;
+
             if (!ativo)
                 return;
 

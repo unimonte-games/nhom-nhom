@@ -25,6 +25,9 @@ namespace NhomNhom {
             Cadeiras cadeiras = FindObjectOfType<Cadeiras>();
 
             for (int i = 0; i < qtdClientes; i++) {
+                if (SistemaPausa.pausado)
+                    yield return new WaitWhile(() => SistemaPausa.pausado);
+
                 if (qtdClientesSimultaneos < limiteClientesSimultaneos) {
                     var clienteGbj = Instantiate<GameObject>(
                         clientes[Random.Range(0, clientes.Length)],
