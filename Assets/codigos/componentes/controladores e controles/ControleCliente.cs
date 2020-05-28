@@ -38,6 +38,15 @@ namespace NhomNhom {
         }
 
         void Update() {
+            if (SistemaPausa.pausado) {
+                compVelocidade.direcao.x = 0;
+                compVelocidade.direcao.y = 0;
+                compVelocidade.direcao.z = 0;
+                compVelocidade.velocidade = 0;
+
+                return;
+            }
+
             float H = ctrl.ctrlValores.eixoHorizontal;
             float V = ctrl.ctrlValores.eixoVertical;
 

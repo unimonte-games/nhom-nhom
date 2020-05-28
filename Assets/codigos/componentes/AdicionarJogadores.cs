@@ -15,6 +15,9 @@ namespace NhomNhom {
         }
 
         void Update() {
+            if (SistemaPausa.pausado)
+                return;
+
             if (jogadorQtd < 4 && Input.GetKeyDown(KeyCode.Return))
                 InstanciarJogador();
         }

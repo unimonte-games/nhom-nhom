@@ -40,6 +40,9 @@ namespace NhomNhom {
         }
 
         void Update() {
+            if (SistemaPausa.pausado)
+                return;
+
             if (espaco_i >= 0 && ctrlVaiPonto.estaNoPonto)
                 tr.rotation = ctrlVaiPonto.trAlvo.rotation;
 
