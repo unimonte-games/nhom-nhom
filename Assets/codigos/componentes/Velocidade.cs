@@ -17,6 +17,9 @@ namespace NhomNhom {
 
         void FixedUpdate()
         {
+            if (SistemaPausa.pausado)
+                return;
+
             if (direcao.magnitude < 0.02f || velocidade <= 0.02f && velocidade >= -0.02f)
                 return;
 

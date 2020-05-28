@@ -5,12 +5,10 @@ using UnityEngine;
 namespace NhomNhom {
 
     public class ComendoPrato : MonoBehaviour {
-        float tempoInicio, intervaloPrato;
+        float intervaloPrato;
         bool terminou = false;
 
         void Start() {
-            tempoInicio = Time.time;
-
             EspacoItem espacoItem = transform.Find("ref_item").GetComponent<EspacoItem>();
             Item itemPrato = espacoItem.itemAbrigado;
 
@@ -28,7 +26,13 @@ namespace NhomNhom {
             paciencia.consumir = false;
             // paciencia.Recuperar();
 
+            if (SistemaPausa.pausado)
+                yield return new WaitWhile(() => SistemaPausa.pausado);
+
             yield return new WaitForSeconds(intervaloPrato);
+
+            if (SistemaPausa.pausado)
+                yield return new WaitWhile(() => SistemaPausa.pausado);
 
             espacoItem.itemAbrigado.bloqueado = false;
             Item itemPrato = espacoItem.Soltar();

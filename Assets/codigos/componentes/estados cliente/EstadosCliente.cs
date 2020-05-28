@@ -81,6 +81,9 @@ namespace NhomNhom {
         }
 
         void Update() {
+            if (SistemaPausa.pausado)
+                return;
+
             if (DeveIrParaProximoEstado()) {
                 ProximoEstado();
             }

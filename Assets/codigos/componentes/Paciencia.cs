@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace NhomNhom {
-
     public class Paciencia : MonoBehaviour {
         public bool consumir;
 
@@ -38,6 +37,9 @@ namespace NhomNhom {
         }
 
         void Update() {
+            if (SistemaPausa.pausado)
+                return;
+
             if (consumir)
                 paciencia -= consumoPorSeg * (bravo ? multiplicadorBravo : 1f) * Time.deltaTime;
 

@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-    namespace NhomNhom {
 
+namespace NhomNhom {
     public class Transformador : MonoBehaviour
     {
         public bool transformar;
@@ -18,6 +18,9 @@ using UnityEngine;
         // Update is called once per frame
         void Update()
         {
+            if (SistemaPausa.pausado)
+                return;
+
             if (!transformar || transformParaTransformar == null)
                 return;
 

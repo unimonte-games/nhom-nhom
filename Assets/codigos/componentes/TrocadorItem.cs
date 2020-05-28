@@ -12,6 +12,7 @@ namespace NhomNhom {
 
         void Update() {
             if (
+                SistemaPausa.pausado ||
                 espacoBalcao.Vazio() ||
                 espacoBalcao.itemAbrigado.GetComponent<TipoItem>().tipo != TipoItem.Tipo.Pedido
             )

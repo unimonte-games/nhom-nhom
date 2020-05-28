@@ -21,6 +21,9 @@ namespace NhomNhom {
         }
 
         void Update() {
+            if (SistemaPausa.pausado)
+                return;
+
             if (!trLerp.ativo)
                 return;
 

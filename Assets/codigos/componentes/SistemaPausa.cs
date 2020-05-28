@@ -2,17 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SistemaPausa : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+namespace NhomNhom {
+    public class SistemaPausa : MonoBehaviour
     {
-        
-    }
+        public static bool pausado;
+        public GameObject pausaMenu;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        static SistemaPausa singleton;
+
+        void Awake() {
+            // por segurança, colocar este componente em todas as cenas,
+            // em especial nas fases, assim, o `pausado` é resetado devidamente.
+            pausado = false;
+            singleton = this;
+        }
+
+        void Update() {
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                if (pausado)
+                    Resumir();
+                else
+                    Pausar();
+            }
+        }
+
+        public static void Pausar() {
+            pausado = true;
+            Time.timeScale = 0f;
+            singleton.pausaMenu.SetActive(true);
+        }
+
+        public static void Resumir() {
+            pausado = false;
+            Time.timeScale = 1f;
+            singleton.pausaMenu.SetActive(false);
+        }
+
+        public void _Pausar() { Pausar(); }
+        public void _Resumir() { Resumir(); }
     }
 }
