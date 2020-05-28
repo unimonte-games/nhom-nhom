@@ -13,6 +13,7 @@ namespace NhomNhom {
         int i_ponto;
         ControladorVaiAtePonto ctrlVaiAtePonto;
         ControleCliente ctrlCliente;
+        PagamentoFeedback pagFeedback;
 
         public bool FoiEmbora() {
             return i_ponto == pontos.Length - 1 && ctrlVaiAtePonto.estaNoPonto;
@@ -22,6 +23,7 @@ namespace NhomNhom {
             cadeiras = FindObjectOfType<Cadeiras>();
             ctrlVaiAtePonto = GetComponent<ControladorVaiAtePonto>();
             ctrlCliente = GetComponent<ControleCliente>();
+            pagFeedback = GetComponent<PagamentoFeedback>();
         }
 
         void Start() {
@@ -37,6 +39,9 @@ namespace NhomNhom {
             int recompensa = GetComponent<Recompensa>().ObterRecompensa(estado.precoPrato);
             FindObjectOfType<Cofre>().Pagar(recompensa);
             FindObjectOfType<Cadeiras>().AbrirVaga(ptFolha);
+
+            Paciencia paciencia = GetComponent<Paciencia>();
+            pagFeedback.Iniciar(paciencia.ObterMarca());
 
             ctrlCliente.anim.SetBool("movimento", true);
         }
