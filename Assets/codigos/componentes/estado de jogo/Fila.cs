@@ -11,6 +11,8 @@ namespace NhomNhom {
         public GameObject[] clientes;
         public Transform[] fila_trs;
 
+        int clientesInstanciados = 0;
+
         int[] espacosOcupados;
 
         void Awake() {
@@ -36,10 +38,15 @@ namespace NhomNhom {
                     );
                     clienteGbj.GetComponent<ControleCliente>().id = i+1;
                     qtdClientesSimultaneos++;
+                    clientesInstanciados++;
                 }
 
                 yield return new WaitForSeconds(Random.Range(intervaloMinimo, intervaloMaximo));
             }
+        }
+
+        public bool AcabouClientes() {
+            return clientesInstanciados == qtdClientes && qtdClientesSimultaneos == 0;
         }
 
         public void AbrirVaga(int id) {
