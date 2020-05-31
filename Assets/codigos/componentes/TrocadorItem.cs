@@ -9,6 +9,7 @@ namespace NhomNhom {
     {
         public Transacao[] transacoes;
         public EspacoItem espacoBalcao;
+        public Temporizador temporizador;
 
         void Update() {
             if (
@@ -45,6 +46,7 @@ namespace NhomNhom {
 
             var pratoPrato = pratoGbj.GetComponent<Prato>();
             pratoPrato.cor_i = cor_prato;
+            temporizador.Iniciar(pratoPrato.tempoPreparo);
             yield return new WaitForSeconds(pratoPrato.tempoPreparo);
 
             pratoGbj.SetActive(true);
