@@ -6,6 +6,7 @@ namespace NhomNhom {
 
     public class ControladorJogador : MonoBehaviour
     {
+        public static int jogadorNum = 0;
         public float velocidade;
         public ControlesEixos ctrlEixos;
 
@@ -39,16 +40,16 @@ namespace NhomNhom {
         }
 
         void Start() {
-            int jogadorNum = AdicionarJogadores.jogadorQtd;
-            if (jogadorNum > 1 && jogadorNum <= 4) {
-                ctrlEixos.eixoHorizontal = string.Concat(ctrlEixos.eixoHorizontal, " ", jogadorNum.ToString());
-                ctrlEixos.eixoVertical = string.Concat(ctrlEixos.eixoVertical, " ", jogadorNum.ToString());
-                ctrlEixos.eixoAcao1 = string.Concat(ctrlEixos.eixoAcao1, " ", jogadorNum.ToString());
+            jogadorNum++;
+
+            if (jogadorNum <= 4) {
+                string aux = jogadorNum == 1 ? "" : " " + jogadorNum.ToString();
+                ctrlEixos.eixoHorizontal = string.Concat(ctrlEixos.eixoHorizontal, aux);
+                ctrlEixos.eixoVertical = string.Concat(ctrlEixos.eixoVertical, aux);
+                ctrlEixos.eixoAcao1 = string.Concat(ctrlEixos.eixoAcao1, aux);
             }
             else if (jogadorNum > 4)
                 Destroy(gameObject);
-
-            jogadorNum++;
         }
 
         void Update() {
