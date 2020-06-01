@@ -8,7 +8,7 @@ namespace NhomNhom {
         public GameObject jogador;
         public Transform localInicial;
         public Color[] coresContorno = new Color[4];
-        public static int jogadorQtd = 4;
+        public static int jogadorQtd = 1;
 
         void Awake() {
             ControladorJogador.jogadorNum = 0;
