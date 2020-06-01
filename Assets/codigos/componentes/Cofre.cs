@@ -9,6 +9,11 @@ namespace NhomNhom {
         public int cofreFase, cofreObjetivo;
         public HudLevel hudLevel;
 
+        private void Awake()
+        {
+            Pagar(0);    
+        }
+
         public void Pagar(int recompensa) {
             cofreFase += recompensa;
             hudLevel.atualizaCofre(cofreFase);
