@@ -31,6 +31,8 @@ namespace NhomNhom {
             } else {
                 Destroy(gameObject);
                 fila.qtdClientesSimultaneos--;
+                if (fila.AcabouClientes())
+                    FindObjectOfType<MenuRelatorio>().mostraRelatorio();
             }
         }
 
