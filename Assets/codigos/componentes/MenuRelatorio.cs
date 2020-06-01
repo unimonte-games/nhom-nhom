@@ -13,6 +13,11 @@ public class MenuRelatorio : MonoBehaviour
     public Image elementoSlimotes;
     public Image elementoEstrelas;
 
+    private void Awake()
+    {
+        transform.GetChild(0).gameObject.SetActive(false);
+    }
+
     public void mostraRelatorio()
     {
         SistemaPausa.Pausar();
