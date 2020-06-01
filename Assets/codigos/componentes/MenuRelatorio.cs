@@ -20,7 +20,7 @@ public class MenuRelatorio : MonoBehaviour
 
     public void mostraRelatorio()
     {
-        SistemaPausa.Pausar();
+        SistemaPausa.ForcarPausa();
         transform.GetChild(0).gameObject.SetActive(true);
 
         int pontuacao;
