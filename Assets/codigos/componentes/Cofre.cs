@@ -5,13 +5,13 @@ using UnityEngine;
 namespace NhomNhom {
     public class Cofre : MonoBehaviour
     {
-        public int cofre, cofreObjetivo;
+        public static int cofreGeral;
+        public int cofreFase, cofreObjetivo;
         public HudLevel hudLevel;
 
         public void Pagar(int recompensa) {
-            cofre += recompensa;
-            //print("recompensa paga: " + recompensa.ToString());
-            hudLevel.atualizaCofre(cofre);
+            cofreFase += recompensa;
+            hudLevel.atualizaCofre(cofreFase);
         }
     }
 }
