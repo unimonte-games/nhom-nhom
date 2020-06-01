@@ -15,6 +15,7 @@ namespace NhomNhom {
             // em especial nas fases, assim, o `pausado` é resetado devidamente.
             pausado = false;
             singleton = this;
+            Resumir();
         }
 
         void Update() {
