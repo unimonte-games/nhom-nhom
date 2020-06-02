@@ -34,14 +34,16 @@ namespace NhomNhom {
             ctrlVaiAtePonto.trAlvo = pontos[i_ponto];
             ctrlVaiAtePonto.ativo = true;
 
-            EstadosCliente estado = GetComponent<EstadosCliente>();
-
-            int recompensa = GetComponent<Recompensa>().ObterRecompensa(estado.precoPrato);
-            FindObjectOfType<Cofre>().Pagar(recompensa);
             FindObjectOfType<Cadeiras>().AbrirVaga(ptFolha);
 
             Paciencia paciencia = GetComponent<Paciencia>();
-            pagFeedback.Iniciar(paciencia.ObterMarca());
+
+            if (paciencia.paciencia > 0f) {
+                EstadosCliente estado = GetComponent<EstadosCliente>();
+                int recompensa = GetComponent<Recompensa>().ObterRecompensa(estado.precoPrato);
+                FindObjectOfType<Cofre>().Pagar(recompensa);
+                pagFeedback.Iniciar(paciencia.ObterMarca());
+            }
 
             ctrlCliente.anim.SetBool("movimento", true);
         }
