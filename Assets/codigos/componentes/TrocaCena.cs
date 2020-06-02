@@ -11,9 +11,13 @@ namespace NhomNhom
             try
             {
                 string cenaAtual = SceneManager.GetActiveScene().name;
-                int indiceAtual = (int)Enum.Parse(typeof(Cenas), cenaAtual);
-                string proxCena = ((Cenas)(indiceAtual + 1)).ToString();
-                SceneManager.LoadScene(proxCena);
+                int indice = (int) Enum.Parse(typeof(Cenas), cenaAtual);
+
+                indice++;
+                int qtdCenas = Enum.GetValues(typeof(Cenas)).Length;
+                Cenas proxCena = indice > qtdCenas -2 ? (Cenas)(-1) : (Cenas)indice;
+
+                SceneManager.LoadScene(proxCena.ToString());
             }
             catch (Exception e)
             {
