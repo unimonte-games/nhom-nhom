@@ -1,26 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(MeshRenderer))]
-public class TrocaMaterial : MonoBehaviour
+namespace NhomNhom
 {
-    public Material[] materiais;
-    private MeshRenderer meshRenderer;
-
-    private void Awake()
+    [RequireComponent(typeof(MeshRenderer))]
+    public class TrocaMaterial : MonoBehaviour
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-    }
+        public Material[] materiais;
+        private MeshRenderer meshRenderer;
 
-    private void Start()
-    {
-        TrocarMaterial();
-    }
+        private void Awake()
+        {
+            meshRenderer = GetComponent<MeshRenderer>();
+        }
 
-    public void TrocarMaterial()
-    {
-        int random = Random.Range(0, materiais.Length - 1);
-        meshRenderer.material = materiais[random];
+        private void Start()
+        {
+            TrocarMaterial();
+        }
+
+        public void TrocarMaterial()
+        {
+            int random = Random.Range(0, materiais.Length - 1);
+            meshRenderer.material = materiais[random];
+        }
     }
 }
