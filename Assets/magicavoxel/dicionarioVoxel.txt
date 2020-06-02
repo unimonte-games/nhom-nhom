@@ -31,3 +31,5 @@
 255 145 236:mastroPrincipal
 255 145 237:mastroSecundario
 255 0 255:leme
+255 227 48:carpeteGrande
+255 227 49:carpetePequeno
