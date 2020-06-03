@@ -25,6 +25,7 @@ namespace NhomNhom {
         ControleCliente ctrlCliente;
 
         Paciencia paciencia;
+        public Item pedidoItem;
 
         public void ProximoEstado() {
             if (estado != Estado.VaiEmbora) {
@@ -40,15 +41,12 @@ namespace NhomNhom {
                 fila.AbrirVaga(ctrlCliente.id);
                 Destroy(c_andaNaFila);
             }
-            if (c_andaAteCadeira) {
+            if (c_andaAteCadeira)
                 Destroy(c_andaAteCadeira);
-            }
-            if (c_aguardaPrato) {
+            if (c_aguardaPrato)
                 Destroy(c_aguardaPrato);
-            }
-            if (c_comendoPrato) {
+            if (c_comendoPrato)
                 Destroy(c_comendoPrato);
-            }
 
             switch (e) {
                 case Estado.NaFila:       c_andaNaFila     = gameObject.AddComponent<AndaNaFila>();     break;
@@ -91,8 +89,11 @@ namespace NhomNhom {
             if (DeveIrParaProximoEstado())
                 ProximoEstado();
 
-            if (paciencia.paciencia < 0 && estado != Estado.VaiEmbora)
+            if (paciencia.paciencia < 0 && estado != Estado.VaiEmbora) {
+                pedidoItem.LimparPosse();
+                Destroy(pedidoItem.gameObject);
                 AbreEstado(Estado.VaiEmbora);
+            }
         }
     }
 }
