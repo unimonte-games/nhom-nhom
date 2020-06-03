@@ -62,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _tex:
-        m_Texture: {fileID: 2800000, guid: bc5ba324b4e91d343ab2165b1a2a61cf, type: 3}
+        m_Texture: {fileID: 2800000, guid: bf3cfb420f11bde45b37d9b47768c2eb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _tex_normal:
@@ -96,7 +96,7 @@ Material:
     - _outline_mul: 0
     - _outline_size: 0.32
     - _usar_cam_dir: 0
-    - _usar_normais: 1
+    - _usar_normais: 0
     - _usar_xadrez: 0
     m_Colors:
     - _BaseColor: {r: 0.26415092, g: 0.11154397, b: 0.037379842, a: 1}
@@ -105,6 +105,6 @@ Material:
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _cam_dir: {r: 0, g: -0.76604444, b: 0.6427875, a: 0}
     - _light_dir: {r: -0.40925205, g: -0.766044, b: 0.4956704, a: 0}
-    - _main_color: {r: 1, g: 1, b: 1, a: 1}
+    - _main_color: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
     - _outline_color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
-    - _tiling: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _tiling: {r: 1, g: 1, b: 0, a: 0}
