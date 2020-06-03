@@ -8,10 +8,12 @@ namespace NhomNhom {
         public GameObject jogador;
         public Transform localInicial;
         public Color[] coresContorno = new Color[4];
-        public static int jogadorQtd;
+        public static int jogadorQtd = 1;
 
         void Awake() {
-            InstanciarJogador();
+            ControladorJogador.jogadorNum = 0;
+            for (int i = 1; i <= jogadorQtd; i++)
+                InstanciarJogador(i);
         }
 
         void Update() {
@@ -19,19 +21,21 @@ namespace NhomNhom {
                 return;
 
             if (jogadorQtd < 4 && Input.GetKeyDown(KeyCode.Return))
-                InstanciarJogador();
+            {
+                jogadorQtd++;
+                InstanciarJogador(jogadorQtd);
+            }
         }
 
-        void InstanciarJogador() {
-            jogadorQtd++;
+        void InstanciarJogador(int numeroJogador) {
             GameObject jogadorGbj = Instantiate<GameObject>(
                 jogador, localInicial.position, Quaternion.identity
             );
             jogadorGbj.GetComponent<ControleJogador>().meshRendSlime.material.SetColor(
-                "_outline_color", coresContorno[jogadorQtd - 1]
+                "_outline_color", coresContorno[numeroJogador - 1]
             );
 
-            SistemaCamera.DefinirJogador(jogadorGbj.transform, jogadorQtd - 1);
+            SistemaCamera.DefinirJogador(jogadorGbj.transform, numeroJogador - 1);
         }
     }
 }

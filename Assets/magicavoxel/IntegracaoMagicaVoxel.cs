@@ -45,14 +45,26 @@ namespace NhomNhom {
 
             public static void RegerarCena()
             {
-                GameObject pai = GameObject.Find("Cenario Importado");
-                Transform posi = null;
-                if (pai != null) posi = pai.transform;
-                
-                try { DestroyImmediate(pai); }
-                catch { Debug.LogWarning("Cenário antigo não excluído, favor escluí-lo manualmente"); }
+                // Encontra o obj com o nome especificado
+                GameObject gbCenario = GameObject.Find("Cenario Importado");
 
-                LerArqPly(posi);
+                // Aborta caso o objeto não exista
+                if (gbCenario == null) return;
+
+                // Encontra o prefab mais proximo do obj e o carrega na memória
+                string prefabPath = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(gbCenario.transform.parent);
+                GameObject prefab = PrefabUtility.LoadPrefabContents(prefabPath);
+
+                // Encontra o obj com o nome especificado dentro do prefab
+                gbCenario = prefab.transform.Find("Cenario Importado").gameObject;
+
+                // Executa o script e define o obj de retorno como filho do prefab
+                Transform novoCenario = LerArqPly(gbCenario);
+                novoCenario.parent = prefab.transform;
+
+                // Salva as alterações e descarrefa o prefab da memória
+                PrefabUtility.SaveAsPrefabAsset(prefab, prefabPath);
+                PrefabUtility.UnloadPrefabContents(prefab);
             }
 
             public static void LerArqDicio()
@@ -84,7 +96,7 @@ namespace NhomNhom {
                 arqRef.Close();
             }
 
-            public static void LerArqPly(Transform posicao = null)
+            public static Transform LerArqPly(GameObject cenarioAntigo = null)
             {
                 var objsParaRot = new List<Rotacionador>();
 
@@ -122,16 +134,18 @@ namespace NhomNhom {
 
                 arqPly.Close();
 
+                if (cenarioAntigo != null)
+                {
+                    paiCenario.position = cenarioAntigo.transform.position;
+                    paiCenario.rotation = cenarioAntigo.transform.rotation;
+                    DestroyImmediate(cenarioAntigo);
+                }
+
                 // Rotaciona os filhos
                 foreach (Rotacionador obj in objsParaRot)
                     obj.Rotacionar();
 
-                // Define a posição e rotação do cenário
-                if (posicao != null)
-                {
-                    paiCenario.transform.position = posicao.position;
-                    paiCenario.transform.rotation = posicao.rotation;
-                }
+                return paiCenario;
             }
 
             private static void InstanciarModelo(string chave, Vector3 posi, Transform pai, ref List<Rotacionador> lista)

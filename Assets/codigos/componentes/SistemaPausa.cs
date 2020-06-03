@@ -8,6 +8,7 @@ namespace NhomNhom {
         public static bool pausado;
         public GameObject pausaMenu;
 
+        static bool pausaForcada = false;
         static SistemaPausa singleton;
 
         void Awake() {
@@ -15,15 +16,22 @@ namespace NhomNhom {
             // em especial nas fases, assim, o `pausado` é resetado devidamente.
             pausado = false;
             singleton = this;
+            Resumir();
         }
 
         void Update() {
-            if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (!pausaForcada && Input.GetKeyDown(KeyCode.Escape)) {
                 if (pausado)
                     Resumir();
                 else
                     Pausar();
             }
+        }
+
+        public static void ForcarPausa()
+        {
+            pausaForcada = true;
+            Pausar();
         }
 
         public static void Pausar() {
@@ -33,6 +41,7 @@ namespace NhomNhom {
         }
 
         public static void Resumir() {
+            pausaForcada = false;
             pausado = false;
             Time.timeScale = 1f;
             singleton.pausaMenu.SetActive(false);

@@ -20,6 +20,12 @@ public class TrocaCena : MonoBehaviour
         }
     }
 
+    public void carregaCena(int index)
+    {
+        string cena = ((Cenas)index).ToString();
+        SceneManager.LoadScene(cena);
+    }
+
     public void recarregaCena()
     {
         string cenaAtual = SceneManager.GetActiveScene().name;
