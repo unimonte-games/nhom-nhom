@@ -133,6 +133,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1102218621766626032, guid: f949687d6e9e9054dad268d72e30bee2,
+        type: 3}
+      propertyPath: limiteClientesSimultaneos
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 1549551795314749821, guid: f949687d6e9e9054dad268d72e30bee2,
         type: 3}
       propertyPath: m_LocalPosition.x
