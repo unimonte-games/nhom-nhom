@@ -6,10 +6,11 @@ namespace NhomNhom
     public class HudLevel : MonoBehaviour
     {
         public Text textoCofre;
+        public Cofre cofre;
 
-        public void atualizaCofre(int valor)
+        public void atualizaCofre()
         {
-            textoCofre.text = valor.ToString();
+            textoCofre.text = string.Concat(cofre.cofreFase, "/", cofre.cofreObjetivo);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace NhomNhom {
 
         public void Pagar(int recompensa) {
             cofreFase += recompensa;
-            hudLevel.atualizaCofre(cofreFase);
+            hudLevel.atualizaCofre();
         }
     }
 }
