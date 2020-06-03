@@ -26,7 +26,7 @@ namespace NhomNhom {
         IEnumerator InstanciarClientes() {
             Cadeiras cadeiras = FindObjectOfType<Cadeiras>();
 
-            for (int i = 0; i < qtdClientes; i++) {
+            while (clientesInstanciados < qtdClientes) {
                 if (SistemaPausa.pausado)
                     yield return new WaitWhile(() => SistemaPausa.pausado);
 
@@ -36,7 +36,7 @@ namespace NhomNhom {
                         cadeiras.saida.position,
                         Quaternion.identity
                     );
-                    clienteGbj.GetComponent<ControleCliente>().id = i+1;
+                    clienteGbj.GetComponent<ControleCliente>().id = clientesInstanciados+1;
                     qtdClientesSimultaneos++;
                     clientesInstanciados++;
                 }
