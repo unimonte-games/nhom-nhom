@@ -6,9 +6,10 @@ namespace NhomNhom
     public class MenuRelatorio : MonoBehaviour
     {
         public Cofre cofre;
-        public Sprite[] slimotes = new Sprite[3];
+        public Sprite[] slimotes = new Sprite[4];
         public Sprite[] estrelas = new Sprite[3];
         public Text textoCofreFase;
+        public Text textoCofreAntigo;
         public Text textoCofreTotal;
         public Image elementoSlimotes;
         public Image elementoEstrelas;
@@ -28,15 +29,18 @@ namespace NhomNhom
                 pontuacao = 0;
             else if (cofre.cofreFase <= 0.66 * cofre.cofreObjetivo)
                 pontuacao = 1;
-            else
+            else if (cofre.cofreFase <= cofre.cofreObjetivo)
                 pontuacao = 2;
+            else
+                pontuacao = 3;
 
             // Desenha elementos
             elementoSlimotes.sprite = slimotes[pontuacao];
-            elementoEstrelas.sprite = estrelas[pontuacao];
+            elementoEstrelas.sprite = estrelas[pontuacao == 3 ? 2 : pontuacao];
+
             textoCofreFase.text = cofre.cofreFase + "/" + cofre.cofreObjetivo;
-            textoCofreTotal.text = string.Format("{0}\n{1}\n____________ +\n{2}",
-                cofre.cofreFase, Cofre.cofreGeral, cofre.cofreFase + Cofre.cofreGeral);
+            textoCofreAntigo.text = Cofre.cofreGeral.ToString();
+            textoCofreTotal.text = (cofre.cofreFase + Cofre.cofreGeral).ToString();
 
             // Adiciona o dinheiro ganho na fase ao dinheiro total
             Cofre.cofreGeral += cofre.cofreFase;
