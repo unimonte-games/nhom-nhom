@@ -316,7 +316,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_SelectOnLeft
       value: 
-      objectReference: {fileID: 1841110594}
+      objectReference: {fileID: 2018344586}
     - target: {fileID: 5884193074462596854, guid: 1d72aa151f699cb4b997bee1ad96350c,
         type: 3}
       propertyPath: m_Navigation.m_SelectOnRight

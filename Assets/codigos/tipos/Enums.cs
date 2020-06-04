@@ -9,7 +9,7 @@ public enum Camadas
 
 public enum Cenas
 {
-    menu_inicial=0, tutorial, externo_medio, interno_grande,
+    menu_inicial=0, tutorial, externo_pequeno, interno_pequeno, externo_medio, interno_grande,
 }
 
 public enum EfeitoSonoro {
