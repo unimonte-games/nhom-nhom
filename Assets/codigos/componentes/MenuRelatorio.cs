@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace NhomNhom 
 {
     public class MenuRelatorio : MonoBehaviour
     {
+        public GameObject itemSelecionado;
         public Cofre cofre;
         public Sprite[] slimotes = new Sprite[4];
         public Sprite[] estrelas = new Sprite[3];
@@ -23,6 +25,7 @@ namespace NhomNhom
         {
             SistemaPausa.ForcarPausa();
             transform.GetChild(0).gameObject.SetActive(true);
+            FindObjectOfType<EventSystem>().SetSelectedGameObject(itemSelecionado);
 
             int pontuacao;
             if (cofre.cofreFase <= 0.33 * cofre.cofreObjetivo)
