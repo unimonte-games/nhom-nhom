@@ -10,6 +10,7 @@ namespace NhomNhom {
         public float intervaloMinimo, intervaloMaximo;
         public GameObject[] clientes;
         public Transform[] fila_trs;
+        public HudLevel hudLevel;
 
         int clientesInstanciados = 0;
 
@@ -39,6 +40,7 @@ namespace NhomNhom {
                     clienteGbj.GetComponent<ControleCliente>().id = i+1;
                     qtdClientesSimultaneos++;
                     clientesInstanciados++;
+                    hudLevel.atualizaClientes(clientesInstanciados, qtdClientes);
                 }
 
                 yield return new WaitForSeconds(Random.Range(intervaloMinimo, intervaloMaximo));
