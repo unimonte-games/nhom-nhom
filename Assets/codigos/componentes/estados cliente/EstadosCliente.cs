@@ -24,10 +24,12 @@ namespace NhomNhom {
         VaiEmbora      c_vaiEmbora;
         ControleCliente ctrlCliente;
 
+        Paciencia paciencia;
+        public Item pedidoItem;
+
         public void ProximoEstado() {
             if (estado != Estado.VaiEmbora) {
-                estado = (Estado)( (int)estado + 1 );
-                AbreEstado(estado);
+                AbreEstado((Estado)((int)estado + 1));
             } else {
                 Destroy(gameObject);
                 fila.qtdClientesSimultaneos--;
@@ -41,15 +43,12 @@ namespace NhomNhom {
                 fila.AbrirVaga(ctrlCliente.id);
                 Destroy(c_andaNaFila);
             }
-            if (c_andaAteCadeira) {
+            if (c_andaAteCadeira)
                 Destroy(c_andaAteCadeira);
-            }
-            if (c_aguardaPrato) {
+            if (c_aguardaPrato)
                 Destroy(c_aguardaPrato);
-            }
-            if (c_comendoPrato) {
+            if (c_comendoPrato)
                 Destroy(c_comendoPrato);
-            }
 
             switch (e) {
                 case Estado.NaFila:       c_andaNaFila     = gameObject.AddComponent<AndaNaFila>();     break;
@@ -58,6 +57,8 @@ namespace NhomNhom {
                 case Estado.ComendoPrato: c_comendoPrato   = gameObject.AddComponent<ComendoPrato>();   break;
                 case Estado.VaiEmbora:    c_vaiEmbora      = gameObject.AddComponent<VaiEmbora>();      break;
             }
+
+            estado = e;
         }
 
         bool DeveIrParaProximoEstado() {
@@ -76,6 +77,7 @@ namespace NhomNhom {
             fila = FindObjectOfType<Fila>();
             cadeiras = FindObjectOfType<Cadeiras>();
             ctrlCliente = GetComponent<ControleCliente>();
+            paciencia = GetComponent<Paciencia>();
         }
 
         void Start() {
@@ -86,8 +88,13 @@ namespace NhomNhom {
             if (SistemaPausa.pausado)
                 return;
 
-            if (DeveIrParaProximoEstado()) {
+            if (DeveIrParaProximoEstado())
                 ProximoEstado();
+
+            if (paciencia.paciencia < 0 && estado != Estado.VaiEmbora) {
+                pedidoItem.LimparPosse();
+                Destroy(pedidoItem.gameObject);
+                AbreEstado(Estado.VaiEmbora);
             }
         }
     }

@@ -73,6 +73,7 @@ namespace NhomNhom {
             espacoCliente.itemAbrigado.gameObject.SetActive(true);
 
             pedidoItem = espacoCliente.Soltar();
+            GetComponent<EstadosCliente>().pedidoItem = pedidoItem;
 
             {
                 var itemPedido = pedidoItem.GetComponent<Pedido>();
