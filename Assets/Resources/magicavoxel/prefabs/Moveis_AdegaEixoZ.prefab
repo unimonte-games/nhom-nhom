@@ -55,12 +55,12 @@ PrefabInstance:
     - target: {fileID: 3662700367496109545, guid: 132a1ef90eb2ae447a38485188efd4bf,
         type: 3}
       propertyPath: m_Center.z
-      value: 0.13
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 3662700367496109545, guid: 132a1ef90eb2ae447a38485188efd4bf,
         type: 3}
       propertyPath: m_Center.x
-      value: 0
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 4126638950280826631, guid: 132a1ef90eb2ae447a38485188efd4bf,
         type: 3}
