@@ -1,12 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class HudLevel : MonoBehaviour
+namespace NhomNhom
 {
-    public Text textoCofre;
-
-    public void atualizaCofre(int valor)
+    public class HudLevel : MonoBehaviour
     {
-        textoCofre.text = valor.ToString();
+        public Text textoCofre;
+        public Text textoClientes;
+
+        public void atualizaCofre(int valorParcial, int valorTotal)
+        {
+            textoCofre.text = string.Concat(valorParcial, "/", valorTotal);
+        }
+
+        public void atualizaClientes(int valorParcial, int valorTotal)
+        {
+            textoClientes.text = string.Concat(valorParcial, "/", valorTotal);
+        }
     }
 }

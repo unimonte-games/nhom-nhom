@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace NhomNhom {
     public class Cofre : MonoBehaviour
@@ -16,7 +14,7 @@ namespace NhomNhom {
 
         public void Pagar(int recompensa) {
             cofreFase += recompensa;
-            hudLevel.atualizaCofre(cofreFase);
+            hudLevel.atualizaCofre(cofreFase, cofreObjetivo);
         }
     }
 }
