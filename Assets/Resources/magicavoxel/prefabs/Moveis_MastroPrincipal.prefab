@@ -12,6 +12,36 @@ PrefabInstance:
       propertyPath: id
       value: '#movel mastroPrincial'
       objectReference: {fileID: 0}
+    - target: {fileID: 1721401422655508000, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.0886161
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721401422655508000, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721401422655508000, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.8932977
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721401422655508000, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721401422655508000, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 6.0841074
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721401422655508000, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 2.5420537
+      objectReference: {fileID: 0}
     - target: {fileID: 1978452991675638965, guid: 174ac4d864dc47e4f8e1365efbfb5ea6,
         type: 3}
       propertyPath: m_Name
