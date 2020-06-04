@@ -1,9 +1,10 @@
-﻿using UnityEngine;
-using UnityEditor;
 
 namespace NhomNhom {
     namespace IntegracaoMagicaVoxel
     {
+        using UnityEngine;
+        using UnityEditor;
+
         public class MenuMagicaVoxel : EditorWindow
         {
             static Object objDicio, objCena;
