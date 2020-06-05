@@ -45358,7 +45358,7 @@ PrefabInstance:
     - target: {fileID: -6587089400813634626, guid: 9666c82332814ce1e8fe92dd19de41f1,
         type: 3}
       propertyPath: cofreObjetivo
-      value: 112
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 41148503028048774, guid: 9666c82332814ce1e8fe92dd19de41f1,
         type: 3}
