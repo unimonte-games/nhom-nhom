@@ -77,6 +77,11 @@ PrefabInstance:
       propertyPath: meshRend
       value: 
       objectReference: {fileID: 3728977900774986839}
+    - target: {fileID: 8733498894887014616, guid: 0368026076e30c18c8705c853bd3e206,
+        type: 3}
+      propertyPath: precoBase
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0368026076e30c18c8705c853bd3e206, type: 3}
 --- !u!4 &7979483883781450121 stripped

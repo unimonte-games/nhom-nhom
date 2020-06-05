@@ -1657,6 +1657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   estado: 0
   precoPrato: 0
+  pedidoItem: {fileID: 0}
 --- !u!114 &7691137582657994454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1824,10 +1825,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recompensas:
-  - 0.8
+  - 0.085
+  - 0.25
+  - 0.5
   - 1
-  - 1.5
-  - 2
 --- !u!114 &4236949260932306666
 MonoBehaviour:
   m_ObjectHideFlags: 0
