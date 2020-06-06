@@ -15,7 +15,7 @@ namespace NhomNhom
 
                 indice++;
                 int qtdCenas = Enum.GetValues(typeof(Cenas)).Length;
-                Cenas proxCena = indice > qtdCenas -2 ? (Cenas)(-1) : (Cenas)indice;
+                Cenas proxCena = indice > qtdCenas -1 ? 0 : (Cenas)indice;
 
                 SceneManager.LoadScene(proxCena.ToString());
             }
