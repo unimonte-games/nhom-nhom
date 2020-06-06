@@ -74,6 +74,8 @@ namespace NhomNhom {
         public static void DefinirJogador(Transform tr, int i) {
             if (singleton)
                 singleton._DefinirJogador(tr, i);
+            else
+                Debug.Log("sem singleton");
         }
 
         void _DefinirJogador(Transform tr, int i) {
