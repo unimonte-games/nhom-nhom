@@ -88,14 +88,25 @@ namespace NhomNhom {
         }
 
 
-        IEnumerator CO_AtualizaLista() {
-            for (int i = 0; i < espacosOcupados.Length-1; i++) {
+        IEnumerator CO_AtualizaLista()
+        {
+            for (int i = 0; i < espacosOcupados.Length - 1; i++)
+            {
                 yield return new WaitForSeconds(0.5f); // WaitForEndOfFrame();
-                if (espacosOcupados[i] == 0) {
-                    espacosOcupados[i] = espacosOcupados[i+1];
-                    espacosOcupados[i+1] = 0;
+                if (espacosOcupados[i] == 0)
+                {
+                    espacosOcupados[i] = espacosOcupados[i + 1];
+                    espacosOcupados[i + 1] = 0;
                 }
             }
+        }
+
+        public void IncrementarClientes()
+        {
+            qtdClientes = (int)(qtdClientes * 1.4);
+            limiteClientesSimultaneos = (int)(limiteClientesSimultaneos * 1.6);
+
+            hudLevel.atualizaClientes(clientesInstanciados, qtdClientes);
         }
     }
 }
