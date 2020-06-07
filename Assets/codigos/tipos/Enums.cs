@@ -17,4 +17,5 @@ public enum EfeitoSonoro {
     SlimePasso,
     Pago,
     PedidoEntregue,
+    PratoPego,
 }
