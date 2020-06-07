@@ -1360,7 +1360,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_SelectOnLeft
       value: 
-      objectReference: {fileID: 2448196963186492191}
+      objectReference: {fileID: 0}
     - target: {fileID: 8913314173627685071, guid: 3cd7eb08cb553e646ba853d6eb59586b,
         type: 3}
       propertyPath: m_Name
@@ -1533,7 +1533,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
-      objectReference: {fileID: 3799433984281595992}
+      objectReference: {fileID: 0}
     - target: {fileID: 8913314173627685071, guid: 3cd7eb08cb553e646ba853d6eb59586b,
         type: 3}
       propertyPath: m_Name

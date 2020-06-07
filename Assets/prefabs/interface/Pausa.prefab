@@ -578,7 +578,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
-      objectReference: {fileID: 3860757129904882437}
+      objectReference: {fileID: 0}
     - target: {fileID: 8913314173627685071, guid: 3cd7eb08cb553e646ba853d6eb59586b,
         type: 3}
       propertyPath: m_Name
@@ -746,7 +746,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
-      objectReference: {fileID: 3711159308776590527}
+      objectReference: {fileID: 0}
     - target: {fileID: 8913314173627685071, guid: 3cd7eb08cb553e646ba853d6eb59586b,
         type: 3}
       propertyPath: m_Name
