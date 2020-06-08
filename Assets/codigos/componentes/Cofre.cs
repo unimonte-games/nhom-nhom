@@ -20,7 +20,7 @@ namespace NhomNhom {
         public void IncrementarObjetivo(int qtdClientes)
         {
             // Preço do pedido base considerado como 12
-            cofreObjetivo = (int) (qtdClientes * 0.8 * 12);
+            cofreObjetivo = (int) (qtdClientes * 0.95 * 12);
             Pagar(0);
         }
     }

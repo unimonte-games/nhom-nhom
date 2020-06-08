@@ -50997,17 +50997,17 @@ PrefabInstance:
     - target: {fileID: -7324840349729081333, guid: 9666c82332814ce1e8fe92dd19de41f1,
         type: 3}
       propertyPath: intervaloMinimo
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -7324840349729081333, guid: 9666c82332814ce1e8fe92dd19de41f1,
         type: 3}
       propertyPath: intervaloMaximo
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -6587089400813634626, guid: 9666c82332814ce1e8fe92dd19de41f1,
         type: 3}
       propertyPath: cofreObjetivo
-      value: 76
+      value: 91
       objectReference: {fileID: 0}
     - target: {fileID: 41148503028048774, guid: 9666c82332814ce1e8fe92dd19de41f1,
         type: 3}
