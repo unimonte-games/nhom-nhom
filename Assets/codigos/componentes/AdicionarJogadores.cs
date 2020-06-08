@@ -14,6 +14,9 @@ namespace NhomNhom {
             ControladorJogador.jogadorNum = 0;
             for (int i = 1; i <= jogadorQtd; i++)
                 InstanciarJogador(i);
+
+            if (jogadorQtd > 1)
+            IncrementararBalanceamento();
         }
 
         void Update() {
@@ -24,6 +27,7 @@ namespace NhomNhom {
             {
                 jogadorQtd++;
                 InstanciarJogador(jogadorQtd);
+                IncrementararBalanceamento();
             }
         }
 
@@ -36,6 +40,13 @@ namespace NhomNhom {
             );
 
             SistemaCamera.DefinirJogador(jogadorGbj.transform, numeroJogador - 1);
+        }
+
+        void IncrementararBalanceamento()
+        {
+            Fila fila = FindObjectOfType<Fila>();
+            fila.IncrementarClientes();
+            FindObjectOfType<Cofre>().IncrementarObjetivo(fila.qtdClientes);
         }
     }
 }

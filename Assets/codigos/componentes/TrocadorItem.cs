@@ -11,12 +11,20 @@ namespace NhomNhom {
         public EspacoItem espacoBalcao;
         public Temporizador temporizador;
 
+        bool tinhaPrato = false;
+
         void Update() {
-            if (
-                SistemaPausa.pausado ||
-                espacoBalcao.Vazio() ||
-                espacoBalcao.itemAbrigado.GetComponent<TipoItem>().tipo != TipoItem.Tipo.Pedido
-            )
+            if (SistemaPausa.pausado)
+                return;
+
+            if (espacoBalcao.Vazio()) {
+                if (tinhaPrato)
+                    SistemaEfeitoSonoro.Disparar(EfeitoSonoro.PratoPego);
+                tinhaPrato = false;
+                return;
+            }
+
+            if (espacoBalcao.itemAbrigado.GetComponent<TipoItem>().tipo != TipoItem.Tipo.Pedido)
                 return;
 
             SistemaEfeitoSonoro.Disparar(EfeitoSonoro.PedidoEntregue);
@@ -35,6 +43,7 @@ namespace NhomNhom {
                 }
 
             Destroy(itemItem.gameObject);
+
         }
 
         IEnumerator InstanciarPrato(int i_trancacao, Vector3 pos, int cor_prato) {
@@ -55,6 +64,8 @@ namespace NhomNhom {
             Assert.IsNotNull(novoItemItem);
 
             espacoBalcao.Abrigar(novoItemItem);
+
+            tinhaPrato = true;
         }
     }
 }
