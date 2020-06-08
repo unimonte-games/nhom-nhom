@@ -16,5 +16,12 @@ namespace NhomNhom {
             cofreFase += recompensa;
             hudLevel.atualizaCofre(cofreFase, cofreObjetivo);
         }
+
+        public void IncrementarObjetivo(int qtdClientes)
+        {
+            // Preço do pedido base considerado como 12
+            cofreObjetivo = (int) (qtdClientes * 0.95 * 12);
+            Pagar(0);
+        }
     }
 }
