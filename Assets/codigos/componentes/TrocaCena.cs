@@ -27,6 +27,11 @@ namespace NhomNhom
 
         public void carregaCena(int index)
         {
+            if (index == 0)
+            {
+                AdicionarJogadores.jogadorQtd = 1;
+                Cofre.cofreGeral = 0;
+            }
             string cena = ((Cenas)index).ToString();
             SceneManager.LoadScene(cena);
         }
