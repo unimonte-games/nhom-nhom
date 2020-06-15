@@ -34,7 +34,7 @@ namespace NhomNhom {
             [MenuItem("MagicaVoxel/Rotacionar Objetos")]
             public static void RotacionarObjetos()
             {
-                GameObject pai = GameObject.Find("Cenario Importado");
+                /*GameObject pai = GameObject.Find("Cenario Importado");
                 foreach (Transform filho in pai.transform)
                 {
                     try
@@ -43,7 +43,7 @@ namespace NhomNhom {
                         rot.Rotacionar();
                     }
                     catch { }
-                }
+                }*/
             }
 
             [MenuItem("MagicaVoxel/Configurações")]

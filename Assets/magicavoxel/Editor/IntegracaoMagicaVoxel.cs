@@ -98,7 +98,7 @@ namespace NhomNhom {
 
             public static Transform LerArqPly(GameObject cenarioAntigo = null)
             {
-                var objsParaRot = new List<Rotacionador>();
+                /*var objsParaRot = new List<Rotacionador>();
 
                 // Atualiza o dicionário
                 LerArqDicio();
@@ -145,10 +145,11 @@ namespace NhomNhom {
                 foreach (Rotacionador obj in objsParaRot)
                     obj.Rotacionar();
 
-                return paiCenario;
+                return paiCenario;*/
+                return GameObject.FindWithTag("MainCamera").transform;
             }
 
-            private static void InstanciarModelo(string chave, Vector3 posi, Transform pai, ref List<Rotacionador> lista)
+            /*private static void InstanciarModelo(string chave, Vector3 posi, Transform pai, ref List<Rotacionador> lista)
             {
                 string nomePrefab;
 
@@ -186,7 +187,7 @@ namespace NhomNhom {
                     obj.transform.position = posi;
                     obj.transform.parent = pai;
                 }
-            }
+            }*/
         }
     }
 }
