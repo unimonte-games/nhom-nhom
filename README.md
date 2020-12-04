@@ -9,3 +9,6 @@ Quarto Projeto Interdisciplinar.
 * [Victor Possent](https://github.com/VictorHugoPossentt)
 * [Náthali Marques](https://github.com/skilinhu)
 * [Johnatan Santos](https://github.com/Mjchez)
+
+## Captura de tela do jogo
+![nhomnhom screenshot](https://img.itch.zone/aW1hZ2UvODQzMjgzLzQ3MjgxNjAucG5n/original/tPZypT.png)
