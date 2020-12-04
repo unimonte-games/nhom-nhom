@@ -98,3 +98,4 @@ Material:
     - _light_dir: {r: 0.3213938, g: 0.7660445, b: -0.5566704, a: 0}
     - _main_color: {r: 1, g: 1, b: 1, a: 0}
     - _outline_color: {r: 1, g: 1, b: 1, a: 0}
+  m_BuildTextureStacks: []
