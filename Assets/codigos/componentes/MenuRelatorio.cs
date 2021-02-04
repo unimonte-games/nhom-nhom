@@ -6,6 +6,7 @@ namespace NhomNhom
 {
     public class MenuRelatorio : MonoBehaviour
     {
+        public HudLevel hudLevel;
         public GameObject itemSelecionado;
         public Cofre cofre;
         public Sprite[] slimotes = new Sprite[4];
@@ -15,6 +16,8 @@ namespace NhomNhom
         public Text textoCofreTotal;
         public Image elementoSlimotes;
         public Image elementoEstrelas;
+        public Transform painelPontuacoes;
+        public GameObject[] relatorioJogadores;
 
         private void Awake()
         {
@@ -45,8 +48,32 @@ namespace NhomNhom
             textoCofreAntigo.text = Cofre.cofreGeral.ToString();
             textoCofreTotal.text = (cofre.cofreFase + Cofre.cofreGeral).ToString();
 
+            atualizaPontuacoes();
+
             // Adiciona o dinheiro ganho na fase ao dinheiro total
             Cofre.cofreGeral += cofre.cofreFase;
+        }
+
+        public void atualizaPontuacoes()
+        {
+            int[] pontuacoes = hudLevel.getPontuacoes();
+            int[] posicoes = new[] { 1, 2, 3, 4 };
+            System.Array.Sort(pontuacoes, posicoes);
+
+            int colocacao = 1;
+            int ultimaPontuacao = pontuacoes[pontuacoes.Length - 1];
+            for (int i = pontuacoes.Length - 1; i >= 0 ; i--)
+            {
+                GameObject gbj = Instantiate(relatorioJogadores[posicoes[i] - 1], painelPontuacoes);
+                Text texto = gbj.GetComponentInChildren<Text>();
+
+                if (ultimaPontuacao != pontuacoes[i]) colocacao++;
+                texto.text = string.Format("#{0}\n{1}", colocacao, pontuacoes[i]);
+                ultimaPontuacao = pontuacoes[i];
+            }
+
+            var painel = painelPontuacoes.GetComponent<HorizontalLayoutGroup>();
+            AtualizarLayout.atualizar(painel);
         }
     }
 }

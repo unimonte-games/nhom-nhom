@@ -8,6 +8,7 @@ namespace NhomNhom {
     // o LimparPosse não deve pedir para EspacoItem.Soltar() (senão entra em recursão sem caso base)
     public class Item : MonoBehaviour
     {
+        public int indiceJogadorResponsavel;
         public EspacoItem espacoPertencente;
         public bool bloqueado;
 

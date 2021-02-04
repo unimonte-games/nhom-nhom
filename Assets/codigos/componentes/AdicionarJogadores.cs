@@ -9,6 +9,7 @@ namespace NhomNhom {
         public Transform localInicial;
         public Color[] coresContorno = new Color[4];
         public static int jogadorQtd = 1;
+        public HudLevel hudLevel;
 
         void Awake() {
             ControladorJogador.jogadorNum = 0;
@@ -35,9 +36,13 @@ namespace NhomNhom {
             GameObject jogadorGbj = Instantiate<GameObject>(
                 jogador, localInicial.position, Quaternion.identity
             );
-            jogadorGbj.GetComponent<ControleJogador>().meshRendSlime.material.SetColor(
+            ControleJogador controleJogador = jogadorGbj.GetComponent<ControleJogador>();
+            controleJogador.meshRendSlime.material.SetColor(
                 "_outline_color", coresContorno[numeroJogador - 1]
             );
+            controleJogador.indiceJogador = numeroJogador - 1;
+
+            hudLevel.ativaPontuacaoJogador(numeroJogador - 1);
 
             SistemaCamera.DefinirJogador(jogadorGbj.transform, numeroJogador - 1);
         }

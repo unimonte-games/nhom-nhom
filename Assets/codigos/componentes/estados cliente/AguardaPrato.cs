@@ -39,6 +39,8 @@ namespace NhomNhom {
                     espacoCliente.Abrigar(pratoItem);
                     pratoItem.bloqueado = true;
                     pratoItem.transform.position = pos;
+                    int indice = pratoItem.indiceJogadorResponsavel;
+                    FindObjectOfType<Cofre>().adicionaPontuacao(indice, paciencia.paciencia);
                     return true;
                 } else {
                     SlimeBravo();

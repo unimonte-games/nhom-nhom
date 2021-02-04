@@ -11,6 +11,7 @@ namespace NhomNhom {
         public EspacoItem espacoItem;
         public OlhadorSuave olhador;
         public MeshRenderer meshRendSlime;
+        public int indiceJogador;
 
         Transform tr;
         Controle ctrl;
@@ -105,6 +106,7 @@ namespace NhomNhom {
                     Assert.IsNotNull(item);
 
                     espacoItem.Abrigar(item);
+                    item.indiceJogadorResponsavel = indiceJogador;
                 }
             }
         }

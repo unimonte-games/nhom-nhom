@@ -41,7 +41,8 @@ namespace NhomNhom {
             if (paciencia.paciencia > 0f) {
                 EstadosCliente estado = GetComponent<EstadosCliente>();
                 int recompensa = GetComponent<Recompensa>().ObterRecompensa(estado.precoPrato);
-                FindObjectOfType<Cofre>().Pagar(recompensa);
+                Cofre cofre = FindObjectOfType<Cofre>();
+                cofre.Pagar(recompensa);
                 pagFeedback.Iniciar(paciencia.ObterMarca());
             }
 
